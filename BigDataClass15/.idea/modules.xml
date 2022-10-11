@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BigDataClass15.iml" filepath="$PROJECT_DIR$/.idea/BigDataClass15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Homework/Homework.iml" filepath="$PROJECT_DIR$/Homework/Homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro01-JavaBase/pro01-JavaBase.iml" filepath="$PROJECT_DIR$/pro01-JavaBase/pro01-JavaBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro02-JavaArray/pro02-JavaArray.iml" filepath="$PROJECT_DIR$/pro02-JavaArray/pro02-JavaArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro03-JavaMethod/pro03-JavaMethod.iml" filepath="$PROJECT_DIR$/pro03-JavaMethod/pro03-JavaMethod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro04-JavaOOP/pro04-JavaOOP.iml" filepath="$PROJECT_DIR$/pro04-JavaOOP/pro04-JavaOOP.iml" />
+    </modules>
+  </component>
+</project>
