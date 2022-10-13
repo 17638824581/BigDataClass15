@@ -6,7 +6,7 @@ public class TestString {
     public static void main(String[] args) {
 
 
-        // 1. equles()
+        // 1. equals()
         // 2. charAt()
         // 3. length()
         // 4. repeat()
