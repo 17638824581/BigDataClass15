@@ -7,15 +7,15 @@ public class Dog {
 
     // 属性就是定义在类中的变量
     // 名字属性
-    String name;
+    private String name;
     // 年龄属性
-    int age;
+    private int age;
     // 性别属性
-    String sex;
+    private String sex;
     // 毛色属性
-    String color;
+    private String color;
     // 品种属性
-    String breed;
+    private String breed;
 
     // 构造方法（在创建对象时，要用到的方法）
     // 希望对象属性有初始值。
@@ -57,10 +57,53 @@ public class Dog {
         this.breed = breed;
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
     // 方法，代表类能干什么？
     // 吃东西的方法
     public void eat(String food){
         System.out.println(name+"吃了"+food);
+        // 吃饱了拉
+        this.shit();
     }
 
     // 叫的方法
@@ -70,6 +113,11 @@ public class Dog {
 
     public void run(){
         System.out.println(name+"跑了~");
+    }
+
+    // 拉屎的方法
+    private void shit(){
+        System.out.println(this.name+"上了个厕所！");
     }
 
 }

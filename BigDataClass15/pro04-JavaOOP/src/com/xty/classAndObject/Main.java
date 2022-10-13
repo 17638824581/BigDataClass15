@@ -24,12 +24,24 @@ public class Main {
 //        cat.eat("鱼");
 
         // 自己写的类，属于引用类型的变量（存的都是内存地址）
-        Student s1 = new Student("张三丰", 88);
-        Student s2 = new Student("张无忌", 35);
+        Dog dog1 = new Dog("小黑",2,"公","黑色","哈士奇");
+        Dog dog2 = new Dog("小白",1,"母","白色","萨摩耶");
 
-        Student s3 = s1;
-        s1.name = "张翠山";
 
-        s3.study();
+        System.out.println(dog1.getName());
+        System.out.println(dog2.getName());
+
+
+        // 当类中属性私有了，外部就访问不到了。
+        // 可以通过 方法 间接传递属性值。防止 name 被篡改
+        // getName() 这个方法，保护属性只能读取，不能修改。
+
+
+        // 只能获取属性却不能改属性，
+        // 怎么改属性？
+        // 能不能通过方法间接去修改指定的属性值
+
+
+
     }
 }
