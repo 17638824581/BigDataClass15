@@ -64,7 +64,7 @@ public class MergingSort {
             int[] arr2 = ints[1];
 
             // 2.排序并合并
-
+            return mergeArray(mergingSort(arr1),mergingSort(arr2));
 
         }else{
             return arr;
