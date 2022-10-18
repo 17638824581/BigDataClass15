@@ -6,7 +6,13 @@ import java.util.Arrays;
 // 归并排序
 public class MergingSort {
 
-    // 拆分数组
+    /*
+     * 对传入的数组进行对半拆分，拆分为前半部分，与后半部分
+     * @param arr: 要拆的数组
+     * @return int[][]: 返回一个保存拆分结果的二维数组，int[0] 代表前半部分，int[1] 代表后半部分
+     * @author Mr.yu
+     * @date 2022/10/17 18:38
+     */
     public static int[][] breakUpArray(int[] arr){
         int[] arr1 = new int[arr.length/2];
         int[] arr2 = new int[arr.length-arr1.length];
@@ -35,18 +41,35 @@ public class MergingSort {
     public static int[] mergeArray(int[] arr1, int[] arr2){
         int[] newArr = new int[arr1.length+arr2.length];
 
-        // 定义一个代表索引的变量
-        int index = 0;
+        // 合并的时候需要 排序  合并
 
-        // forEach 迭代器
-        for (int item: arr1) {
-            newArr[index] = item;
-            index++;
-        }
-
-        for (int item: arr2) {
-            newArr[index] = item;
-            index++;
+        // 如果两半部分都有内容
+        if (arr1.length>0 && arr2.length>0){
+            int index = 0;
+            int l_index = 0;
+            int r_index = 0;
+            // 判断哪一个值最小，将其存入 newArr
+            while (index < newArr.length){
+                if (l_index==arr1.length){
+                    newArr[index++] = arr2[r_index++];
+                }else if(r_index == arr2.length){
+                    newArr[index++] = arr1[l_index++];
+                }else if (arr1[l_index] < arr2[r_index]){
+                    newArr[index++] = arr1[l_index++];
+                }else{
+                    newArr[index++] = arr2[r_index++];
+                }
+            }
+        }else if(arr1.length>0){
+            for (int i = 0; i < newArr.length; i++) {
+                newArr[i] = arr1[i];
+            }
+        }else if(arr2.length>0){
+            for (int i = 0; i < newArr.length; i++) {
+                newArr[i] = arr2[i];
+            }
+        }else{
+            return new int[]{};
         }
 
         return newArr;
@@ -72,13 +95,12 @@ public class MergingSort {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {};
-        int[] arr2 = {};
 
-        int[][] ints = breakUpArray(arr1);
+        int[] arr = {1,8,9,6,2,5,3,6};
 
-        System.out.println("前半部分:"+Arrays.toString(ints[0]));
-        System.out.println("前半部分:"+Arrays.toString(ints[1]));
+        int[] ints = mergingSort(arr);
+
+        System.out.println(Arrays.toString(ints));
 
         // 使用 for 循环遍历数组
         // 通过 i 代表索引
