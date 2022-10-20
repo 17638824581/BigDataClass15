@@ -2,6 +2,8 @@ package com.dahua.ArraySort;
 
 
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 // 归并排序
 public class MergingSort {
@@ -96,11 +98,20 @@ public class MergingSort {
 
     public static void main(String[] args) {
 
-        int[] arr = {1,8,9,6,2,5,3,6};
 
-        int[] ints = mergingSort(arr);
+        Random random = new Random();
 
-        System.out.println(Arrays.toString(ints));
+        double i = random.nextDouble();
+
+        System.out.println(i);
+
+
+//        int[] arr = {1,8,9,6,2,5,3,6};
+//
+//        int[] ints = mergingSort(arr);
+//
+//        System.out.println(Arrays.toString(ints));
+
 
         // 使用 for 循环遍历数组
         // 通过 i 代表索引

@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/pro03-JavaMethod/pro03-JavaMethod.iml" filepath="$PROJECT_DIR$/pro03-JavaMethod/pro03-JavaMethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro04-JavaOOP/pro04-JavaOOP.iml" filepath="$PROJECT_DIR$/pro04-JavaOOP/pro04-JavaOOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro05-JavaString/pro05-JavaString.iml" filepath="$PROJECT_DIR$/pro05-JavaString/pro05-JavaString.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro06-ArrayList/pro06-ArrayList.iml" filepath="$PROJECT_DIR$/pro06-ArrayList/pro06-ArrayList.iml" />
     </modules>
   </component>
 </project>
