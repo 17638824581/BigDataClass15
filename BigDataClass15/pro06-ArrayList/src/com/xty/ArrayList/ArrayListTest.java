@@ -42,12 +42,15 @@ public class ArrayListTest {
 //        System.out.println(al);
 
         ArrayList<String> shz = new ArrayList<>();
-        shz.add("宋江");
-        shz.add("李逵");
-        shz.add("武松");
-        shz.add("晁盖");
-        shz.add("鲁智深");
-        shz.add("卢俊义");
+//        shz.add("宋江");
+//        shz.add("李逵");
+//        shz.add("武松");
+//        shz.add("晁盖");
+//        shz.add("鲁智深");
+//        shz.add("卢俊义");
+
+
+
 
 
         // 遍历 shz
