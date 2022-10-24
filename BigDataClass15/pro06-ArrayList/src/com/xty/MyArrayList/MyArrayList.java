@@ -24,6 +24,7 @@ public class MyArrayList {
         data = new int[initLength];
     }
 
+
     // 扩充数组的方法,默认每次扩充 5 个长度
     private void grow(){
         // 先新建一个更长的数组
