@@ -177,7 +177,7 @@ public class MyStudentList {
     // 交换 index1 和 index2 元素
     public boolean exchange(int index1, int index2){
         // 判断索引是否越界
-        if (index1 >= size && index2 >= size){
+        if (index1 >= size || index2 >= size){
             return false;
         }
 
