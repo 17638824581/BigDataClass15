@@ -11,6 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/pro05-JavaString/pro05-JavaString.iml" filepath="$PROJECT_DIR$/pro05-JavaString/pro05-JavaString.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro06-ArrayList/pro06-ArrayList.iml" filepath="$PROJECT_DIR$/pro06-ArrayList/pro06-ArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro07-JavaOOP2/pro07-JavaOOP2.iml" filepath="$PROJECT_DIR$/pro07-JavaOOP2/pro07-JavaOOP2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro08-JavaOOP3/pro08-JavaOOP3.iml" filepath="$PROJECT_DIR$/pro08-JavaOOP3/pro08-JavaOOP3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro09-DataStructures/pro09-DataStructures.iml" filepath="$PROJECT_DIR$/pro09-DataStructures/pro09-DataStructures.iml" />
     </modules>
   </component>
 </project>
