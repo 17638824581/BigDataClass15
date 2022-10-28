@@ -1,51 +1,63 @@
 package com.xty.link;
 
 /**
- * 链表类：由一个个Node组成链表，
- *  链表类中提供对节点的 增删改查等方法
+ * 链表接口：就是用来规范 链表实现类的，我们可以现在接口中定义 链表实现类所需要具备的各种方法。
  * @author Mr.yu
- * @date 2022/10/27 17:52
+ * @date 2022/10/28 14:59
  */
-public class Link {
-    // 想要保存一条链表，只需保存它的头节点就行
-    private Node head;
-    // 保存当前链表有多长
-    private int length;
+public interface Link {
+    
+    /**
+     * 添加元素方法
+     * @param data: 要添加到链表中的元素值
+     * @return void
+     * @author Mr.yu
+     * @date 2022/10/28 15:05
+     */
+    void add(int data);
 
-    public Link() {
-    }
+    /**
+     * 根据索引访问元素的方法
+     * @param index: 索引位
+     * @return int：找到的元素值
+     * @author Mr.yu
+     * @date 2022/10/28 15:07
+     */
+    int get(int index);
 
-    // 添加元素 add()
-    public void add(int i){
-        Node node = new Node();
-        node.setData(i);
+    /**
+     * 根据元素值找元素位置，返回找到的索引
+     * @param data: 要找的元素值
+     * @return int：找到的元素值的索引位置，若没找到，返回-1
+     * @author Mr.yu
+     * @date 2022/10/28 15:09
+     */
+    int findValue(int data);
 
-        // 当链表中没有节点时
-        if (head == null){
-            head = node;
-        }else{
-            // 当链表中有节点时，需要找到最后的节点，把新节点存到最后的节点上
-            Node n = head;
-            while (n.getNext() != null){
-                n = n.getNext();
-            }
-            // 循环结束之后，n就是最后一个节点
-            n.setNext(node);
-        }
+    /**
+     * 更新指定索引位置的元素值
+     * @param index: 索引位
+     * @param data: 新的元素值
+     * @return boolean: 更新是否成功，若返回 false 就是因为索引越界。
+     * @author Mr.yu
+     * @date 2022/10/28 15:13
+     */
+    boolean update(int index, int data);
 
-        length++;
-    }
-
-    // 删除元素 remove()
-    // 修改元素 update(index i, int value)
-    // 查找元素 int indexOf(value)
-
-
-//    @Override
-//    public String toString() {
-//        return "Link{" +
-//                "head=" + head +
-//                ", length=" + length +
-//                '}';
-//    }
+    /**
+     * 按照索引删除元素
+     * @param index: 索引位
+     * @return boolean: 更新是否成功，若返回 false 就是因为索引越界。
+     * @author Mr.yu
+     * @date 2022/10/28 15:14
+     */
+    boolean delete(int index);
+    
+    /**
+     * 获取链表长度
+     * @return int：返回当前链表的长度
+     * @author Mr.yu
+     * @date 2022/10/28 15:15
+     */
+    int size();
 }
