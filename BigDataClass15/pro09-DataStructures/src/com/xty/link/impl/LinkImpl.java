@@ -25,6 +25,7 @@ public class LinkImpl implements Link {
 
     // 存储整个链表的头节点
     private Node head;
+    private Node end;
 
     // 存储链表长度
     private int length;
@@ -48,18 +49,59 @@ public class LinkImpl implements Link {
         // 先判断整个链表是否为空，如果为空，应该让 head = 新节点
         if(length == 0){
             head = node;
+            end = node;
         }else{
             // 找到链表中最后一个节点
-            Node temp = head;
-            while (temp.next != null){
-                temp = temp.next;
-            }
-            // 循环结束之后，temp就是最后一个节点。
-            // 将新节点放到最后一个节点后面
-            temp.next = node;
+            end.next = node;
+            end = node;
         }
 
         length ++;
+    }
+
+    /**
+     * 添加元素到指定位置方法
+     *
+     * @param index : 要添加到链表中的索引位
+     * @param data  : 要添加到链表中的元素值
+     * @return void
+     * @author Mr.yu
+     * @date 2022/10/28 15:05
+     */
+    @Override
+    public boolean add(int index, int data) {
+        if (index<0 || index>size()){
+            return false;
+        }
+
+        if (index == size()){
+            add(data);
+            return true;
+        }
+
+        // 先新建节点，存储 data 数据
+        Node newNode = new Node(data);
+
+        // 表示将新节点插入到开头
+        if (index == 0){
+            newNode.next = head;
+            head = newNode;
+            length++;
+            return true;
+        }
+
+        Node temp = head;
+        // 循环结束后 temp 表示 index 前一个节点
+        for (int i = 0; i < index - 1; i++) {
+            temp = temp.next;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+        length++;
+
+        return true;
     }
 
     /**
@@ -72,7 +114,19 @@ public class LinkImpl implements Link {
      */
     @Override
     public int get(int index) {
-        return 0;
+        // 判断索引是否越界
+        if (index<0 || index >= length){
+            System.out.println("索引越界");
+            return -1;
+        }
+
+        // 临时让 temp 指向 head节点
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+
+        return temp.data;
     }
 
     /**
@@ -85,7 +139,16 @@ public class LinkImpl implements Link {
      */
     @Override
     public int findValue(int data) {
-        return 0;
+        // 遍历整个链表，找 data
+        Node temp = head;
+        for (int i = 0; i < size(); i++) {
+            if (temp.data == data){
+                return i;
+            }
+            temp = temp.next;
+        }
+
+        return -1;
     }
 
     /**
@@ -99,7 +162,19 @@ public class LinkImpl implements Link {
      */
     @Override
     public boolean update(int index, int data) {
-        return false;
+        // 索引是否越界
+        if (index < 0 || index >= size()){
+            return false;
+        }
+
+        // 通过循环找到要修改的节点
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        // 修改节点的值为 data
+        temp.data = data;
+        return true;
     }
 
     /**
@@ -112,7 +187,24 @@ public class LinkImpl implements Link {
      */
     @Override
     public boolean delete(int index) {
-        return false;
+        if (index<0 || index>=size()){
+            return false;
+        }
+
+        if (index == 0){
+            head = head.next;
+            length --;
+            return true;
+        }
+
+        Node temp = head;
+        for (int i = 0; i < index - 1; i++) {
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
+        length --;
+        return true;
     }
 
     /**

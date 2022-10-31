@@ -8,13 +8,23 @@ package com.xty.link;
 public interface Link {
     
     /**
-     * 添加元素方法
+     * 添加元素到尾部方法
      * @param data: 要添加到链表中的元素值
      * @return void
      * @author Mr.yu
      * @date 2022/10/28 15:05
      */
     void add(int data);
+
+    /**
+     * 添加元素到指定位置方法
+     * @param data: 要添加到链表中的元素值
+     * @param index: 要添加到链表中的索引位
+     * @return boolean：添加是否成功
+     * @author Mr.yu
+     * @date 2022/10/28 15:05
+     */
+    boolean add(int index, int data);
 
     /**
      * 根据索引访问元素的方法
