@@ -93,12 +93,21 @@ public class Test {
 
 
         // 练习：将 字符串 "15 95 66 84 6 1 95 6 65 48 52 15"
+        String s = "15 95 66 84 6 1 95 6 65 48 52 15";
         // 拆分并排序，最后按原格式打印出来
         // 1. 拆分 String.split()
+        String[] arr = s.split(" ");
         // 2. 排序 Arrays.sort()
+        Arrays.sort(arr,(o1, o2)-> Integer.parseInt(o1) - Integer.parseInt(o2));
         // 3. 拼接 StringBuilder
+        StringBuilder sb = new StringBuilder();
+        for (String x : arr) {
+            sb.append(x);
+            sb.append(" ");
+        }
         // 3. 打印
-//        String s = "15 95 66 84 6 1 95 6 65 48 52 15";
+        System.out.println(sb);
+
 
 
 
