@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/pro09-DataStructures/pro09-DataStructures.iml" filepath="$PROJECT_DIR$/pro09-DataStructures/pro09-DataStructures.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro10-CommonApi/pro10-CommonApi.iml" filepath="$PROJECT_DIR$/pro10-CommonApi/pro10-CommonApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro11-Exception/pro11-Exception.iml" filepath="$PROJECT_DIR$/pro11-Exception/pro11-Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro12-Collection/pro12-Collection.iml" filepath="$PROJECT_DIR$/pro12-Collection/pro12-Collection.iml" />
     </modules>
   </component>
 </project>

@@ -1,11 +1,15 @@
 package com.xty.MyArrayList;
 
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
 /*
  * 仿照 ArrayList 写的一个 简单的存储 Student 型元素的列表
  * @author Mr.yu
  * @date 2022/10/24 10:00
  */
-public class MyArrayList {
+public class MyArrayList implements Iterable{
 
     // 代表列表存储数据的数量
     private int size;
@@ -160,4 +164,23 @@ public class MyArrayList {
         return sb.toString();
     }
 
+    /**
+     * Returns an iterator over elements of type {@code T}.
+     *
+     * @return an Iterator.
+     */
+    @Override
+    public Iterator iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer action) {
+        Iterable.super.forEach(action);
+    }
+
+    @Override
+    public Spliterator spliterator() {
+        return Iterable.super.spliterator();
+    }
 }

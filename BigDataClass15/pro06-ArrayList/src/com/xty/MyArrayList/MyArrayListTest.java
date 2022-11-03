@@ -5,15 +5,19 @@ public class MyArrayListTest {
     public static void main(String[] args) {
         MyArrayList mal = new MyArrayList();
 
-        mal.add(10);
-        mal.add(20);
-        mal.add(30);
-        mal.add(40);
-        mal.add(60);
+        mal.add(100);
+        mal.add(200);
+        mal.add(300);
+        mal.add(400);
 
 
-        System.out.println(mal.get(5));
+        for (Object i:mal) {
+            System.out.println(i);
+        }
 
+//        for (int i = 0; i < mal.getSize(); i++) {
+//            System.out.println("mal.get(i) = " + mal.get(i));
+//        }
 
     }
 }
