@@ -1,5 +1,7 @@
 package com.xty.collection;
 
+import java.util.HashMap;
+
 public class Student {
     private String name;
     private int age;
@@ -45,5 +47,29 @@ public class Student {
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj == null){
+            return false;
+        }
+
+        if (!(obj instanceof Student)){
+            return false;
+        }
+
+        Student stu = (Student) obj;
+        if (stu.getName().equals(this.name) && stu.getAge() == this.age && stu.getScore() == this.score){
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (this.name.hashCode() + this.age * 32);
     }
 }

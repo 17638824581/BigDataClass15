@@ -1,6 +1,4 @@
-package com.xty.collection;
-
-import java.util.Queue;
+package com.xty.collection.list;
 
 public class MyStackTest {
     public static void main(String[] args) {

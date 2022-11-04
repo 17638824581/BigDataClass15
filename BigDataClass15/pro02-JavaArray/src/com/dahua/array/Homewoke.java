@@ -3,7 +3,6 @@ package com.dahua.array;
 public class Homewoke {
     public static void main(String[] args) {
 
-
         // 创建一个长度为 100 的数组，赋初始值 1~100
 //        int[] arr = new int[100];
 
