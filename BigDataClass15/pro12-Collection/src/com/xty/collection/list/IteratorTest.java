@@ -25,7 +25,7 @@ public class IteratorTest {
         iterator.next();
         iterator.next();
 
-        iterator.forEachRemaining((s)->s.setScore(s.getScore()+10));
+//        iterator.forEachRemaining((s)->s));
 
         System.out.println(al);
 
