@@ -5,7 +5,7 @@ import java.util.Spliterator;
 import java.util.function.Consumer;
 
 /*
- * 仿照 ArrayList 写的一个 简单的存储 Student 型元素的列表
+ * 仿照 ArrayList 写的一个 简单的存储 int 型元素的列表
  * @author Mr.yu
  * @date 2022/10/24 10:00
  */

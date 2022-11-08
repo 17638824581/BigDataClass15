@@ -168,5 +168,9 @@ public class ArrayListTest {
 //        System.out.println("link = " + link);
 //        System.out.println("vector = " + vector);
 
+
+
+
+
     }
 }
