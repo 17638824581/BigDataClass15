@@ -59,12 +59,12 @@ public class StreamTest {
          *   7. allMatch()：返回流中全部元素是否都 符合指定条件（谓词），返回布尔值。
          *   8. noneMatch()：返回流中全部元素是否都 不符合指定条件（谓词），返回布尔值。
          *   9. toArray()：使用流中元素组成一个数组并返回。
-         *   10. collect()：收集，将流中元素使用指定收集器收集为一个其他类型的容器。
+         *   10. collect()：收集，将流中元素使用指定收集器收集为一个其他类型的集合。
          *       --- Collectors 类中提供了常用的收集器：
          *           1. Collectors.toList(): 将流中元素收集到一个新的 List 集合中并返回。
          *           2. Collectors.toSet(): 将流中元素收集到一个新的 Set 集合中并返回。
-         *           3. Collectors.toMap(fn1,fn2): 将流中元素收集到一个新的 Map 集合中并返回，新Map集合的键值对由 fn1、fn2 方法决定。
-         *           4. Collectors.toMap(fn1,fn2): 将流中元素连接到一个 String 字符串中并返回。
+         *           2. Collectors.joining(s1,s2,s3): 将流中 字符串元素，使用指定分隔符 s1 、指定前缀 s2、指定后缀。拼接为一个字符串并返回。
+         *           4. Collectors.toMap(fn1,fn2): 将流中元素收集到一个新的 Map 集合中并返回，新Map集合的键值对由 fn1、fn2 方法决定。
          *   11. reduce()：聚合，使用指定二元运算器，将流中所有元素进行运算，最终得到单独的运算结果。
          *
          *   中间操作方法：
@@ -81,14 +81,6 @@ public class StreamTest {
          *       Stream.concat(stream1,stream2)：将两个流合并为一个新的流，并返回。
          * */
 
-
-        ArrayList<Integer> al = new ArrayList<>();
-
-        al.add(1);
-        al.add(2);
-        al.add(3);
-        al.add(4);
-        al.add(5);
 
 
     }
