@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/pro10-CommonApi/pro10-CommonApi.iml" filepath="$PROJECT_DIR$/pro10-CommonApi/pro10-CommonApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro11-Exception/pro11-Exception.iml" filepath="$PROJECT_DIR$/pro11-Exception/pro11-Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro12-Collection/pro12-Collection.iml" filepath="$PROJECT_DIR$/pro12-Collection/pro12-Collection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro13-Stream/pro13-Stream.iml" filepath="$PROJECT_DIR$/pro13-Stream/pro13-Stream.iml" />
     </modules>
   </component>
 </project>

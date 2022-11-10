@@ -1,9 +1,7 @@
-package com.xty.collection.stream;
+package com.xty.stream;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Optional;
-import java.util.function.BinaryOperator;
+import java.util.*;
+import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -42,6 +40,59 @@ public class StreamTest {
                     parallelStream 是流并行处理程序的代替方法。以下实例我们使用 parallelStream 来输出空字符串的数量：
         */
 
+        ArrayList<Double> al = new ArrayList<>();
+
+        al.add(2.0);
+        al.add(2.0);
+        al.add(2.5);
+        al.add(8.0);
+        al.add(8.0);
+        al.add(6.7);
+        al.add(8.5);
+        al.add(12.5);
+        al.add(3.5);
+
+        // 将 al 中 所有 > 10 的元素 和 所有 < 7 的元素 取出 ，并存储为 List
+        List<Double> collect = al.stream().filter((d) -> d < 7 || d > 10).collect(Collectors.toList());
+
+        System.out.println(collect);
+
+
+        // 按照 al 中元素的排序，取出 6.7 之前所有的元素
+//        al.stream().takeWhile((d)->d!=6.7).forEach(System.out::println);
+
+        // 按照 al 中元素的排序，取出 6.7 之后所有的元素
+//        al.stream().dropWhile((d)->d != 6.7).skip(1).forEach(System.out::println);
+
+
+        // 获取 al 中所有 >2 的元素,并打印
+//        al.stream().filter((d)-> d>2).forEach(System.out::println);
+
+
+        // 获取 al 中所有 >5 的元素，按照 由大到小的顺序排序之后打印
+//        al.stream().filter(d-> d>5).sorted((d1,d2)->d2-d1>1 ? 1:-1).forEach(System.out::println);
+
+        // 对 al 中每个元素 * 2 ,并打印
+
+//        System.out.println("执行流之前:"+al);
+//
+//        al = (ArrayList<Double>) al.stream().map((d)->d*2).collect(Collectors.toList());
+//
+//        System.out.println("执行流之后:"+al);
+
+
+        // 获取 al 中最大的前三个元素
+//        al.stream()
+//            .sorted((o1,o2)->o1-o2>0 ? -1:1)
+//                .limit(3).forEach(System.out::println);
+
+        // 获取 al 中除去最大的前三之后的元素。
+
+//        al.stream().sorted((o1,o2)->o1-o2>0?-1:1).skip(3).forEach(System.out::println);
+
+
+
+
 
         /*
          * 流的常用方法：
@@ -69,7 +120,7 @@ public class StreamTest {
          *
          *   中间操作方法：
          *   1. map()：映射，对流中每个元素使用指定操作，将操作后的结果组成新的流并返回。
-         *   2. filter()：过滤，使用指定条件(谓词)，过滤出流中符合条件的元素，返回流。
+         *   2. filter()：过滤，使用指定条件(谓词)，过滤出流中符合条件的元素，返回这些元素所组成的新流。
          *   3. limit()：截取，从流中取出指定个数的元素，组成新的流并返回。
          *   4. skip()：跳过，跳过指定个数的元素，返回剩余元素的流。
          *   5. sorted()：排序，使用指定比较器，对流中元素进行排序，返回流。
@@ -83,5 +134,9 @@ public class StreamTest {
 
 
 
+    }
+
+    public static <T> void method(T t){
+        System.out.println("我是method方法！"+t);
     }
 }
