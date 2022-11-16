@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 public class StreamTest {
     public static void main(String[] args) {
 
+
+
         /*
             Java 8 API添加了一个新的抽象称为流Stream，可以让你以一种声明的方式处理数据。
             Stream API可以极大提高Java程序员的生产力，让程序员写出高效率、干净、简洁的代码。

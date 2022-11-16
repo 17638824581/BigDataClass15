@@ -17,6 +17,8 @@
       <module fileurl="file://$PROJECT_DIR$/pro11-Exception/pro11-Exception.iml" filepath="$PROJECT_DIR$/pro11-Exception/pro11-Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro12-Collection/pro12-Collection.iml" filepath="$PROJECT_DIR$/pro12-Collection/pro12-Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro13-Stream/pro13-Stream.iml" filepath="$PROJECT_DIR$/pro13-Stream/pro13-Stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro14-IoStream/pro14-IoStream.iml" filepath="$PROJECT_DIR$/pro14-IoStream/pro14-IoStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro15-Network/pro15-Network.iml" filepath="$PROJECT_DIR$/pro15-Network/pro15-Network.iml" />
     </modules>
   </component>
 </project>
