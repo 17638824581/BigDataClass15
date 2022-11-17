@@ -1,9 +1,6 @@
-package com.xty.ioStream;
+package com.xty.bytesStream;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Date;
 
 // File 类 测试
 public class FileTest {

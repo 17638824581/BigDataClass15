@@ -1,7 +1,6 @@
-package com.xty.ioStream;
+package com.xty.bytesStream;
 
 import java.io.*;
-import java.util.Arrays;
 
 /**
  * 使用字节流来打开图片文件，并读取内部数据。

@@ -1,4 +1,4 @@
-package com.xty.ioStream;
+package com.xty.bytesStream;
 
 import java.io.*;
 

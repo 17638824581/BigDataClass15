@@ -1,10 +1,16 @@
 package com.xty.homework;
 
-public class Student {
+import java.io.Serializable;
+
+// Student 实现 Serializable 接口即可序列化
+public class Student implements Serializable{
     private String id;
     private String name;
     private int age;
-    private String location;
+    private transient String location;
+
+    // 使用序列化版本号
+    private static final long serialVersionUID = 1L;
 
     public Student() {
     }

@@ -18,7 +18,8 @@
       <module fileurl="file://$PROJECT_DIR$/pro12-Collection/pro12-Collection.iml" filepath="$PROJECT_DIR$/pro12-Collection/pro12-Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro13-Stream/pro13-Stream.iml" filepath="$PROJECT_DIR$/pro13-Stream/pro13-Stream.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro14-IoStream/pro14-IoStream.iml" filepath="$PROJECT_DIR$/pro14-IoStream/pro14-IoStream.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pro15-Network/pro15-Network.iml" filepath="$PROJECT_DIR$/pro15-Network/pro15-Network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro15-MultiThreading/pro15-MultiThreading.iml" filepath="$PROJECT_DIR$/pro15-MultiThreading/pro15-MultiThreading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro16-Network/pro16-Network.iml" filepath="$PROJECT_DIR$/pro16-Network/pro16-Network.iml" />
     </modules>
   </component>
 </project>
