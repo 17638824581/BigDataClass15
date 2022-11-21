@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BigDataClass15.iml" filepath="$PROJECT_DIR$/.idea/BigDataClass15.iml" />
       <module fileurl="file://$PROJECT_DIR$/Homework/Homework.iml" filepath="$PROJECT_DIR$/Homework/Homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyModel1/MyModel1.iml" filepath="$PROJECT_DIR$/MyModel1/MyModel1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyModel2/MyModel2.iml" filepath="$PROJECT_DIR$/MyModel2/MyModel2.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro01-JavaBase/pro01-JavaBase.iml" filepath="$PROJECT_DIR$/pro01-JavaBase/pro01-JavaBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro02-JavaArray/pro02-JavaArray.iml" filepath="$PROJECT_DIR$/pro02-JavaArray/pro02-JavaArray.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro03-JavaMethod/pro03-JavaMethod.iml" filepath="$PROJECT_DIR$/pro03-JavaMethod/pro03-JavaMethod.iml" />
@@ -20,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/pro14-IoStream/pro14-IoStream.iml" filepath="$PROJECT_DIR$/pro14-IoStream/pro14-IoStream.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro15-MultiThreading/pro15-MultiThreading.iml" filepath="$PROJECT_DIR$/pro15-MultiThreading/pro15-MultiThreading.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro16-Network/pro16-Network.iml" filepath="$PROJECT_DIR$/pro16-Network/pro16-Network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro17-ClassLoderAndReflect/pro17-ClassLoderAndReflect.iml" filepath="$PROJECT_DIR$/pro17-ClassLoderAndReflect/pro17-ClassLoderAndReflect.iml" />
     </modules>
   </component>
 </project>
