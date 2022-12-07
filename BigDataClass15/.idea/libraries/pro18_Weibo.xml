@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="pro18-Weibo">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pro18-WeiBo/lib/druid-1.2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro18-WeiBo/lib/mysql-connector-java-8.0.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro18-WeiBo/lib/commons-dbutils-1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro18-WeiBo/lib/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro18-WeiBo/lib/junit-4.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/pro18-WeiBo/lib/druid-1.2.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro18-WeiBo/lib/commons-dbutils-1.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
