@@ -3,7 +3,10 @@ package com.xty.JDBCTest;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -63,17 +66,30 @@ public class JdbcUtils {
     // 一个通用的增、删、改的方法
     // 方法接收 sql语句，和sql语句的填充参数
     // 方法返回sql语句的执行结果
-    public static int update(Connection conn,String sql,Object... o) throws SQLException {
-        // 1. 通过Connection对象创建PreparedStatement对象
-        PreparedStatement ps = conn.prepareStatement(sql);
-        // 2. 给PreparedStatement对象，填充参数
-        for (int i = 1; i <= o.length ; i++) {
-            ps.setObject(i,o[i-1]);
+    public static int update(Connection conn,String sql,Object... o){
+        int count = -1;
+        PreparedStatement ps = null;
+        try {
+            // 1. 通过Connection对象创建PreparedStatement对象
+            ps = conn.prepareStatement(sql);
+            // 2. 给PreparedStatement对象，填充参数
+            for (int i = 1; i <= o.length ; i++) {
+                ps.setObject(i,o[i-1]);
+            }
+            // 3. 调用executeUpdate() 方法执行sql语句
+            count = ps.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
-        // 3. 调用executeUpdate() 方法执行sql语句
-        int i = ps.executeUpdate();
+
         // 4. 返回结果
-        return i;
+        return count;
     }
 
     // 既然有通用的执行增、删、改的方法
@@ -82,17 +98,75 @@ public class JdbcUtils {
     // 通用的查询多条数据的方法
     // 接收 要执行的sql语句，和sql语句要填充的参数值
     // 查询的结果是一个ResultSet
-    public static ResultSet queryAll(Connection conn,String sql,Object... o) throws SQLException {
-        // 1. 通过sql语句创建PreparedStatement对象
-        PreparedStatement ps = conn.prepareStatement(sql);
-        // 2. 给PreparedStatement对象填充参数
-        for (int i = 1; i <= o.length ; i++) {
-            ps.setObject(i,o[i-1]);
+    public static ResultSet queryAll(Connection conn,String sql,Object... o){
+        ResultSet resultSet = null;
+        try {
+            // 1. 通过sql语句创建PreparedStatement对象
+            PreparedStatement ps = conn.prepareStatement(sql);
+            // 2. 给PreparedStatement对象填充参数
+            for (int i = 1; i <= o.length ; i++) {
+                ps.setObject(i,o[i-1]);
+            }
+            // 3. 执行
+            resultSet = ps.executeQuery();
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        // 3. 执行
-        ResultSet resultSet = ps.executeQuery();
+
         // 4. 返回结果
         return resultSet;
     }
+
+    // 通用的处理 ResultSet 结果集数据的方法
+    // 传入一个 ResultSet，再告诉方法，要转换成哪个类的对象。
+    // 可以通过泛型来实现这样的功能
+    // 这个方法可以将 ResultSet 结果集中的数据，解析为指定Bean类的对象，并返回这个Bean类对象所组成的List集合。
+    public static <T> List<T> parseRS(ResultSet rs, Class<T> clazz){
+        // 创建一个存储Bean类对象的集合
+        ArrayList<T> al = new ArrayList<>();
+
+        try{
+            // 通过 MetaDate 获取 ResultSet 中的所有列名相关的数据
+            ResultSetMetaData metaData = rs.getMetaData();
+            // 获取所有的列的数量
+            int columnCount = metaData.getColumnCount();
+
+            // 遍历ResultSet中所有的行
+            while (rs.next()){
+                // 通过反射机制，创建一个泛型类 T 的对象
+                T t = clazz.newInstance();
+
+                // 属性值注入，将查询到的 ResultSet结果集中的值，注入到对象 t 的对应属性中。
+
+                // 通过遍历的方式获取到的列名，是一定在 ResultSet 中所存在的列
+                for (int i = 1; i <= columnCount ; i++) {
+                    // 通过遍历获取 ResutSet 中所有的 列名
+                    String columnLabel = metaData.getColumnLabel(i);
+                    // 通过列名获取当前行这个列的值。
+                    Object object = rs.getObject(columnLabel);
+
+                    // 我们可以通过反射直接操作属性，避免了调用set方法的诸多不便
+                    // 通过反射机制，获取到 Student 类中和 字段同名的属性对象。
+                    // 再通过强制赋值的方式，给student 对象赋值。
+
+                    // 通过列名拿到对应Bean类对应的属性
+                    Field declaredField = clazz.getDeclaredField(columnLabel.toLowerCase());
+                    // 给这个属性设置强制访问
+                    declaredField.setAccessible(true);
+                    // 通过反射机制，给泛型对象 t 的 columnLabel 属性设置值。
+                    declaredField.set(t,object);
+                }
+
+                // 将创建好并赋好值的 t 对象，存储到List集合中
+                al.add(t);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        // 返回整个 List 集合
+        return al;
+    }
+
 
 }
