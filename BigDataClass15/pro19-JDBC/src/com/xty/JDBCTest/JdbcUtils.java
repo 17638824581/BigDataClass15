@@ -64,27 +64,17 @@ public class JdbcUtils {
     // 一个通用的增、删、改的方法
     // 方法接收 sql语句，和sql语句的填充参数
     // 方法返回sql语句的执行结果
-    public static int update(Connection conn,String sql,Object... o){
+    public static int update(Connection conn,String sql,Object... o) throws SQLException {
         int count = -1;
         PreparedStatement ps = null;
-        try {
-            // 1. 通过Connection对象创建PreparedStatement对象
-            ps = conn.prepareStatement(sql);
-            // 2. 给PreparedStatement对象，填充参数
-            for (int i = 1; i <= o.length ; i++) {
-                ps.setObject(i,o[i-1]);
-            }
-            // 3. 调用executeUpdate() 方法执行sql语句
-            count = ps.executeUpdate();
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+        // 1. 通过Connection对象创建PreparedStatement对象
+        ps = conn.prepareStatement(sql);
+        // 2. 给PreparedStatement对象，填充参数
+        for (int i = 1; i <= o.length ; i++) {
+            ps.setObject(i,o[i-1]);
         }
+        // 3. 调用executeUpdate() 方法执行sql语句
+        count = ps.executeUpdate();
 
         // 4. 返回结果
         return count;

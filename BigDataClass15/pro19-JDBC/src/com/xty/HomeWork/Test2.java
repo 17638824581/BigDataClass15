@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Test2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // 从控制台输入，插入一个新的 examstudent信息
 
 

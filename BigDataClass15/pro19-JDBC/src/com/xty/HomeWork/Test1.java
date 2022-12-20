@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Test1 {
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException {
         // 从 控制台 向数据库的表 student 中插入一条数据，表结构如下
 
         // 1.从控制台输入学生相关信息
