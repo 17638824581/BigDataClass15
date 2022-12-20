@@ -1,8 +1,6 @@
 package com.xty.JDBCTest;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
@@ -168,5 +166,43 @@ public class JdbcUtils {
         return al;
     }
 
+    // 将Blob类型数据存储至本地
+    public static void saveBlob(Blob b, String path){
+        // 读取并将Blob数据存储起来
+        // getBinaryStream() 方法，会返回读取该Blob对象所存储的数据的输入流
+        InputStream binaryStream = null;
+        BufferedInputStream bis = null;
+        FileOutputStream fos = null;
+        BufferedOutputStream bos = null;
+
+        try {
+            binaryStream = b.getBinaryStream();
+            bis = new BufferedInputStream(binaryStream);
+            // 使用输出流，将Blob对象中的数据，写到到我们本地
+            fos = new FileOutputStream(path);
+            bos = new BufferedOutputStream(fos);
+
+            // 使用循环从输出流中读取数据，并写入输出流中
+            byte[] bytes = new byte[1024];
+            int len = 0;
+            while ((len = bis.read(bytes,0,bytes.length)) != -1){
+                bos.write(bytes,0,len);
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }finally {
+            // 释放资源
+            try {
+                binaryStream.close();
+                bis.close();
+                bos.close();
+                fos.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
 
 }
