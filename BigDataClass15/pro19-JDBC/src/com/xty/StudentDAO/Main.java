@@ -169,6 +169,12 @@ public class Main {
 
 
     public static void main(String[] args) {
+        // 初始化数据库连接池
+        try {
+            Class.forName("com.xty.StudentDAO.JdbcUtils");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         // 学生管理系统，业务程序
         A:while (true){

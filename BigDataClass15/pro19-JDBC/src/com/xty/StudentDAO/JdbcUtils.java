@@ -1,25 +1,29 @@
 package com.xty.StudentDAO;
 
+import com.xty.ConnectionPool.DruidUtils;
+
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.Properties;
 
 // JdbcUtils工具类
 public class JdbcUtils {
 
-    // 获取数据库连接的方法
+    private static DataSource ds = null;
+
+    static{
+        System.out.println("123123");
+        // 初始化数据库连接池
+        ds = DruidUtils.getDataSource();
+    }
+
+    // 获取数据库连接池中连接的方法
     public static Connection getConn(){
-        Properties p = new Properties();
         Connection connection = null;
         try {
-            p.load(ClassLoader.getSystemResourceAsStream("jdbc.properties"));
-            // 1. 注册驱动(只需要加载Driver类)
-            Class.forName(p.getProperty("dirver"));
-            // 2. 准备url、用户名、密码
-            String url = p.getProperty("url");
-            // 3. 使用DriverManager类获取数据库连接
-            connection = DriverManager.getConnection(url, p);
-        }catch (Exception e){
-            e.printStackTrace();
+            connection = ds.getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
 
         return connection;
