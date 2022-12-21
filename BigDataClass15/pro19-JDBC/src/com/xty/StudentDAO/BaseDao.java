@@ -52,10 +52,12 @@ public class BaseDao {
             // 3. 执行sql语句
             resultSet = ps.executeQuery();
             // 4. 解析ResultSet，将ResultSet中的数据转换为对应的 Bean类对象
-            // 4.1 通过反射创建泛型类 T 的对象
-            t = clazz.newInstance();
+
             // 4.2 遍历ResultSet，给这个对象 t 注入属性值
             if (resultSet.next()){
+                // 4.1 通过反射创建泛型类 T 的对象
+                t = clazz.newInstance();
+
                 ResultSetMetaData metaData = resultSet.getMetaData();
                 // 遍历 ResultSet 的列名
                 for (int i = 1; i <= metaData.getColumnCount(); i++) {
