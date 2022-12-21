@@ -7,6 +7,7 @@ import java.util.List;
 
 // BaseDao 类中，包含一些通用的对数据表做增、删、改、查操作的方法
 // Dao 类中查询操作，一般会结合 Bean 类来实现。
+// BaseDAO 类中提供了各种通用的对数据表做操作的方法。
 public class BaseDao {
 
     // 通用的修改（增、删、改）表的方法
