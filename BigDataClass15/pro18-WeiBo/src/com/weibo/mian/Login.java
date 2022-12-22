@@ -50,7 +50,7 @@ public class Login {
 
         // 验证重复账号
         while(userDao.isExists(uname)){
-            System.out.println("此账号已存在，请输入一个新的账号。");
+            System.out.println("此账号已存在，请输入一个新的账号:");
             uname = sc.next();
         }
 

@@ -2,13 +2,12 @@ package com.weibo.mian;
 
 import com.weibo.bean.Posts;
 import com.weibo.bean.User;
-import com.weibo.dao.LikesDao;
+import com.weibo.dao.PostsDao;
 import com.weibo.dao.impl.ConcernDaoImpl;
 import com.weibo.dao.impl.LikesDaoImpl;
 import com.weibo.dao.impl.PostsDaoImpl;
 import com.weibo.utils.FarmatPrint;
 
-import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,7 +17,7 @@ public class Mian {
     private static User user;
 
     // 打印指定帖子
-    public static void showPosts(Posts p){
+    public static void printPosts(Posts p){
         FarmatPrint.printPosts(p);
         Scanner sc = new Scanner(System.in);
         SHOW:while (true){
@@ -48,6 +47,7 @@ public class Mian {
         }
     }
 
+    // 展示关注列表
     public static void showConcern(){
         ConcernDaoImpl concernDao = new ConcernDaoImpl();
         FarmatPrint.printTitle("关注列表");
@@ -55,6 +55,7 @@ public class Mian {
 
     }
 
+    // 展示已发布的帖子
     public static void showWeiBo(){
         PostsDaoImpl postsDao = new PostsDaoImpl();
         FarmatPrint.printTitle("weibo热榜");
@@ -92,7 +93,7 @@ public class Mian {
                         i1 = sc.nextInt();
                     }
                     Posts posts1 = posts.get(i1 - page * pageLen - 1);
-                    showPosts(posts1);
+                    printPosts(posts1);
                     break ;
                 case 4:
                     break SHOW;
@@ -101,8 +102,36 @@ public class Mian {
 
     }
 
+    // 写一个帖子
     public static void writeWeiBo(){
-
+        Scanner sc = new Scanner(System.in);
+        // 输入帖子标题
+        System.out.println("请输入weibo的标题：");
+        String title = sc.next();
+        // 输入帖子内容
+        System.out.println("请输入weibo的正文（输入“ends”结束）：");
+        // 因为一个帖子可以有多行内容
+        StringBuilder sb = new StringBuilder();
+        while (true){
+            // 输入了一行内容
+            String next = sc.next();
+            if (next.equals("ends")){
+                break;
+            }else{
+                // 将用户输入的内容保存到sb中
+                sb.append(next);
+                sb.append("\n");
+            }
+        }
+        // 将帖子保存到帖子表中，通过 PostsDao 类来实现对 Posts表的操作
+        PostsDao pd = new PostsDaoImpl();
+        // 调用 addPosts() 方法， 既可以保存一条帖子数据
+        boolean b = pd.addPosts(user, title, sb.toString());
+        if (b){
+            System.out.println("weibo发布成功！");
+        }else{
+            System.out.println("weibo发布失败！");
+        }
     }
 
     public static void printMenu(){
@@ -129,6 +158,7 @@ public class Mian {
                 case 2:
                     break;
                 case 3:
+                    writeWeiBo();
                     break;
                 case 4:
                     break;
