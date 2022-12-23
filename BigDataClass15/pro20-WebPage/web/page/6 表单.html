@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+  <!--  无论是什么单选框、多选框还是按钮等，它们都属于 表单元素  -->
+<!--
+     表单元素，我们就需要写到  form 标签中。
+
+       form 标签： form 标签表示一个表单，表单元素通常都需要写在
+       表单中才能起到实际的作用。
+
+          form 标签常用属性：
+              action 属性：设置我们表单的提交地址 url。
+              method 属性：设置我们表单的提交方式。
+                 方式有两种：  post 方式
+                             get  方式（默认）
+
+       想要写表单元素，最常用的一个标签就是 input 标签
+
+         input 标签它也是 自闭合标签
+
+         input标签常用的属性：
+            type 属性：设置表单元素的类型
+                常用取值：
+                    text: 表示一个单行文本框
+                    password：表示一个密码文本框
+                    radio：表示一个单选框
+                    checkbox：表示一个多选框
+                    file：表示一个文件选择框（文件上传）
+                    date：表示一个日期选择框
+                    time：表示一个时间选择框
+                    color：表示一个颜色选择框
+                    button：表示一个按钮
+                    reset：表示一个重置按钮
+                    submit：表示一个提交按钮
+
+            name 属性：设置表单元素的所代表的 名称
+                如果一个表单元素没有设置 name 属性，
+                那么在提交表单的时候
+                这个元素的值并不会被提交给服务器
+
+
+            value 属性： 设置表单元素所代表的 值
+ -->
+
+  <h1>表单</h1>
+
+  <form action="http://www.baidu.com" method="get">
+
+    <!--  对于单行文本框，以及密码文本框，有一些常用的属性
+          placeholder 属性：占位符。
+          maxlength 属性：最大长度，设置用户能够输入的最大字符数量。
+          size 属性：设置文本框的大小。
+      -->
+
+    <h2>单行文本框</h2>
+    <input type="text" name="ss" size="50">
+
+    <h2>密码文本框</h2>
+    <input type="password" name="ps" size="50" maxlength="20" placeholder="请输入密码">
+
+    <hr>
+
+    <!--
+          对于单选框的复选框来说，也有一些属性比较常用
+
+          name 属性：对于 单选框 和 复选框来说，相当于是一个分组的属性。
+          value 属性：设置这个单选框或者复选框所代表的值。
+          checked 属性：用于设置默认选中的 单选框 或 复选框
+      -->
+
+    <h2>单选框</h2>
+    1.你是男生还是女生？
+    <input type="radio" name="sex" checked value="男"> 男
+    <input type="radio" name="sex" value="女"> 女
+    <br>
+    2.你是成年还是未成年？
+    <input type="radio" name="man" value="no"> 未成年
+    <input type="radio" name="man" value="yes" checked> 已成年
+
+    <h2>复选框</h2>
+    3.你喜欢什么水果？<br>
+    <input type="checkbox" checked name="likes" value="西瓜"/> 西瓜
+    <input type="checkbox" name="likes" value="桃子"/> 桃子
+    <input type="checkbox" name="likes" value="草莓"/> 草莓
+    <input type="checkbox" checked name="likes" value="香蕉"/> 香蕉
+    <br>
+    <input type="checkbox" name="likes" value="李子"/> 李子
+    <input type="checkbox" checked name="likes" value="苹果"/> 苹果
+    <input type="checkbox" name="likes" value="葡萄"/> 葡萄
+    <input type="checkbox" name="likes" value="榴莲"/> 榴莲
+
+    <hr>
+
+    <!--
+          对于按钮（button、submit、reset）来说，常用的属性
+              value 属性：可以设置按钮上面显示的文字
+      -->
+
+    <h2>普通按钮</h2>
+    <input type="button" value="点我">
+
+    <h2>重置按钮</h2>
+    <p>用户点击重置按钮后，这个表单中所有已经填写过的元素都会被重置</p>
+    <input type="reset" value="点我重置"/>
+
+    <h2>提交按钮</h2>
+    <p>用户点击提交按钮后，这个表单中所填写的内容就会被提交给后台服务器</p>
+    <input type="submit" value="点我提交"/>
+
+    <h2>文件上传</h2>
+    <input type="file">
+
+    <h2>日期选择框</h2>
+    <input type="date" name="date">
+
+    <h2>时间选择框</h2>
+    <input type="time" name="time"/>
+
+    <h2>颜色选择框</h2>
+    <input type="color" name=color/>
+
+    <hr>
+
+    <!--
+       写多行文本框，需要使用 textarea 标签
+            常用属性：
+                name 属性：设置多行文本框提交时的名称
+                rows 属性：设置多行文本框的行数。
+                cols 属性：设置多行文本框的列数。
+      -->
+    <h2>多行文本框</h2>
+    <textarea rows="10" cols="50"></textarea>
+
+
+    <!--
+       写下拉列表，需要使用 select 和 option 标签
+         select 和 option 标签写下拉列表，是和写无序、有序列表十分相似
+
+          常用属性：
+              name 属性：设置给 select 标签
+              mutiple 属性：设置下拉列表可以多选，设置给 select 标签
+              size 属性：设置下来列表可以同时显示多少项，设置给 select 标签。
+
+
+              selected 属性：设置默认选项，设置给 option 标签
+      -->
+    <h2>下拉列表</h2>
+
+    <p>请选择您所在的省份：</p>
+    <select size="10" multiple name="shengfen">
+      <option>北京</option>
+      <option>上海</option>
+      <option>广州</option>
+      <option>深圳</option>
+      <option>天津</option>
+      <option selected>河南省</option>
+      <option>河北省</option>
+      <option>山东省</option>
+      <option>山西省</option>
+      <option>湖南省</option>
+      <option>湖北省</option>
+      <option>山西省</option>
+      <option>江西省</option>
+    </select>
+
+  </form>
+
+</body>
+</html>

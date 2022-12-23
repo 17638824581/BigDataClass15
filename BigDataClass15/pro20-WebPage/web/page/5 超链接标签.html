@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接</title>
+
+</head>
+<body style="background-color: white">
+<!-- 所谓的超链接，指的就是在我们的网页中，能够点击然后会跳转或者打开其他网页的 文字或者图片的内容
+
+    想要在网页中添加超链接，需要使用  a 标签 来实现超链接的效果
+
+    我们在使用  a 标签写超链接的时候，需要设置 a 标签的 href 属性
+    我们需要给 href 属性指定跳转的 网址 或 url
+
+    URL 的组成部分： 协议+网址
+      http://  表示使用 http 协议
+      https:// 表示使用 https 协议访问  www.baidu.com
+
+    a 标签常用的属性
+       href 属性：配置超链接跳转的 url
+       target 属性：设置超链接的打开效果
+          取值： _self ：代表使用原页面打开
+                _blank ： 代表使用新页面打开
+
+    超链接表现形式：
+        1. 文字超链接：在 a 标签中 插入 文字
+        2. 图片超链接：在 a 标签中 插入 img 标签
+
+
+    还会有一些特殊的超链接
+
+      文件链接
+        我们将 a 标签的 href 属性指向 我们的本地文件的路径，那么
+        当用户点击超链接的时候，浏览器就会按照路径打开这个文件。
+
+        当用户点击超链接的时候，就会打开这个文件。
+        例如：有一个网页，展示了很多小的图片，然后又给这个图片设置了超链接的效果
+        当用户点击这个小图片的时候，就会跳转打开这张图片的文件。
+
+      锚点连接
+        我们可以利用 a 标签来做 锚点连接 的效果
+        就是当用户访问网页的时候，就可以点击锚点链接快速跳转到本页面中的指定部分，
+        便于用户浏览网页
+
+        做锚点连接：
+            1. 我们可以在要跳转到的地方做一个标记：给标签设置 id 属性
+            2. 在 a 标签的 href 属性中配置这个标记
+
+-->
+<p id="top">
+  在这做一个导航栏：
+  <a href="#bd">百度</a>
+  <a href="#jd">京东</a>
+  <a href="#tx">腾讯</a>
+  <a href="#tb">淘宝</a>
+  <a href="#iqy">爱奇艺</a>
+  <a href="#qq">QQ</a>
+  <a href="#xl">新浪网</a>
+  <a href="#wb">微博</a>
+  <a href="#mi">小米</a>
+</p>
+
+<h3>超链接</h3>
+<p>想要实现超链接，我们可以使用 a 标签</p>
+
+<hr>
+<a href="../imgs/1.jpg" target="_blank">
+    <img src="../imgs/1.jpg" height="80"/>
+</a>
+
+<a href="../imgs/2.jpg" target="_blank">
+    <img src="../imgs/2.jpg" height="80"/>
+</a>
+<a href="../imgs/3.jpg" target="_blank">
+    <img src="../imgs/3.jpg" height="80"/>
+</a>
+<a href="../imgs/4.jpg" target="_blank">
+    <img src="../imgs/4.jpg" height="80"/>
+</a>
+<hr>
+
+<br>
+
+<hr>
+<h2 id="bd">百度</h2>
+<p>百度是一个中国国内常用的搜索引擎。</p>
+<a href="http://www.baidu.com" target="_blank">百度</a><br>
+<hr>
+<h2 id="jd">京东</h2>
+<p>京东是由刘强东创办的一个电商购物平台，京东还有自己的物流，叫做京东快递，非常快！</p>
+<a href="http://www.jd.com">京东</a><br>
+<hr>
+<h2 id="tx">腾讯网</h2>
+<p>腾讯网是由马化腾，领导创建的由腾讯公司的一个新闻资讯网站。</p>
+<a href="http://www.qq.com">腾讯网</a><br>
+<hr>
+<h2 id="tb">淘宝网</h2>
+<p>淘宝网是由马云领导，的阿里巴巴公司旗下的一个电商购物平台，算是国内最大的电商购物平台。</p>
+<a href="http://www.taobao.com">淘宝</a><br>
+<hr>
+<h2 id="iqy">爱奇艺</h2>
+<p>爱奇艺是一个视频网站，能够在线观看电视剧、电影等，但是得冲会员。</p>
+<a href="http://www.iqiyi.com">爱奇艺</a><br>
+<hr>
+<h2 id="qq">QQ</h2>
+<p>QQ是一款常用的聊天社交软件</p>
+<a href="http://im.qq.com">qq</a><br>
+<hr>
+<h2 id="wx">微信</h2>
+<p>微信是一款聊天软件，也可以发朋友圈。</p>
+<a href="http://www.wechat.com">微信</a><br>
+<hr>
+<h2 id="xl">新浪网</h2>
+<p>新浪网是一个新闻资讯网站</p>
+<a href="http://www.sina.com.cn">新浪网</a><br>
+<hr>
+<h2 id="wb">微博</h2>
+<p>新浪微博，是现在最大的微博门户网站</p>
+<a href="http://www.weibo.com">微博</a><br>
+<hr>
+<h2 id="mi">小米</h2>
+<p>小米是一家科技企业，主要卖手机，老板是雷军</p>
+<a href="http://www.mi.com">小米</a><br>
+<hr>
+<a href="#top">点我回到顶部</a>
+
+</body>
+</html>
