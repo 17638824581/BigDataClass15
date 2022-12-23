@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+</head>
+<body>
+    <h1>表格</h1>
+
+    <!--
+      写一个表格
+      最基本的表格
+
+      至少用到三个标签：
+        1. table 表格标签：表示这是一个表格
+            我们可以设置 table 标签的 border 属性，给表格填上边框
+        2. tr  表行标签：表示一行
+        3. td  单元格标签：表示一个格子
+      -->
+    <hr>
+
+    <table border="1">
+        <tr>
+            <td>序号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>20</td>
+            <td>女</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>王五</td>
+            <td>32</td>
+            <td>女</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>赵六</td>
+            <td>36</td>
+            <td>男</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <p>可以给表格加上表格的标题，表格的表头</p>
+    <p>表格标题标签：caption 表头: th </p>
+
+    <table border="1">
+        <caption>表格标题</caption>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>15</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>20</td>
+            <td>女</td>
+        </tr>
+    </table>
+
+    <hr>
+    <p>通常，我们更希望表格更加的规范。</p>
+    <p>我们可以通过 thead、tbody、tfoot 标签来给表格分为三个部分</p>
+
+    <p>
+        写一个完整的表格使用到的标签有：<br>
+        1. table 标签<br>
+        2. caption 标签<br>
+        3. thead 标签<br>
+        4. tbody 标签<br>
+        5. tfoot 标签<br>
+        6. tr 标签<br>
+        7. th 标签<br>
+        8. td 标签<br>
+    </p>
+
+    <table border="1">
+        <caption>分数表</caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>语文</th>
+                <th>数学</th>
+                <th>英语</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>88</td>
+                <td>56</td>
+                <td>72</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>50</td>
+                <td>63</td>
+                <td>91</td>
+            </tr>
+            <tr>
+                <td>赵六</td>
+                <td>88</td>
+                <td>92</td>
+                <td>36</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>总分</td>
+                <td>226</td>
+                <td>211</td>
+                <td>199</td>
+            </tr>
+            <tr>
+                <td>平均分</td>
+                <td>75.3</td>
+                <td>70.3</td>
+                <td>66.3</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+    <p>有时候我们会需要对表格的单元格进行合并</p>
+    <p>
+        我们如何让单元格进行合并？<br>
+        我们如需要合并单元格的话,我们可以使用 colspan 属性和 rowspan 属性，
+        来对单元格设置合并效果。<br>
+        合并列： colspan<br>
+        合并行： rowspan<br>
+    </p>
+
+    <table border="1">
+        <caption>2022年 10月课程</caption>
+        <tr>
+            <td rowspan="4">序号</td>
+            <td colspan="2">专业</td>
+            <td>Java大数据</td>
+            <td>课程名称</td>
+            <td>javaSE基础</td>
+            <td>任课老师</td>
+            <td colspan="2">邢庭玉</td>
+        </tr>
+        <tr>
+            <td colspan="2">班级</td>
+            <td>大数据15班</td>
+            <td>应到人数</td>
+            <td>33</td>
+            <td>重修人数</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="2">成才人数</td>
+            <td></td>
+            <td>成才率</td>
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td>报道号</td>
+            <td>姓名</td>
+            <td>签到</td>
+            <td>理论测试</td>
+            <td>技能测试</td>
+            <td>专业素质测试</td>
+            <td>总分</td>
+            <td>排名</td>
+        </tr>
+    </table>
+
+</body>
+</html>

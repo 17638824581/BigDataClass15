@@ -25,6 +25,7 @@
       <module fileurl="file://$PROJECT_DIR$/pro17-ClassLoderAndReflect/pro17-ClassLoderAndReflect.iml" filepath="$PROJECT_DIR$/pro17-ClassLoderAndReflect/pro17-ClassLoderAndReflect.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro18-WeiBo/pro18-WeiBo.iml" filepath="$PROJECT_DIR$/pro18-WeiBo/pro18-WeiBo.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro19-JDBC/pro19-JDBC.iml" filepath="$PROJECT_DIR$/pro19-JDBC/pro19-JDBC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro20-WebPage/pro20-WebPage.iml" filepath="$PROJECT_DIR$/pro20-WebPage/pro20-WebPage.iml" />
     </modules>
   </component>
 </project>
