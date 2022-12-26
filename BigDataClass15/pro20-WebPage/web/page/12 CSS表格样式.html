@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS表格样式</title>
+    <style>
+        /* 使用 css 给表格加边框 */
+        table {
+            border: 10px dashed red;
+        }
+
+        td {
+            border: 2px solid pink;
+        }
+
+        /*
+            和表格相关的 css 属性
+
+            1. caption-side    设置标题的位置
+                  取值： top     上边
+                        bottom  下边
+
+            2. border-collapse  去除表格边框的间隙（合并表格边框）
+                  取值：separate   边框分开
+                       collapse   边框合并
+
+            3. border-spacing  设置表格边框间距
+                  取值：像素值
+
+          */
+
+        table {
+            text-align: center;
+            font-size: 30px;
+            caption-side: top;
+            /* 合并表格的边框 */
+            /*border-collapse: collapse;*/
+            border-spacing: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+<table>
+    <caption>大数据15班座位表</caption>
+    <tr>
+        <td colspan="4">过道</td>
+        <td>讲台</td>
+        <td colspan="5">过道</td>
+        <td>门</td>
+    </tr>
+    <tr>
+        <td>余志亮</td>
+        <td>刘璟帅</td>
+        <td>井莹</td>
+        <td>李杨</td>
+        <td>赛金洋</td>
+        <td rowspan="4">过道</td>
+        <td>李盛虎</td>
+        <td>徐欣桐</td>
+        <td>许灿</td>
+        <td>李成龙</td>
+        <td rowspan="4">墙</td>
+    </tr>
+    <tr>
+        <td>孔令晨</td>
+        <td>晁岱帅</td>
+        <td>邹照星</td>
+        <td>闫金亮</td>
+        <td rowspan="2"></td>
+        <td>王伟</td>
+        <td>李昊睿</td>
+        <td>王新龙</td>
+        <td>邢一鸣</td>
+    </tr>
+    <tr>
+        <td>彭博</td>
+        <td>赵迪</td>
+        <td>张宸昕</td>
+        <td>彭丰壮</td>
+        <td>黄审亨</td>
+        <td>褚旺</td>
+        <td>陈铭宇</td>
+        <td>邢高鹏</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>李根明</td>
+        <td>马晓东</td>
+        <td>李小光</td>
+        <td>刘鹏飞</td>
+        <td>郭琳</td>
+        <td>牛子毅</td>
+        <td>段学懿</td>
+        <td>赵盼</td>
+    </tr>
+</table>
+
+</body>
+</html>

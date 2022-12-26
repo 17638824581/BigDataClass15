@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS边框</title>
+    <style>
+        /* 设置所有的元素水平居中显示 */
+        *{
+            text-align: center;
+        }
+
+        /* 给 h1 元素添加边框 */
+        h1{
+            /* 设置边框样式 */
+            border-style: solid;
+            /* 设置边框的宽度 */
+            border-width: 1px;
+            /* 设置边框的颜色 */
+            border-color: red;
+            /* 设置边框的圆角 */
+            border-radius: 5px;
+        }
+
+        /* 给 a 元素添加边框 */
+        a{
+            /*  单独设置 a 元素的上边框  */
+            border-top: 10px solid red;
+            /*  单独设置 a 元素的下边框  */
+            border-bottom: 10px dashed yellow;
+            /*  单独设置 a 元素的左边框  */
+            border-left: 10px dotted orange;
+            /* 单独设置 a 元素的右边框 */
+            border-right: 10px double green;
+        }
+
+        /* 给 p 元素设置边框 */
+        /*
+            设置边框的时候，有一个
+            复合属性 border ，它涵盖了 border-style、
+            border-width、border-color
+            三条属性的效果。
+
+            border: 宽度 样式 颜色;
+        */
+        p{
+            border: 2px dotted green;
+        }
+
+        /* 给图片设置边框 */
+        img{
+            border: 5px groove gold;
+            border-radius: 5px;
+        }
+
+        /*  给 div 元素设置边框  */
+        div{
+            border: 2px double blue;
+        }
+
+        /*!*  给 span 标签设置边框  *!*/
+        /*span{*/
+        /*    border-top: 50px solid blue;*/
+        /*    border-left: 50px solid red;*/
+        /*    border-right: 50px solid yellowgreen;*/
+        /*    border-bottom: 50px solid orange;*/
+        /*    font-size: 0;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+    <!--  给网页中的元素添加边框
+
+            边框三个要素：
+                1. 边框样式  border-style
+                        取值： solid   实线
+                              dashed   虚线
+                              dotted   圆点
+                              double   双实线
+                              groove   凹槽
+                              ridge    凸起
+                2. 边框宽度  border-width
+                        取值： 像素值
+                3. 边框颜色  border-color
+                        取值：颜色值（使用关键字、使用rgb、使用颜色代码）
+
+                4. 复合的边框属性： border
+
+                5. 边框圆角  border-radius
+                        取值：像素值
+
+                一个元素边框还可以分成，上边框、下边框、左边框、右边框
+                我们可以针对单条边框设置样式
+                6. 指定边框：
+                    border-top     上边框
+                    border-left    左边框
+                    border-right   右边框
+                    border-bottom  下边框
+      -->
+
+    <h1>CSS边框</h1>
+    <a href="">超链接</a>
+    <p>我是p标签</p>
+    <img src="../imgs/1.jpg" width="100">
+    <div>我是div标签</div>
+    <hr>
+<!--    <a href="">我是a标签</a>-->
+<!--    <a href="">我是a标签</a>-->
+<!--    <a href="">我是a标签</a>-->
+<!--    <a href="">我是a标签</a>-->
+<!--    <a href="">我是a标签</a>-->
+    <span></span>
+
+</body>
+</html>
