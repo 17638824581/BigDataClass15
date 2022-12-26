@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本属性</title>
+    <style>
+      p{
+        font-size: 20px;
+        /* 1em 表示一个字体大小
+            em 单位是相对于 字体大小而言的
+         */
+        text-indent: 2em;
+
+        text-align: left;
+
+        /* text-transform 设置英文的大小写
+                取值：uppercase   大写
+                     lowercase   小写
+        */
+        text-transform: lowercase;
+
+        /* line-height  设置行高，取值px或em  */
+        line-height: 2em;
+      }
+
+      /*
+          text-align: 设置文本水平对齐方式
+              取值： left    表示居左
+                    center  表示居中
+                    right   表示居右
+      */
+      h2{
+        text-align: center;
+
+        /*
+            text-decoration：设置文本的划线
+                 取值： overline       上划线
+                       line-through   中划线
+                       underline      下划线
+                       none           去除划线
+        */
+      }
+
+      a{
+        /* 去除超链接的下划线 */
+        text-decoration: none;
+        /* 设置字间距 */
+        /*letter-spacing: 0px;*/
+        /* 设置单词之间间距（对中文无效） */
+        word-spacing: 10px;
+      }
+
+    </style>
+</head>
+<body>
+  <h2>文本属性</h2>
+  <hr>
+  <ol>
+    <li>文本首行缩进：text-indent</li>
+    <li>文本水平对齐：text-align</li>
+    <li>文本修饰（设置划线）：text-decoration</li>
+    <li>文本大小写转换：text-transform</li>
+    <li>行高：line-height</li>
+    <li>字间距：letter-spacing</li>
+    <li>词(英文单词)间距：word-spacing</li>
+  </ol>
+
+  <p>
+    字体样式针对的是“文字本身”的型体效果，而文本样式针对的是“整个段落”的排版效果。字体样式注
+    重个体，文本样式注重整体。因此在CSS中，特意使用了“font”和“text”两个前缀来区分这两类样式。如
+    果清楚这一点，以后写CSS时，就很容易想起哪些属性是字体样式，哪些属性是文本样式了。
+  </p>
+  <p>
+    字体样式针对的是“文字本身”的型体效果，而文本样式针对的是“整个段落”的排版效果。字体样式注
+    重个体，文本样式注重整体。因此在CSS中，特意使用了“font”和“text”两个前缀来区分这两类样式。如
+    果清楚这一点，以后写CSS时，就很容易想起哪些属性是字体样式，哪些属性是文本样式了。
+  </p>
+  <p>
+    abcefg hijklmn OPQRST
+  </p>
+
+  <a href="">我是超链接</a>
+  <a href="">我是超链接</a>
+  <a href="">我是超链接</a>
+  <a href="">i am bob, i like sleep</a>
+
+</body>
+</html>
