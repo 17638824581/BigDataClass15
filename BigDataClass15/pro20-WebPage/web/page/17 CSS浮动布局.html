@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局</title>
+    <style>
+        #list {
+            width: 800px;
+            border: 2px solid red;
+        }
+
+
+        /*
+              我们想要给行元素设置宽高，默认情况下，是不生效的。
+              我们可以使用  display 属性，来设置某个元素的显示类型。
+              display 属性：可以修改元素指定它为 行元素 或 块元素
+                    取值：  block         以块元素显示
+                           inline-block  以行内块元素显示
+                           inline        以行元素显示
+                           none          不显示这个元素
+
+             浮动布局： 通常为我们想要让 块元素们 能够待在一行，我们可以将这些
+             块元素设置为浮动布局。
+                 使用  float 属性，可以将元素设置为 浮动元素。
+                 浮动元素遵循浮动的布局规则。
+                 float 属性的取值：
+                  1. left   左浮动
+                  2. right  右浮动
+
+            浮动元素会导致它后面的元素占据它原本的位置。
+
+            清除浮动： clear 能够消除浮动对后面元素所造成影响
+                  clear 属性使用在 浮动元素后面的元素上
+                    取值： both  清除所有浮动。
+
+        */
+
+        #list > a {
+            text-decoration: none;
+            color: black;
+            width: 56px;
+            background-color: #f6f7f8;
+            /* 将 a 元素设置为 行内块元素 */
+            display: inline-block;
+            /* 给 a 元素设置外边距 */
+            margin: 4px 1px;
+            /* 给 a 元素设置内边距 */
+            padding: 5px 2px;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        /*  给 a 标签设置鼠标放置时的效果  */
+        #list > a:hover {
+            background-color: #e1e3e5;
+        }
+
+        #body{
+          /* 设置上外边距 */
+          margin-top: 20px;
+          border: 2px solid blue;
+          width: 500px;
+          height: 500px;
+        }
+
+        .small{
+          background-color: #CCFFCC;
+          width: 50px;
+          height: 50px;
+          margin: 5px;
+          /* 设置为浮动元素 */
+          float:left;
+        }
+
+        .big{
+          margin: 5px;
+          background-color: gold;
+          width: 110px;
+          height: 110px;
+          float:left;
+        }
+
+        .middle{
+          background-color: pink;
+          width: 110px;
+          height: 50px;
+          float: left;
+          margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>浮动布局</h1>
+<div id="list">
+    <a href="">番剧</a>
+    <a href="">国创</a>
+    <a href="">综艺</a>
+    <a href="">动画</a>
+    <a href="">鬼畜</a>
+    <a href="">舞蹈</a>
+    <a href="">娱乐</a>
+    <a href="">科技</a>
+    <a href="">美食</a>
+    <a href="">汽车</a>
+    <a href="">运动</a>
+    <a href="">VLOG</a>
+    <br>
+    <a href="">电影</a>
+    <a href="">电视剧</a>
+    <a href="">纪录片</a>
+    <a href="">游戏</a>
+    <a href="">音乐</a>
+    <a href="">影视</a>
+    <a href="">知识</a>
+    <a href="">资讯</a>
+    <a href="">生活</a>
+    <a href="">时尚</a>
+    <a href="">动物圈</a>
+    <a href="">更多</a>
+</div>
+
+<div id="body">
+  <div class="big">大1</div>
+  <div class="middle">中1</div>
+  <div class="small">小1</div>
+  <div class="small">小2</div>
+  <div class="small">小3</div>
+  <div class="small">小3</div>
+  <div class="middle">中1</div>
+  <div class="small">小4</div>
+  <div class="middle">中1</div>
+  <div class="small">小5</div>
+  <div class="small">小6</div>
+  <div class="middle">中1</div>
+  <div class="middle">中1</div>
+  <div class="small">小7</div>
+  <div class="middle">中1</div>
+  <div class="big">大2</div>
+  <div class="small">小8</div>
+  <div class="small">小9</div>
+  <div class="middle">中1</div>
+  <div class="small">小10</div>
+  <div class="big">大3</div>
+  <div class="small">小11</div>
+  <div class="small">小12</div>
+
+</div>
+</body>
+</html>

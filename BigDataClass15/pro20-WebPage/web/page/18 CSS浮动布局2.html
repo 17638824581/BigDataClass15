@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局</title>
+    <style>
+      div{
+        width: 100px;
+        height: 100px;
+        background-color: #99CCCC;
+        margin: 5px;
+      }
+
+      .float{
+        /*
+            浮动元素会导致它下面的元素占据它原本的位置。
+            浮动也会使，块元素不再独占一行，而是能够像行元素一样放置在一行中
+
+            清除浮动： clear 能够消除浮动对后面元素所造成影响
+                  clear 属性使用在 浮动元素后面的元素上
+                    取值： both  清除所有浮动。
+
+        */
+          float: left;
+      }
+
+      .big{
+        clear: both;
+        width: 150px;
+        height: 150px;
+        background-color: red;
+      }
+
+    </style>
+</head>
+<body>
+  <div class="float">div1</div>
+  <div class="float">div2</div>
+  <div class="big">div3</div>
+  <div class="big">div4</div>
+
+</body>
+</html>

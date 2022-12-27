@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位布局</title>
+    <style>
+
+        /*
+             文档流：
+
+                 正常文档流：
+                     正常情况下，我们页面的元素都是按照行元素、块元素等布局，
+                     行元素能够放在同一行中，块元素独占一行。。。
+
+                 脱离（正常）文档流：
+                     我们一旦给元素设置了 浮动 或者 定位，那么这个元素，就会脱离
+                     它原本的正常文档流。正常文档流和脱离文档流的元素，互不干扰。
+
+
+            我们给元素设置浮动之后，元素就会称为 浮动元素，浮动元素只遵循浮动的
+                排布规则。（脱离文档流）
+
+            定位布局：
+                 使用 position 属性来设置元素的定位模式
+                     取值：  static    静态定位（默认）
+                            fixed     固定定位：
+                                    会让元素固定在窗口的指定位置上，
+                                    元素就不会随着页面的滚动而滚动。
+
+                            absolute   绝对定位
+                                    可以指定元素在页面中的位置，
+                                    元素会随着页面的滚动而滚动。
+
+                            relative  相对定位
+                                    相对定位，不会使元素脱离文档流。
+                                    可以指定元素相对于它自己以前的位置，
+                                    进行定位。
+                                    只会改变元素的显示位置。
+
+                 还需要结合以下四个属性来确定一个元素的位置
+
+                 如果是：固定定位 或 绝对定位：
+                     left        表示元素左边框到窗口左边的距离
+                     right       表示元素右边框到窗口右边的距离
+                     top         表示元素的上边框到窗口上边的距离
+                     bottom      表示元素的下边框到窗口下边的距离
+
+                 如果是相对定位：
+                     left   表示元素左边框到它原本左边框位置的距离
+                            让元素往右移动
+                     rigth   表示元素右边框到它原本右边框位置的距离
+                            让元素往左移动
+                     top    表示元素上边框到它原本上边框位置的距离
+                            让元素往下移动
+                     bottom   表示元素下边框到它原本下边框位置的距离
+                            让元素往上移动
+
+        */
+
+        #div1{
+            /* 我们给 div1 设置定位  fixed 表示固定定位 */
+            position: fixed;
+            right: 100px;
+            top:200px;
+
+            border: 2px solid red;
+            width: 150px;
+            height: 150px;
+        }
+
+        #div2{
+            /* 我们给 div2 设置定位， absolute 绝对定位 */
+            position: absolute;
+            right: 50px;
+            top: 500px;
+
+            border: 2px solid blue;
+            width: 200px;
+            height: 200px;
+        }
+
+        #div3{
+            clear: both;
+            border: 2px solid green;
+            height: 2000px;
+        }
+
+        #div4{
+            /* 给 div4 设置定位，相对定位 relative */
+            position: relative;
+            left: 600px;
+
+            border: 2px solid orange;
+            height: 120px;
+            width: 120px;
+            float: left;
+        }
+
+        .float{
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 2px solid purple;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>定位布局</h1>
+
+    <div id="div1">
+        固定定位元素
+    </div>
+    <div id="div2">
+        绝对定位元素
+    </div>
+
+    <div id="div4">
+        相对定位元素
+    </div>
+
+    <div class="float">
+        div
+    </div>
+
+    <div class="float">
+        div
+    </div>
+
+    <div id="div3"></div>
+</body>
+</html>

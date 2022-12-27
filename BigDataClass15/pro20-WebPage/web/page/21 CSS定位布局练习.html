@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位布局练习</title>
+    <style>
+      #sousuo{
+        width: 400px;
+        height: 30px;
+        background-color: #6e6e6e;
+        font-size: 18px;
+        color: white;
+        border: none;
+        padding: 5px 20px;
+        border-radius: 20px 0px 0px 20px;
+      }
+
+      #anniu{
+        /*height: 30px;*/
+        border: none;
+        font-size: 18px;
+        background-color: #409adf;
+        color: white;
+        padding: 8px 15px;
+        /* 设置圆角 */
+        border-radius: 0px 20px 20px 0px;
+
+        cursor: pointer;
+
+        /* 使用相对定位，来对齐按钮和输入框 */
+        position: relative;
+        right: 5px;
+        top: 1px;
+      }
+
+      #anniu:hover{
+        background-color: #006cbe;
+      }
+
+      #div1{
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+  <h1>定位练习</h1>
+
+  <div id="div1">
+    <input id="sousuo" type="text" placeholder="搜索网页"/>
+    <input id="anniu" type="button" value="搜索"/>
+  </div>
+
+</body>
+</html>
