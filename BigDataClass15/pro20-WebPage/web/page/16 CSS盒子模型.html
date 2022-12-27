@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style>
+
+      /*
+            盒子模型：是一个概念，它描述了我们网页中每一个元素的结构。
+              我们要学会将，页面中的 每一个 元素都看作一个盒子模型。
+              理解了盒子模型，我们就能够对页面的排版和布局有更深的了解。
+
+
+            盒子相关的四个属性：
+                宽度和高度属性： width  height，相当于设置元素内容区的大小
+                      代表的时这个元素的 内容区 的大小
+
+                对于 内边距、边框、外编剧等属性，我们都可以单独设置上下左右各个
+                方向的大小。
+
+
+                内边距属性：     padding，相当于给元素填充大小
+
+                    padding 像数值  ： 同时设置上下左右四个方向的内边距
+                    padding 像素值1 像素值2 ：设置上下内边距为 像素值1，设置做左右内边距为 像素值2
+                    padding 值1 值2 值3 值4 ：设置 上为值1，右为值2，下为值3，左为值4
+                    代表的是 元素 内容区 到 边框 之间的间隔
+
+                边框属性：      border，给元素加边框
+                       代表的就是 元素的 边框
+
+                外边距属性：     margin，相当于设置每个元素之间的距离
+                       代表的是元素 边框之外所占据的空间
+
+           组成一个元素实际的大小，依靠的就是这四个属性。
+      */
+
+      div{
+        background-color: red;
+        /* 设置div的宽高（内容区的宽高） */
+        width: 200px;
+        height: 200px;
+
+        /* 在内容区和边框之间 可以设置内边距 */
+        padding: 30px;
+
+        /* 给div加上边框 */
+        border: 20px solid gold;
+
+        /* 在边框之外，还有外边距 */
+        margin: 50px;
+      }
+
+      a{
+        background-color: #99CCCC;
+
+        /* 加上内边距 */
+        padding: 5px 20px;
+
+        /* 加上边框圆角 */
+        border-radius: 5px;
+
+        /* 加上外边距 */
+        margin: 0px 10px;
+      }
+
+    </style>
+</head>
+<body>
+  <h1>盒子模型</h1>
+  <p>我们要把页面上的每一个元素都看做一个盒子模型，构成盒子模型的四个部分：<br>
+    1.内容区 : 用来存放元素内容的区域。<br>
+    2.内边距<br>
+    3.边框<br>
+    4.外边距<br>
+  </p>
+
+  <a href="">我是超链接</a>
+  <a href="">我是超链接</a>
+  <a href="">我是超链接</a>
+  <a href="">我是超链接</a>
+
+
+  <div>
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+  </div>
+  <div>
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+    我是div，我是div，我是div，
+  </div>
+
+</body>
+</html>

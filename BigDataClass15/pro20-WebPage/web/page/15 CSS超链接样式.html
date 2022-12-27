@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接样式</title>
+    <style>
+      /*  CSS 超链接的伪类（选择器）
+            同一个超链接在不同情况下，表现出来的样子是不一样的
+
+            我们能不能手动指定，某些元素不同状态的样子
+
+            想要指定元素不同状态时的样子，我们就需要使用 伪类选择器
+                  :link      表示超链接未访问时的样子
+                  :visited   表示超链接访问过后的样子
+                  :hover     表示鼠标划过的时候
+                  :active     表示鼠标点击的时候
+
+            我们会经常 去除超链接的下划线
+                使用：  text-decoration: none;
+
+
+            改变鼠标样式   cursor 属性
+
+            禁止鼠标选中文字：
+                     user-select: none;
+
+
+       */
+
+      *{
+        user-select: none;
+      }
+
+      a:link{
+        /* 我们手动指定超链接的颜色，会破坏掉超链接原本的样式 */
+        color: blue;
+        text-decoration: none;
+      }
+
+     /* 设置 a 元素访问后的样子 */
+     a:visited{
+       color: black;
+     }
+
+     /* 设置 a 元素当鼠标划过时候的样子 */
+      a:hover{
+        color: green;
+      }
+
+     /* 像要设置 a 元素在点击的时候变成金色 */
+      a:active{
+        color: red;
+      }
+
+      div{
+        background-color: gold;
+        width: 80px;
+        height: 30px;
+        font-size: 20px;
+        color: red;
+        text-align: center;
+        border: 2px solid gainsboro;
+        border-radius: 5px;
+        /* 禁止选中文字 */
+        user-select: none;
+      }
+
+     /*  当鼠标划过div的时候，给div加上边框 */
+      div:hover{
+        border: 2px solid red;
+        /* 改变光标的样式 */
+        cursor: pointer;
+      }
+
+    /* 当点击div的时候，改变div的背景颜色  */
+      div:active{
+        background-color: #99CCCC;
+      }
+    </style>
+</head>
+<body>
+  <h1>超链接样式</h1>
+  <a href="http://www.4399.com">我是超链接</a>
+
+  <div>
+    点我
+  </div>
+</body>
+</html>

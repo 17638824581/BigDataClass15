@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景样式</title>
+    <style>
+      /*
+            CSS 背景样式
+                1.背景颜色       background-color
+                     取值： 颜色值
+                2.背景图片       background-image
+                    当设置的背景图片不够大的时候，背景图片就会重复填充
+                     取值： url() 指定图片的位置
+                3.背景图片重复    background-repeat
+                     取值：关键字
+                          repeat     允许重复（默认值）
+                          repeat-x   限制只允许水平方向重复
+                          repeat-y   限制只允许垂直方向重复
+                          no-repeat  不允许重复
+
+                4.背景图片定位    background-position
+                      取值：两个像素值,
+                          第一个值代表 x 轴的坐标，
+                          第二个值代表 y 轴的坐标。
+
+                5.背景图片大小    background-size
+                       取值：两个像素值，
+                            第一个代表背景图片 宽度
+                            第二个代表背景图片  高度
+                            也可以是两个百分值
+
+                5.背景图片固定    background-attachment
+                       取值：  scroll     设置背景图片随元素滚动（默认）
+                              fixed      设置背景图片固定不动
+      */
+
+      /* 给body设置背景颜色，那么整个页面就会有背景颜色 */
+      body{
+        background-color: #99CCCC;
+      }
+
+      h1{
+        text-align: center;
+        background-color: #FFFFCC;
+        border-radius: 10px;
+      }
+
+      a{
+        background-color: #CCFFCC;
+        font-size: 24px;
+        color: black;
+        border: 2px solid #CCFFCC;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+
+      div{
+        background-color: #FFFFCC;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 400px;
+        width: 400px;
+        border-radius: 10px;
+        color: black;
+      }
+
+      #div1{
+        background-image: url("../imgs/1.jpg");
+      }
+
+      #div2{
+        background-image: url("../imgs/2.jpg");
+      }
+
+    </style>
+</head>
+<body>
+  <h1>背景颜色</h1>
+  <p>
+    <a href="">我是a标签</a>
+    <a href="">我是a标签</a>
+    <a href="">我是a标签</a>
+    <a href="">我是a标签</a>
+    <a href="">我是a标签</a>
+  </p>
+
+  <div id="div1">
+    我是div标签， 我是div标签， 我是div标签， 我是div标签， 我是div标签， 我是div标签，
+    我是div标签， 我是div标签， 我是div标签， 我是div标签， 我是div标签， 我是div标签，
+    我是div标签， 我是div标签， 我是div标签， 我是div标签， 我是div标签， 我是div标签，
+    我是div标签， 我是div标签， 我是div标签， 我是div标签， 我是div标签， 我是div标签，
+  </div>
+
+  <div id="div2"></div>
+</body>
+</html>
