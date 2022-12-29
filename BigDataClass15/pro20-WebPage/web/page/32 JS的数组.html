@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS数组</title>
+    <script>
+        // 定义数组：简写
+        // var arr = [4,3,2,5,1,6,7];
+        // // 定义数组：完整写法
+        // var arr2 = new Array("张三","李四","王五","赵六");
+        // // 创建空数组
+        // var arr3 = [];
+
+        // 访问数组中的元素
+        //     数组名[索引值]
+        //     当访问数组的索引越界的时候，会得到 undefined
+        // let a = arr2[-1];
+        // document.write(a);
+
+        // 获取数组的长度
+        //     数组名.length 可以获取数组的长度
+        // let length = arr.length;
+        // document.write(length)
+
+        // 如何遍历数组
+        // 1.使用 for 循环遍历数组
+        // for (let i = 0; i < arr.length; i++) {
+        //   document.write(arr[i]);
+        //   document.write("<br>");
+        // }
+
+        // 如何修改数组的元素
+        // arr[1] = 5;
+        // document.write(arr)
+
+        // 2. js的数组支持通过 forEach()函数 进行隐式遍历
+
+
+        //  JS 中的数组，就好像我们 Java 的 List 集合，数组对象具有很多功能性的操作方法
+        //  JS 中的数组，允许存储不同的数据类型。
+        //  JS 中数组对象自带的一些常用方法：
+        //      slice()    截取数组
+        //      unshift()  添加元素到数组开头
+        //      push()     添加元素到数组的结尾
+        //      pop()      从数组的尾部取出一个元素
+        //      concat()   合并两个数组，返回合并后的新数组
+        //      sort()     对数组进行排序，默认对数组中的元素按照自然排序进行排序。
+        //                 这个方法也可以接收一个 比较器方法 用于排序
+        //      reverse()   反转数组中的元素
+        //      join()      可以将数组中的所有元素，使用指定的连接符，链接为一个字符串。
+
+        // document.write(arr);
+        // // let numbers = arr.slice(0,4);
+        // document.write("<br>");
+        // arr.unshift(10);
+        // document.write(arr);
+        // document.write("<br>");
+        // arr.push(99);
+        // document.write(arr);
+        // document.write("<br>");
+        //
+        // let number = arr.pop();
+        // document.write(number);
+        //
+        // document.write("<br>");
+        // document.write(arr);
+        //
+        // let numbers = arr.concat(arr2);
+        //
+        // document.write("<br>");
+        // document.write(numbers);
+
+        // document.write(arr);
+        //
+        // // arr.sort(function (a,b){return b-a});
+        // // JS中的Lambda表达式
+        // arr.sort((a,b) => {return b-a});
+        // document.write("<br>");
+        //
+        // document.write(arr);
+
+        // let arr = [1,2,3,4,5];
+        //
+        // let s = arr.join("-");
+        //
+        // document.write(s);
+
+        // let str = "张三,李四,王五,赵六,田七";
+        //
+        // // 使用 逗号 分割字符串，得到存储每个名字的数组
+        // let arr = str.split(",");
+        //
+        // // 对数组中的每个元素 使用 ")(" 连接起来
+        // let s = arr.join(")(");
+        //
+        // // 对连接后的字符串，前后加上 括号
+        // s = "(" + s + ")";
+        //
+        // // 打印字符串
+        // document.write(s);
+
+        // let s = "今天天气真好";
+        // let strings = s.split("");
+        // let s1 = strings.join("><");
+        // s1 = "<" + s1 + ">";
+        // document.write(s1)
+
+
+        // let s = "Rome was not built in a day";
+        //
+        // let strings = s.split("");
+        //
+        // document.write(strings.length);
+
+        // let s = "abcdef";
+        // let s1 = s.split("").reverse().join("");
+        // document.write(s1);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

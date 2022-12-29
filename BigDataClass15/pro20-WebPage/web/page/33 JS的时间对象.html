@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的时间对象</title>
+    <script>
+      // JS 中也有一个类  Date
+      //   我们可以直接通过 new Date() 来创建一个 Date 对象
+      //    Date 对象默认存储当前时间
+      //    Date 对象中的月份，
+      //        是从 0 开始的，0 代表 1月，1 代表 2月，11 代表 12 月。
+      let date = new Date();
+
+      let fullYear = date.getFullYear();
+      let month = date.getMonth();
+      let date1 = date.getDate();
+      let day = date.getDay();
+
+      document.write("<p>当前时间是：</p>")
+      document.write("<div>"+fullYear+"年"+(month+1)+"月"+date1+"日<br>星期"+day+"</div>")
+
+      // SetXxx 方法
+      // date.setFullYear(2050);
+      // date.setMonth(2);
+      // date.setDate(11);
+      // date.setHours(12);
+      // date.setMinutes(15);
+      // date.setSeconds(20);
+      // date.setMilliseconds(888);
+      //
+      //
+      // // getXxx方法
+      // document.write(date.getFullYear()+"年"+"<br>");
+      // document.write(date.getMonth()+1+"月"+"<br>");
+      // document.write(date.getDate()+"日"+"<br>");
+      // document.write("周"+date.getDay()+"<br>");
+      // document.write(date.getHours()+"时"+"<br>");
+      // document.write(date.getMinutes()+"分"+"<br>");
+      // document.write(date.getSeconds()+"秒"+"<br>");
+      // document.write(date.getMilliseconds()+"毫秒"+"<br>");
+    </script>
+    <style>
+      div{
+        border: 2px solid red;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的数学对象</title>
+    <script>
+        //  JS中的数学对象就是 Math
+        //  Math 对象中，提供了大量的常用的和数学计算相关的一些方法
+        //    Math 中常用 的属性和 方法
+        //           属性：
+        //                 PI    圆周率
+        //           方法：
+        //                max()   取最大值
+        //                min()   取最小值
+        //               floor()   向下取整
+        //               ceil()    向上取整
+        //               round()    四舍五入取整
+        //                  取 [0~x] 的整数，Math.floor(Math.random() * (x+1))
+        //                  取 [x~y] 的整数，Math.float(Math.random() * (y+1-x)) + x
+        //               random()   生成(0~1)之间的随机小数
+        //               abs()      求绝对值
+        //               sqrt()     返回平方根
+        //               pow()      计算次方
+
+        // 取一个 0 ~ 10 的随机整数
+        // let number = Math.floor(Math.random() * 11);
+        // 取一个 5 ~ 10 的随机整数
+        // let number = Math.floor(Math.random() * 6) + 5;
+        // document.write(number)
+
+        // let a = Math.pow(5,3);
+        // document.write(a);
+
+
+        // 生成随机4位数的验证码
+        // let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWSXYZ0123456789";
+        // let code = "";
+        // for (let i = 0; i < 4; i++) {
+        //     // 随即生成一个索引
+        //     let index = Math.floor(Math.random()*str.length);
+        //     // 使用随机索引获取字符串中的一个字符
+        //     let s = str.charAt(index);
+        //     // 将随机的字符，放入 code 中
+        //     code += s;
+        // }
+        //
+        // document.write("生成的验证码是："+code);
+
+
+        // 写一个函数，能够返回一个随机的rgb颜色值
+
+        function getRandomColor(){
+            let r = Math.floor(Math.random()*256);
+            let g = Math.floor(Math.random()*256);
+            let b = Math.floor(Math.random()*256);
+            return "rgb("+r+","+g+","+b+")";
+        }
+
+        document.write(getRandomColor());
+
+        window.onload = function (){
+            // 我们可以通过js来修改 div 元素的背景颜色
+            let div = document.getElementById("dd");
+            setInterval((e)=>{
+                div.style.backgroundColor = getRandomColor();
+            },1000);
+        }
+
+
+    </script>
+    <style>
+        #dd{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="dd"></div>
+</body>
+</html>
