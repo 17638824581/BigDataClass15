@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS补充</title>
+    <!--  使用 link 标签，去链接外部的样式表
+          href 属性用来指定 css 样式表的路径
+          rel 属性用来标识文件的作用（链接样式表就填 stylesheet）
+
+          如果我们将 css 代码，单独写到 css 文件中，那么就可以显示
+          多个 html 文件共用一个 css 文件。 我们修改一个 css 文件，就可以
+          实现修改多个页面。
+
+          外部样式表：就是通过link标签，去链接外部的样式表文件。
+                css 写在专门的 css 文件中，在html中需要使用 link 标签链接。
+                可以对多个页面生效。
+          内部样式表：就是在 html 文件中，style 标签中直接写 css 代码。
+                只对当前页面（当前html文件）生效，css 写在style标签中。
+          行内样式表：就是在标签内部的 style 属性中直接写 css 代码。
+                不需要选择器，可以写多条属性，只对单个元素生效，只适用于修改个别元素。
+
+          三种样式表我们都可以结合使用。
+
+          不同样式表的优先级：
+               在不同的样式表中，同时设置了相同的属性，并且属性值不同。
+               那么，这时候多个样式表中的属性 就会起冲突，
+
+              行内样式表 > 内部样式表 > 外部样式表
+
+              样式表的优先级高，页面就会优先显示这个样式表的效果。
+
+      -->
+    <link href="../css/test.css" rel="stylesheet">
+    <style>
+        div{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div style="color: green">我是div标签</div>
+<p>我是p标签</p>
+<h2 style="color:blue;">我是h2标签</h2>
+<h2>我是h2标签</h2>
+<h2>我是h2标签</h2>
+<h2>我是h2标签</h2>
+<h2>我是h2标签</h2>
+<h2>我是h2标签</h2>
+<h2>我是h2标签</h2>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的函数</title>
+    <script>
+        // JS 是一门 函数式语言
+        //   我们可以像操作数值一样，去操作函数
+        //   我们可以将函数对象，再传入函数中
+
+
+        // 我们之前使用的函数，都被称为 预定义 函数。
+        // alert("123");
+        // var a =  Number("123");
+
+        // 更应该了解，我们如何自己来写一个函数
+
+        // 在 Java 中写一个方法
+        // public static int add(int a, int b){ return a+b }
+
+        // 在 JS 中写一个函数：
+        //  语法一： function 函数名(形参){ 函数体 }
+        //   当我们在函数中写了 return 语句，那么这个函数就有返回值。
+        //   如果我们没有写 return 语句，那么这个函数的返回值就是 undefined
+
+        // function add(a,b) {
+        //   return a + b;
+        // }
+        //
+        // // 在 JS 中调用函数
+        // var c = add(10,undefined);
+        //
+        // document.write(c);
+
+
+        // 在 JS 中的函数还有一个特性：
+        //  JS 中的函数，我们可以直接用变量存起来
+
+        // 拿变量 s 存储 sub 函数
+        // 变量 s 就是一个函数对象（function 类型）
+        // var s = function sub(a,b){
+        //           return a-b;
+        //         }
+        //
+        // // s() 调用s ，就相当于调用了 sub 这个函数
+        // // var c = s(10,20);
+        // var c = sub(20,30);
+        //
+        // document.write(c);
+
+        // 我再写一个函数
+        // 函数的作用是：接收传来的函数，调用这个函数
+        // function speak(){
+        //   document.write("abc");
+        // }
+        //
+        //
+        // function ff( f ){
+        //   // 调用这个形参 f
+        //   f();
+        // }
+        //
+        // ff(speak);
+
+
+        // 函数的第一种写法： function 函数名( 形参 ){ 函数体 }
+        // function add(a,b){
+        //   return a+b;
+        // }
+
+        // 函数的第二种写法： 函数名 = function( 形参 ){ 函数体 }
+        // var add = function (a,b){
+        //   return a+b;
+        // }
+
+
+        // 像这样的接收函数作为参数的函数，我们在JS中会经常用到
+        // function f(f1,f2){
+        //   return f1()+f2();
+        // }
+        //
+        // var c = f(function (){return 10},function (){return 20});
+        //
+        // document.write(c)
+
+
+        // 写一个函数用于计算阶乘  10! = 10*9*7*6*5*...*1
+
+        // 计算 num 的阶乘
+        // function jc(num) {
+        //     // 在函数中定义函数，嵌套函数
+        //     // 嵌套函数只能在这个函数内部使用
+        //     function mul(a, b) {
+        //         return a * b;
+        //     }
+        //
+        //     let sum = 1;
+        //     for (let i = num; i >= 1 ; i--) {
+        //       sum = mul(sum,i);
+        //     }
+        //
+        //     return sum;
+        // }
+        //
+        //
+        // let mul1 = mul(10,20);
+        //
+        // document.write(mul1)
+
+
+        // JS 的内置函数
+        //  parseInt()    解析字符串中的整数
+        //  parseFloat()  解析字符串中的小数
+        //  isFinite()    判断传入的内容是否为有效数字
+        //  isNaN()       判断是否为 NaN
+        //  escape()      对字符串进行编码
+        //  unescape()      对字符串进行解码
+        //  eval()         可以将字符串转为表达式进行执行
+
+
+        // 写一个函数，用来判断是否为闰年
+        //
+        // function isRunNian(num) {
+        //     // 如果能被4整除，不能被100整数，是闰年
+        //     if (num % 4 == 0 && num & 100 != 0) {
+        //         document.write(num + "是闰年！")
+        //     } else if (num % 400 == 0) {
+        //         // 如果能被400整除，也是闰年
+        //         document.write(num + "是闰年！")
+        //     } else {
+        //         document.write(num + "不是闰年！")
+        //     }
+        // }
+        //
+        // // 让用户输入一个年份
+        // let s = prompt("请输入一个年份：");
+        // if (isFinite(s)) {
+        //     isRunNian(s);
+        // } else {
+        //     alert("您输入的不是数字！");
+        // }
+
+        // 计算 5 个参数中的最大值，并返回
+        // function max(a, b, c, d, e) {
+        //   // 两两比较
+        //   let max1 = a > b ? a : b;
+        //   let max2 = max1 > c ? max1 : c;
+        //   let max3 = max2 > d ? max2 : d;
+        //   let max4 = max3 > e ? max3 : e;
+        //   return max4;
+        // }
+        //
+        // let a = prompt("请输入第一个值:");
+        // let b = prompt("请输入第二个值:");
+        // let c = prompt("请输入第三个值:");
+        // let d = prompt("请输入第四个值:");
+        // let e = prompt("请输入第五个值:");
+        //
+        // let max1 = max(a,b,c,d,e);
+        // document.write("最大值是："+max1);
+
+    </script>
+
+</head>
+<body>
+<input id="btn" type="button" value="点我"/>
+</body>
+</html>

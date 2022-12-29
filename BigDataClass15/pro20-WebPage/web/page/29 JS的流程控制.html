@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的流程控制语句</title>
+
+    <script>
+        // JS 中的流程控制
+        //  1. 分支语句
+        //    if 语句
+        // 让用户来输入 a 的值
+        // 通过函数弹出一个输入框，让用户来输入内容
+        //  prompt() 函数：弹出一个对话框，让用户输入内容。
+        //    返回类型是 string
+        //    在 js 中，js的关系表达式，会尝式直接将 字符串 和 数字型进行比较
+        //    当用户点击取消的时候，函数的返回值就是 null
+        //    null 转为 数字型是 0
+        //
+        // var a = prompt("请输入a的值：");
+        // document.write(typeof(a));
+        //
+        // if (a > 10) {
+        //     document.write(a + " 大于 10");
+        // } else if (a == 10) {
+        //     document.write(a + " 等于 10");
+        // } else {
+        //     document.write(a + " 小于 10");
+        // }
+
+        // ==  双等运算符：在js中比较是否相等，它会尝试自动转型。
+        // === 全等运算符：严格对两边的值进行比较，不会自动转型。
+        // document.write(10 === 10);
+
+
+        // a 是什么类型的？
+        // var a = prompt("请输入a的值：");
+        // //    switch 语句
+        // switch (a) {
+        //     case "0":
+        //         document.write("你好帅！")
+        //         break;
+        //     case "1":
+        //         document.write("你好美！")
+        //         break;
+        //     case "2":
+        //         document.write("你又帅又美！")
+        //         break;
+        //     default:
+        //         document.write("你啥也不是！")
+        // }
+
+
+        //  2. 循环语句
+
+        //    while 循环
+        // var a = 10;
+        // while (a > 0){
+        //   document.write(a);
+        //   document.write("<br>");
+        //   a--;
+        // }
+
+        //    do-while 循环
+
+        // var a = 10;
+        // do{
+        //     document.write(a);
+        //     document.write("<br>");
+        //     a--;
+        // }while (a > 0);
+
+        //    for 循环
+        //  在 js 中，使用 var 关键字定义的变量，它是全局变量
+        //  在循环中，我们最好使用 let 关键字来定义变量，它是局部变量
+
+        // for(let i=0; i<100; i++){
+        //   document.write(i);
+        //   document.write("<br>")
+        // }
+        //
+        // // 除了循环后， i 这个变量还是存在的
+        // document.write("<hr>")
+        // document.write(i)
+
+        // 使用 js 打印一个 9 9 乘法表
+        for (let i = 1; i <= 9 ; i++) {
+          for (let j = 1; j <= i  ; j++) {
+            document.write(j+"×"+i+"="+(i*j));
+            document.write(" ");
+          }
+          document.write("<br>")
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

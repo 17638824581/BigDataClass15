@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS补充</title>
+    <style>
+        /*
+            组成盒子模型的四个属性
+                内容区的宽高         width 、height
+                内边距（内填充）      padding
+                边框                border
+                外边距              margin
+
+                内边距、边框、外边距，都分为 上、下、左、右 四个方向，我们都可以单独设置它们的大小
+
+                外边距：
+                    当两个元素是浮动元素的时候，上下左右的外边距都不会重叠，
+                    当两个元素是正常文档流的时候，两个元素的上下外边距会重叠在一块。
+
+
+
+         */
+
+        #div2{
+            width: 1000px;
+            height: 500px;
+            border: 5px solid red;
+            /*  设置外边距来实现居中  */
+            margin: 0px auto;
+        }
+
+        .d1{
+            height: 210px;
+            width: 210px;
+            padding: 10px;
+            border: 5px solid blue;
+            margin: 5px;
+            float: left;
+        }
+
+        .d2{
+            height: 460px;
+            width: 210px;
+            padding: 10px;
+            border: 5px solid green;
+            margin: 5px;
+            float: left;
+        }
+
+        .d3{
+            height: 210px;
+            width: 460px;
+            padding: 10px;
+            border: 5px solid gold;
+            margin: 5px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="div2">
+    <div class="d2">板块1</div>
+    <div class="d1">板块2</div>
+    <div class="d1">板块3</div>
+    <div class="d1">板块4</div>
+    <div class="d1">板块5</div>
+    <div class="d3">板块6</div>
+</div>
+
+
+
+</body>
+</html>

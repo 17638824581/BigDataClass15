@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS语法基础</title>
+    <script>
+        // 写 js 代码
+        /*
+        *   1. 常量和变量
+        *   2. 数据类型
+        *   3. 运算符
+        *   4. 表达式与语句
+        *   5. 类型转换
+        *   6. 转移字符
+        * */
+
+        // 打印内容到 页面中 document.write();
+        // document.write("哈哈哈")
+        // 弹出警告框  alert()
+        // alert("你好！")
+        // 打印内容到 控制台 console.log();
+        // console.log("我是打印到控制台的语句");
+
+        // 1. 在 js 中的常量和变量
+        // 如何定义变量：
+        //  在java中 ： int a = 10;
+        //             double b = 12.4;
+        //             String s = "123";
+        //             boolean b = false;
+
+        //  js 是一个动态语言，js不会强制区分变量的类型。
+        //  在 js 中，我们可以直接使用 var 关键字，来创建任意类型的变量
+        // var a = 10;
+        // var b = 20.5;
+        // var c = "你好！";
+        // var d = false;
+        //
+        // // 打印变量
+        // document.write(a);
+        // document.write("<br>")
+        // document.write(b);
+        // document.write("<br>")
+        // document.write(c);
+        // document.write("<br>")
+        // document.write(d);
+
+        // 2. JS 中的数据类型
+        //  在java中，数据类型分为 基本数据类型 和 引用数据类型
+        //     基本数据类型：byte、short、ing、long、char、boolean、float、double
+
+        //  在 js 中，数据类型分为 基本数据类型 和 引用数据类型
+        //     基本数据类型：数学（Number）、字符串（String）、布尔值（boolean）、未定义值（undefined）、null（空值）
+        //     我们可以使用 typeof() 函数，来查看变量或常量的数据类型
+        // 定义数字型的变量
+        // var a = 123;
+        // var b = 123.456;
+        // document.write(a);
+        // document.write(typeof(a))
+        // document.write(b);
+        // document.write(typeof(b))
+
+        // 定义字符串型变量
+        // 在 js 中，单引号、双引号都可以用来表示字符串，不区分 字符 、 字符串
+        // var a = "你好！";
+        // var b = '我好！';
+        // var c = '我';
+        // document.write(a)
+        // document.write(typeof(a));
+        // document.write("<br>")
+        // document.write(b)
+        // document.write(typeof(b));
+        // document.write("<br>")
+        // document.write(c)
+        // document.write(typeof(c));
+        // document.write("<br>")
+
+        // 定义布尔值型变量,
+        // 布尔值型的常量：true 和 false
+        // var a = true;
+        // var b = false;
+        // document.write(a)
+        // document.write(typeof(a));
+        // document.write("<br>")
+        // document.write(b)
+        // document.write(typeof(b));
+        // document.write("<br>")
+
+        // 未定义值 和 空值
+        // 未定义值表示：变量定义了，但没给值。
+        // 空值表示：变量有值，值就是 null。
+        // var a = undefined;
+        // var b;
+        // var c = null;
+        //
+        // document.write(a);
+        // document.write(b);
+        // document.write(c);
+
+        // 3. js 中的运算符
+        // 算数运算符 + - * / % ++ --
+        // var a = "你好";
+        // var b = 4;
+        // var c = a+b;
+        // document.write(c);
+        // document.write(typeof(c));
+
+        // 赋值运算符 = += -= *= /= %=
+        // var a = 10;
+        // a /= 20;
+        // document.write(a);
+
+        // 比较运算符  > < >= <= != ==
+        // var a = 10;
+        // var b = 20;
+        // document.write(a != b)
+
+        // 逻辑运算符  &&  ||  !
+        // var a  = 10;
+        // var b = 20;
+        // document.write((a>b) || (b>a))
+
+        // 三目运算符  条件 ? 表达式1 : 表达式2
+
+        // var a = 30;
+        // var b = 20;
+        //
+        // // 求 a 和 b 之中的最大值
+        // var max = a > b? a : b;
+        //
+        // document.write(max)
+
+        // 4. JS 中的数据类型转换
+        //   (1) 隐式类型转换
+        //   字符串和其他类型相计算，就会得到字符串类型的结果
+        //   布尔型和数字型相计算，得到数字型的结果
+        //     布尔型会自动转换为数字型： true -> 1，false -> 0
+        //   null 值，可以自动转为 0
+        //   undefined 类型如果参与计算的话，结果会得到 NaN（非数值型）
+
+        // var a = "字符串";
+        // var b = true;
+        // var c = 123;
+        // var d = undefined;
+        // var e = null;
+        //
+        // document.write(typeof(a+b));
+        // document.write(typeof(a+c));
+        // document.write(1+false);
+        // document.write(c+e);
+
+
+        //   (2) 显式类型转换
+        //    我们可以通过一些函数，来将数据转换为指定的数据类型。
+        //   字符串 -> 数字
+        //    Number()      尝试将 数字型的字符串 转换为 数字型
+        //    parseInt()    尝试解析 字符串中的数字 转换为 整数结果的数字型
+        //    parseFloat()  尝试解析 字符串中的数字 转换为 带有小数结果的数字型
+
+        //   其他类型 -> 字符串
+        //   1. 和空字符串相加
+        //   2. toString()
+        // var a = 100;
+
+        //   其他类型 -> 布尔值
+        //  1.Boolean()：可以将其他任何类型转换为布尔型
+        //   数字型 -> 布尔型（只有0，会得到false）
+        //   字符串 -> 布尔型（只有空字符串，会得到false）
+        //   undefined  -> 布尔型（得到false）
+        //   null -> 布尔型（得到false）
+
+        // document.write(a.toString()+10);
+
+        // document.write(Boolean(null))
+
+        // 5. JS 中的转义字符
+        //  使用 \ 反斜杠和 特定的字符组合为一个转义字符
+        // document.write("你好<hr>我也好")
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

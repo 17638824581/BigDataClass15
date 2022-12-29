@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的内置对象</title>
+    <script>
+        /*
+        *     JS中的内置对象
+        *
+        *     1. 字符串对象  String
+        *           属性： length  表示字符串的长度
+        *           方法： toLowerCase()   将字符串转为小写
+        *                 toUpperCase()   将字符串转为大写
+        *                 charAt()        获取字符串中指定索引的字符
+        *                 subString()     截取子字符串
+        *                 replace()       替换子字符串（只替换第一个）
+        *                 replaceAll()    替换全部的子字符串
+        *                 split()         分割字符串，分割得到数组
+        *                 indexOf()       从开头查找子字符串的位置
+        *                 lastIndexOf()   从后往前查找子字符串的位置
+        *     2. 数组对象   Array
+        *     3. 日期对象    Date
+        *     4. 数学对象    Math
+        *
+        *     内置对象中都会有属性 和 方法， 我们需要了解这些对象中都有什么方法。
+        * */
+
+        // 遍历字符串
+        // var s = "a,b,c,d,e,f";
+        // let number = s.lastIndexOf('c');
+        // document.write(number);
+
+
+        // 统计字符串中，指定字符的个数
+        // let s = "Can you can a can as a Canner can can a can";
+        // // 通过字符串中 字符 c 的个数，不区分大小写
+        // // 1. 将字符串转为全部小写
+        // s = s.toLowerCase();
+        // // 2. 使用 'c' 分割字符串
+        // let strings = s.split("c");
+        // console.log(strings)
+        // // 3. 计算数组长度
+        // let length = strings.length - 1;
+        //
+        // document.write("c 共有 "+length+"个");
+
+
+        // 统计字符串中共有多少个数字
+        let s = "我今天买了10个螃蟹，共有80条腿，有20只眼睛abcd";
+        let sum = 0;
+        // 遍历字符串
+        for (let i = 0; i < s.length; i++) {
+            let c = s.charAt(i);
+            if (isFinite(c)){
+              sum++;
+            }
+        }
+        // 打印结果
+        document.write("字符串中共有"+sum+"个数字");
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器优先级</title>
+    <style>
+        /*
+            通配符选择器      *           选择所有元素
+            标签名选择器     标签名        选择所有相同标签名的元素
+            id 选择器        id属性       只选择一个id值相同的元素
+            class 选择器     class属性    选择所有 class 属性相同的元素
+
+             id选择器 > class选择器 > 标签名选择器 > 统配符选择器
+
+           选择器权重（方便我们计算优先级）：
+              选择器的权重值越高，它的优先级就越高
+              通配符选择器    权重值是  1
+              标签名选择器    权重值是  10
+              class 选择器   权重值是  100
+              id 选择器      权重值是  1000
+
+
+            群组选择器       复合选择器    使用 ， 将多个选择器组合
+                权重计算方式：各论各的
+            后代选择器       复合选择器    使用 空格  将多个选择器组合
+                权重计算方式：相加
+            子代选择器       复合选择器    使用 >   将多个选择器组合
+                权重计算方式：相加
+        */
+
+        * {
+            color: red;
+        }
+
+        li {
+            color: blue;
+        }
+
+        a {
+            color: pink;
+        }
+
+        h2{
+            color: green;
+        }
+
+        #hh{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<h2>我是H2</h2>
+<h2 id="hh" class="c">我是H2</h2>
+<p class="c">我是P</p>
+<a href="">我是a</a>
+<ol class="l" id="o">
+    <li>我是列表项</li>
+    <li>我是列表项</li>
+    <li>我是列表项</li>
+    <li>我是列表项</li>
+</ol>
+</body>
+</html>
