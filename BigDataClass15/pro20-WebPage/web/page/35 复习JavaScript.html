@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习JavaScript</title>
+</head>
+<body>
+  <script>
+    // 在script标签中写js代码
+    /*
+      Js的多行注释
+     */
+
+    /*
+    *   JS 中的输出语句
+    *
+    *    1. document.write()  将内容写在页面上。
+    *    2. console.log()  将内容打印在控制台中。
+    *    3. alert()  将内容以提示窗口的形式，显示出来。
+    * */
+
+
+    /*
+    *   JS 中的输入语句
+    *
+    *    1. prompt()  弹出一个带提示的输入框
+    *    2. 可以使用表单元素。
+    * */
+
+    /*
+    *   JS 的基本数据类型
+    *   1. 数值型 Number
+    *   2. 字符型 String
+    *   3. 布尔型 Boolean
+    *   4. 未定义 undefined
+    *   5. 空     null
+    * */
+
+    // var a = "123123.123哈哈";
+    // document.write(parseFloat(a)+1);
+
+    /*
+    *   流程控制
+    *      分支语句：
+    *         if-else
+    *         switch
+    *      循环语句：
+    *         for
+    *         while
+    *         do-while
+    * */
+
+    // 猜数字游戏：生成一个随机的（1~100）的整数，让用户猜
+    // var r = Math.floor(Math.random() * 100 +1);
+    //
+    // for (let i = 1; i < 6; i++) {
+    //   var num = prompt("（第"+i+"次）请输入（1-100）的整数：");
+    //
+    //   if (num == r){
+    //     alert("您猜对了！")
+    //     break;
+    //   }else if(num < r){
+    //     alert("猜小了！")
+    //   }else{
+    //     alert("猜大了！")
+    //   }
+    // }
+    //
+    // document.write("正确答案是："+r);
+
+    /*
+    *   JS 中的数组
+    *       可以存储不同的类型
+    *
+    * */
+
+    // var a = [3,2,1];
+
+    // 访问数组
+    // document.write(a[4][2]);
+
+    // 头部插元素 unshift()
+    // 尾部插元素 push()
+    // 头部取元素 shift()
+    // 尾部去元素 pop()
+
+    // 排序元素 sort() 默认升序
+    // a.sort((a,b)=>{return b-a})
+
+    // 映射：使用指定函数对数组中的每一个元素进行操作，得到一个新数组，不会影响原数组的内容
+    // var b = a.map((a)=>{return a*2})
+
+    // 隐式遍历：使用指定函数对数组中的每一个元素进行操作，会影响原数组内容
+    // a.forEach((a)=>{document.write(a+"<br>")});
+
+    // document.write(b);
+
+
+    /*
+    * JS 中的时间对象
+    *       Date
+    *
+    * */
+    //
+    // let date = new Date();
+    //
+    // let day = date.getDay();
+    // let month = date.getMonth();
+    // let date1 = date.getDate();
+    //
+    //
+    // document.write("星期"+day)
+    // document.write("月份"+month)
+    // document.write("当前月份第几天："+date1)
+    // document.write(date.getTimezoneOffset())
+
+
+
+  </script>
+</body>
+</html>

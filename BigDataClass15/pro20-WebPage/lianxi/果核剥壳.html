@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>果核剥壳</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #f5f5f5;
+        }
+
+        #top-dh {
+            height: 64px;
+            width: 100%;
+            background-color: white;
+            position: fixed;
+            top: 0px;
+            box-shadow: 0 0 3px 1px rgb(0 0 0 / 10%);
+        }
+
+        #content {
+            width: 1180px;
+            margin: 0px auto;
+            height: 2164px;
+        }
+
+        #lbt{
+            margin-top: 84px;
+            height: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #lbt>img{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        #content>div{
+            float: left;
+        }
+
+        #content-left{
+            background-color: #FFFFCC;
+            width: 860px;
+            margin-right: 20px;
+            height: 500px;
+        }
+
+        #content-right{
+            /*background-color: darksalmon;*/
+            width: 300px;
+            height:500px;
+        }
+
+        #content-qnxw,#content-wxtw{
+            width: 580px;
+            background-color: orange;
+            margin-top: 20px;
+            height: 582px;
+        }
+
+        #content-wxtw{
+            margin-right: 20px;
+        }
+
+        #content-ghsp{
+            margin-top: 20px;
+            width: 100%;
+            height:344px;
+            background-color: purple;
+        }
+
+        #content-yqlj{
+            margin-top: 36px;
+            width: 100%;
+            height: 137px;
+            background-color: pink;
+        }
+
+        #bottom-dh{
+            width: 100%;
+            height: 280px;
+            background-color: #2d3236;
+        }
+
+        #top-dh-content{
+            width: 1180px;
+            height: 100%;
+            margin: 0px auto;
+        }
+
+        #top-dh-content>img{
+            width: 200px;
+            height: 50px;
+            position: relative;
+            top: 8px;
+        }
+
+        #menu>li{
+            float: left;
+            margin-left: 30px;
+        }
+
+        #menu{
+            display: inline-block;
+            position: relative;
+            bottom: 6px;
+            left: 16px;
+        }
+
+        #top-dh-content>span{
+            float: right;
+            position: relative;
+            top: 20px;
+
+        }
+
+        #top-dh-content>span>a{
+            color: #515151;
+            text-decoration: none;
+        }
+        #top-dh-content>span>a:hover{
+            color: #e52d34;
+        }
+
+        #content-left-zbth{
+            background-color: white;
+            padding: 20px;
+            height: 290px;
+        }
+
+        #content-left-zbth>h3{
+            font-weight: normal;
+            height: 28px;
+            margin-bottom: 30px;
+        }
+
+        .title-3{
+            font-size: 18px;
+        }
+
+        .small{
+            font-size: 14px;
+        }
+
+        #content-left-zbth>h3>span>input{
+            width: 24px;
+            height: 22px;
+        }
+
+        #anniu{
+            float: right;
+        }
+
+        .zbth-block{
+            width: 188px;
+            height: 224px;
+            border: 1px solid #ededed;
+            border-radius: 5px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .block-clear{
+            margin-right: 0;
+        }
+
+        .zbth-block>img{
+            width: 100%;
+            height: 120px;
+            margin-bottom: 12px;
+        }
+
+        #search{
+            height: 34px;
+            background-color: #FFFFCC;
+            margin-bottom: 20px;
+        }
+
+        #search>form>button{
+            width: 42px;
+            height: 34px;
+            border: none;
+            background-color: #ec4448;
+        }
+
+        #search>form>*{
+            display: block;
+            float: left;
+        }
+
+        #search>form>input{
+            width: 258px;
+            border: none;
+            height: 34px;
+        }
+
+        #content-left-bzgg>ul>li{
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        #content-left-bzgg{
+            background-color: white;
+            padding: 20px;
+        }
+
+        #content-left-bzgg>p{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="top-dh">
+    <div id="top-dh-content">
+        <img src="imgs/2020logo.png"/>
+        <ul id="menu">
+            <li>最新</li>
+            <li>PC</li>
+            <li>安卓</li>
+            <li>补丁/注册机</li>
+            <li>系统</li>
+            <li>实验室</li>
+            <li>文档图书</li>
+        </ul>
+        <span>
+            <a href="">登录</a>
+            |
+            <a href="">注册</a>
+        </span>
+    </div>
+</div>
+
+<div id="content">
+    <div id="lbt">
+        <img src="imgs/xzm02.webp"/>
+    </div>
+    <div id="content-left">
+        <div id="content-left-zbth">
+            <h3>
+                <span class="title-3">正版特惠</span>
+                <span class="small">果核谈下来的优惠正版价查看更多</span>
+                <span id="anniu">
+                    <input type="button" value="<"/>
+                    <input type="button" value=">"/>
+                </span>
+            </h3>
+            <div class="zbth-block">
+                <img src="imgs/win11zb.png"/>
+                【正版特惠】Windows 11 家庭版/专
+            </div>
+            <div class="zbth-block">
+                <img src="imgs/Adguardbag.png"/>
+                【正版特惠】AdGuard 广告拦截隐</div>
+            <div class="zbth-block">
+                <img src="imgs/goodsynczb.png"/>
+                多平台文件同步 GoodSync 11 官方正版</div>
+            <div class="zbth-block block-clear">
+                <img src="imgs/office365.png"/>
+                Office 365 官方订阅一年拼团 99元/年</div>
+        </div>
+    </div>
+    <div id="content-right">
+        <div id="search">
+            <form>
+                <input type="text" placeholder="请输入关键词搜索..."/>
+                <button>搜索</button>
+            </form>
+        </div>
+
+        <div id="content-left-bzgg">
+            <p>本站公告</p>
+            <ul>
+                <li>果核祝大家新年快乐</li>
+                <li>本站又被腾讯拦截了</li>
+                <li>本站一直遭受DDOS和CC攻击</li>
+                <li>本站开放API接口</li>
+                <li>关于本站注册激活问题</li>
+                <li>域名更换通知</li>
+                <li>有些世界，这样才看得到</li>
+                <li>本站QQ绑定的用户，请重新绑定</li>
+                <li>关于部分地区无法访问本站究极解决方法</li>
+                <li>关于本站清理部分修改软件的通知</li>
+            </ul>
+        </div>
+    </div>
+    <div id="content-wxtw">
+        微信推文
+    </div>
+    <div id="content-qnxw">
+        圈内新闻
+    </div>
+    <div id="content-ghsp">
+        果核视频
+    </div>
+
+    <div id="content-yqlj">
+        友情链接
+    </div>
+</div>
+
+<div id="bottom-dh">
+    底部导航栏
+</div>
+
+</body>
+</html>
