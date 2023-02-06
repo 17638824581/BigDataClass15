@@ -115,6 +115,69 @@
     // document.write(date.getTimezoneOffset())
 
 
+    /*
+    *   JS 的函数
+    *
+    * */
+
+    // 定义函数
+    // function min(a,b){
+    //     return a < b ? a : b;
+    // }
+    //
+    // // 定义函数
+    // // 我们定义了一个匿名函数，然后将这个 函数赋值给了 变量 max
+    // var max = function (a,b){
+    //     return a > b? a : b;
+    // }
+    //
+    // var mm = max;
+    //
+    // console.log(mm(50,99));
+
+    function jiecheng(num){
+        if (num <= 1){
+            return 1;
+        }
+
+        return num * jiecheng(num-1);
+    }
+
+    function ldy_richeng(day){
+        if (day == 3 || day == 13 || day == 23){
+            return "去公园遛弯";
+        }else if (day == 5 || day == 25 || day == 15){
+            return "去游泳馆游泳";
+        }else if(day == 8 || day == 18 || day == 28){
+            return "去和老伴约会";
+        }else{
+            return "没有什么安排";
+        }
+    }
+
+    function lpp_richeng(day){
+        if (day == 3 || day == 13 || day == 23){
+            return "去菜市场买菜";
+        }else if (day == 5 || day == 25 || day == 15){
+            return "儿子家看看孙子、孙女";
+        }else if(day == 8 || day == 18 || day == 28){
+            return "去和老伴约会";
+        }else{
+            return "您没啥事";
+        }
+    }
+
+    function jtqgs(name,richeng){
+        let date = new Date();
+        let date1 = date.getDate();
+        document.write("您好："+name+"<br>")
+        document.write("今天是"+date1+"号"+"<br>")
+        document.write("您应该去"+richeng(date1)+"<br>")
+    }
+
+
+    jtqgs("老爷爷",ldy_richeng);
+    jtqgs("老婆婆",lpp_richeng);
 
   </script>
 </body>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+  <h1 class="orange">我是H1标签</h1>
+  <p>我是 p 标签1</p>
+  <p id="p2">我是 p 标签2</p>
+  <p>我是 p 标签3</p>
+  无序列表：
+  <ul>
+    <li>我是无序列表列表项1</li>
+    <li class="orange">我是无序列表列表项2</li>
+    <li>我是无序列表列表项3</li>
+    <li>我是无序列表列表项4</li>
+    <li>我是无序列表列表项5</li>
+  </ul>
+
+  <form method="get" action="https://www.baidu.com/s">
+    <label>搜索：</label><input type="text" name="wd"/>
+    <input type="submit">
+  </form>
+
+  <p>我是 p 标签4</p>
+
+  <script>
+    /*
+    *   DOM 全称  Document object model，文档对象模型
+    *   我们可以通过  JS，来使用 DOM ，就可以来操作我们文档(网页)中，任何的一个对象
+    * */
+
+    // 我们可以通过 document 对象来直接获取 body 对象
+    // b.innertText 属性：代表 元素 b 的内部文本内容
+    // b.innnerHTML 属性: 代表 元素 b 的内部HTML内容
+
+    // getEelementsByTagName() 通过标签名获取元素节点
+    // b.getEelementsByTagName() 通过标签名获取b节点下面所有的指定标签的元素节点
+
+    //  将 p 标签元素 的字体颜色 改为红色
+
+    // 1.获取 p 标签节点元素
+    // let elements = document.body.getElementsByTagName("p");
+    // console.log(elements)
+    // let element = elements[0];
+    //
+    // // 2.修改元素的属性
+    // element.style.color = 'red';
+
+    // getElementById() : 通过元素的id属性获取到这个元素
+    // let p2 = document.getElementById("p2");
+    //
+    // p2.style.color = 'red';
+
+    /*
+    *   将页面中所有的 p 标签元素的字体颜色都改为 blue
+    * */
+    // let elements = document.getElementsByTagName("p");
+    //
+    // // 遍历 elements 这个集合
+    // for (let i = 0; i < elements.length; i++) {
+    //   elements[i].style.color = "blue";
+    // }
+
+    // let elements = document.getElementsByClassName("orange");
+    //
+    // for (let i = 0; i < elements.length; i++) {
+    //   elements[i].style.color = "orange";
+    // }
+
+    // 如果我们能够像 css选择器一样，来指定元素，就会方便很多
+    // querySelector() 按照指定的 css 选择器来获取一个元素对象
+
+    // let element = document.querySelector("p");
+    // let elements = document.querySelectorAll("p");
+    // let element1 = document.querySelector("#p2");
+    // let elements2 = document.querySelectorAll(".orange");
+
+
+    // getElementsByName() 通过元素的 name 属性来选择元素
+
+    // let elements = document.getElementsByName("wd");
+    // // setAttribute() 改元素的 html 属性
+    // elements[0].setAttribute("value","阿(′д｀ )…彡…彡");
+
+
+    // 1.修改所有p标签的颜色为 红色，字体加粗，加上边框。
+    // 选择所有的p标签
+    let elements = document.getElementsByTagName("p");
+    // 遍历 elements ，将其中每个p标签都设置 css 属性
+    for (let i = 0; i < elements.length; i++) {
+      // 设置字体颜色
+      elements[i].style.color = "red";
+      // 设置字体加粗
+      elements[i].style.fontWeight = "bolder";
+      // 设置边框
+      elements[i].style.border = "2px solid red";
+    }
+
+    // 2.修改无序列表所有的列表项，把列表项都加上超链接的效果，内容不变。
+    // 1.选择所有的li
+    let elements2 = document.getElementsByTagName("li");
+    // 2. 遍历 elements2 ，设置每个元素的属性
+    for (let i = 0; i < elements2.length; i++) {
+      elements2[i].innerHTML = "<a href=''>" + elements2[i].innerText + "</a>";
+    }
+
+    // 3.给h1标签加上背景图片，设置宽度 300px 高度 100px。
+    // 1. 选择 h1 元素
+    let h1 = document.querySelector("h1");
+    // 2. 修改 h1 元素的属性
+    h1.style.width = "300px";
+    h1.style.height = "100px";
+    h1.style.backgroundImage = "url('../imgs/1.jpg')";
+
+  </script>
+</body>
+</html>

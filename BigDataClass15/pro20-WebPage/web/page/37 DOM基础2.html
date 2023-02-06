@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+
+  <script>
+    // window.onload 是一个加载事件，
+    // 加载事件，会在当浏览器解析完毕整个网页的内容之后，被触发
+    window.onload = function (){
+      // p 是一个标签节点
+      // let p = document.getElementById("a");
+      // nodeType 的值就是一个整数,
+      // 1 : 标签节点
+      // 2 : 属性节点
+      // console.log(p.nodeType);
+
+      // 获取 p 的 aria-level属性节点
+      // var attr = p.getAttributeNode("aria-level");
+      // console.log(attr.nodeType);
+
+      // p.children 指的是 p 下面所有的 标签节点
+      // p.childNodes 指的是 p 下面所有的 标签节点 和 文本节点
+      // let cn = p.childNodes;
+      // console.log(cn[0].nodeType);
+
+
+      // 简单方法：
+      // let p = document.getElementById("a");
+      // p.innerHTML = p.innerHTML+"<img src='../imgs/1.jpg'/>";
+
+      // 原生DOM的添加节点的步骤：
+      // 1. 先拿到 p节点
+      let p = document.getElementById("a");
+      // 2. 创建 img 节点
+      let img = document.createElement("img");
+      // 3. 创建 img 节点的 src 属性节点
+      let attr = document.createAttribute("src");
+      // 4. 给 src 属性节点设置值
+      attr.value = "../imgs/1.jpg";
+      // 5. 将 src 属性节点添加到 img 节点中
+      img.setAttributeNode(attr);
+      // 6. 将组装好的 img 节点，添加到 p 的子节点中
+      // 将 img 节点插入到 p 子节点的末尾
+      // p.appendChild(img);
+      // 将 img 节点插入到 p.firstChild(p的第一个子节点)之前
+      p.insertBefore(img, p.firstChild);
+    }
+  </script>
+
+  <p id="a" aria-level="123">
+    <a href="">点我</a>
+    我是p的文本
+  </p>
+  <p>我是p标签</p>
+
+
+
+</body>
+</html>
