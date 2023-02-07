@@ -10,7 +10,7 @@
     window.onload = function () {
         // 1. 拿到所有的 a 元素
         let elements = document.querySelectorAll("td>a");
-        // 2. 给所有的 a 元素设置 点击事件
+        // 2. 给所有的 a 元素设置
         for (let i = 0; i < elements.length; i++) {
             elements[i].onclick = function () {
                 // 如何让我们 js 代码区分是哪个 a 元素被点击了！
@@ -24,7 +24,9 @@
         }
     }
 </script>
-<table border="1">
+
+
+<table border="1" id="table1">
     <tr>
         <th>序号</th>
         <th>姓名</th>
@@ -61,5 +63,27 @@
         <td><a id="a4" href="javascript:;">删除</a></td>
     </tr>
 </table>
+
+
+<script>
+    // 1. 获取 table 标签元素
+    let table = document.getElementById("table1");
+
+    // 2. 使用 cloneNode() 方法复制 table
+    //  如果我们不传入 boolean 的参数，则默认为 false : 只去复制这样元素节点本身，不包括它的子节点。
+    //  如果我们传入 true, 则会复制这个元素节点的 所有内容，包括它的所有子节点。
+
+    let table2 = table.cloneNode(true);
+
+    // 修改 table2 的 id 属性
+    table2.id = "table2";
+
+    // 3. 将复制出来的 table2 加入到页面上
+    document.body.appendChild(table2);
+
+    // console.log(table);
+    // console.log(table2);
+
+</script>
 </body>
 </html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM进阶</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #div {
+            height: 50px;
+            width: 50px;
+            background-color: pink;
+            border: 2px solid red;
+            /*
+              基于 定位 来实现元素的移动
+            */
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="div">我是div</div>
+<input id="addHeight" type="button" value="增高"/>
+<input id="subHeight" type="button" value="减高"/>
+<input id="addWidth" type="button" value="增宽"/>
+<input id="subWidth" type="button" value="减宽"/>
+<input id="reset" type="button" value="重置"/><br/>
+<input id="left" type="button" value="左移"/>
+<input id="right" type="button" value="右移"/>
+<input id="up" type="button" value="上移"/>
+<input id="down" type="button" value="下移"/>
+<input id="resetPostion" type="button" value="重置"/><br/>
+<input id="color" type="text" placeholder="请输入颜色值："/>
+<input id="recolor" type="button" value="改色"/><br/>
+
+<script>
+    // 获取按钮
+    let btn = document.querySelector("input");
+    // 获取 div
+    let div = document.getElementById("div");
+
+    // 给按钮添加 点击事件
+    btn.onclick = function () {
+        // 每点一次，给 div 宽度 + 50px
+
+        // 1. 先获取到 当前 div 的宽度
+        let width = getComputedStyle(div).width;
+        width = parseFloat(width);
+        // 2. 设置div 的宽度为 之前的宽度 + 50
+        div.style.width = width + 50 + "px";
+    };
+
+    // 实现左移按钮的功能
+    // 减少 div 元素的 left 属性的值
+    document.getElementById("left").onclick = function () {
+        // 先获取当前 div 的 left 属性值
+        let left = parseFloat(getComputedStyle(div).left);
+        // 每次点击减少 10px
+        div.style.left = left - 10 + 'px';
+    }
+
+    document.getElementById("recolor").onclick = function () {
+        // 如何获取输入框（表单元素）的值
+        // 访问它们的 value 属性值
+        let color = document.getElementById("color");
+        // 获取到输入的颜色值
+        let value = color.value;
+        // 将颜色值设置给 div 元素
+        let div = document.getElementById("div");
+        div.style.backgroundColor = value;
+    };
+
+
+
+
+
+    // 方法一：直接通过 元素对象.属性名 来操作属性
+    // 1. 获取 HTML 属性值
+    // console.log(input.value);
+    // 2. 修改属性值
+    // input.type = "text";
+    // input.id = "btnn";
+    // input.value = "哈哈哈";
+    // input.name = "abc";
+
+    // 方法二：可以使用 setAttribute() 以及 getAttribute() 来操作 HTML 属性。
+    // let id = input.getAttribute("id");
+    // let type = input.getAttribute("type");
+    // let name = input.getAttribute("name");
+    // console.log(id);
+    // console.log(type);
+    // console.log(name);
+
+    /*input.setAttribute("id","abc");
+    input.setAttribute("type","text");*/
+
+    // 操作元素的 CSS 属性
+
+    // 获取 css 属性值(获取到它现在真正的显示在页面上的被应用的属性值)
+    // 使用 input.style.height 只能够获取到 行内样式
+    // 使用 getComputedStyle() 方法可以获取到这个元素实际上的CSS属性值
+    // let computedStyle = getComputedStyle(input);
+    // console.log(computedStyle);
+    //
+    // // let height = computedStyle['height'];
+    // let height = computedStyle.height;
+    // console.log("height:"+height);
+
+
+    // 设置 css 属性值
+    // input.style = "background-color:red;border:1px dashed blue;";
+
+    // input.style.backgroundColor = "blue";
+    // input.style.border = "1px dashed red";
+    // input.style.borderRadius = "5px";
+    // input.style.width = "100px";
+    // input.style.height = "30px";
+
+
+</script>
+</body>
+</html>

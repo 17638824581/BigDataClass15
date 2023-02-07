@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换练习</title>
+    <style>
+      #div{
+        width: 300px;
+        height: 300px;
+        border: 5px solid red;
+      }
+
+      #div>img{
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+</head>
+<body>
+    <div id="div">
+      <img src="../imgs/1.jpg"/>
+    </div>
+    <input id="previous" type="button" value="上一张"/>
+    <input id="next" type="button" value="下一张"/>
+    <script>
+      // 准备五张图片的路径
+      paths = ['../imgs/1.jpg','../imgs/2.jpg','../imgs/3.jpg','../imgs/4.jpg','../imgs/5.jpg'];
+
+      // 记录当前显示的图片的索引
+      var index = 0;
+
+      // 下一张的效果
+      let next = document.getElementById("next");
+      next.onclick = function (){
+          // 修改 img 标签的 src 属性为 paths 中下一个元素的值
+          let img = document.querySelector("img");
+          img.src = paths[++index % paths.length];
+      };
+    </script>
+</body>
+</html>

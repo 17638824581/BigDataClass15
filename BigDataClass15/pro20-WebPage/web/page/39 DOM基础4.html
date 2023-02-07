@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM基础</title>
+</head>
+<body>
+  <div>
+      <p>我是p标签</p>
+  </div>
+
+  <script>
+    // 将 p 标签 替换为 h1 标签
+    let p = document.querySelector("div>p");
+
+    // 创建一个 h1 标签节点
+    let h1 = document.createElement("h1");
+    // 设置 h1 标签的内容
+    h1.innerText = "我是h1标签";
+
+    // 把 p 元素替换为 h1
+    p.parentNode.replaceChild(h1,p);
+
+
+  </script>
+</body>
+</html>
