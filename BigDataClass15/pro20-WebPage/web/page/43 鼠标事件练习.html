@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件练习</title>
+</head>
+<body>
+<script>
+    // 返回一个随机颜色
+    function randomColor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
+
+    var newDiv = null;
+
+    document.onmousedown = function (e) {
+        console.log("鼠标按下")
+        // 新建一个 div 对象
+        newDiv = document.createElement("div");
+        // newDiv.innerText = "我是新div";
+        newDiv.style.position = 'absolute';
+        newDiv.style.top = e.clientY + 'px';
+        newDiv.style.left = e.clientX + 'px';
+        newDiv.style.backgroundColor = randomColor();
+
+        document.body.appendChild(newDiv);
+    };
+
+    document.onmousemove = function (e) {
+        console.log("鼠标移动")
+        //修改 div 宽高
+        if (newDiv != null) {
+            // 当前 div 左上角的位置
+            let left = parseFloat(getComputedStyle(newDiv).left);
+            let top = parseFloat(getComputedStyle(newDiv).top);
+
+            // 当前鼠标的位置
+            let clientX = e.clientX;
+            let clientY = e.clientY;
+
+            // 实时修改div宽高
+            newDiv.style.width = clientX - left + 'px';
+            newDiv.style.height = clientY - top + 'px';
+        }
+    };
+
+    document.onmouseup = function (e) {
+        console.log("鼠标松开")
+        newDiv = null;
+    }
+
+
+</script>
+
+</body>
+</html>

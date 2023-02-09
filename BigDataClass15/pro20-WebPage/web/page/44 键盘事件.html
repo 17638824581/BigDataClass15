@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #409adf;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+<div id="dd">我是div</div>
+
+<!--    <input type="text" id="tt"/>-->
+<!--    <input type="checkbox"/>-->
+<!--    <input type="radio"/>-->
+<!--    <input type="password"/>-->
+<!--    <input type="button"/>-->
+
+<!--    <textarea></textarea>-->
+
+<!--    <select>-->
+<!--      <option>选项一</option>-->
+<!--      <option>选项二</option>-->
+<!--      <option>选项三</option>-->
+<!--    </select>-->
+
+<script>
+    //绑定键盘事件
+
+    // 键盘事件只能绑定给那些有 焦点 的元素
+
+    // 一般如果我们需要将键盘事件设置为 全局可用 的话
+    // 我们一般就会将键盘事件绑定给 document
+
+
+    //onkeydown 键盘按下事件
+    //onkeyup 键盘松开事件
+
+    // 给 document 绑定键盘事件
+    // document.onkeydown = function (){
+    //     alert("按键按下了！")
+    // };
+
+    // 给 文本框 绑定键盘事件
+    // document.getElementById("tt").onkeydown = function (){
+    //     alert("按下了！！！");
+    // }
+
+    // 如何知道我们按了什么键？
+    // 将键盘事件设置给 document
+
+    let div = document.getElementById("dd");
+
+    document.onkeydown = function (event) {
+
+        let left = parseFloat(getComputedStyle(div).left);
+        let top = parseFloat(getComputedStyle(div).top);
+
+        // 根据按键来操作div
+        switch (event.keyCode) {
+            case 37:
+                // 往左移动div
+                div.style.left = left - 10 + "px";
+                break;
+            case 38:
+                // 往上移动div
+                div.style.top = top - 10 + "px";
+                break;
+            case 39:
+                // 往右
+                div.style.left = left + 10 + "px";
+                break;
+            case 40:
+                // 往下
+                div.style.top = top + 10 + "px";
+                break;
+        }
+    };
+
+
+</script>
+</body>
+</html>

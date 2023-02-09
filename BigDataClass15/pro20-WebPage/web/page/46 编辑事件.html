@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑事件</title>
+</head>
+<body>
+    <h1>我是h1</h1>
+    <p>我是p标签我是p标签我是p标签我是p标签我是p标签</p>
+    <ul>
+        <li>无序列表项1</li>
+        <li>无序列表项2</li>
+        <li>无序列表项3</li>
+        <li>无序列表项4</li>
+        <li>无序列表项5</li>
+        <li>无序列表项6</li>
+    </ul>
+
+    <script>
+        //给 body 对象设置 oncopy 事件
+        //禁止复制
+        // document.body.oncopy = function (){
+        //     alert("你不能复制内容！");
+        //     return false;
+        // }
+
+        //给 body 对象设置 onselectstart 事件
+        // 禁止选中内容
+        document.onselectstart = function (){
+            return false;
+        }
+
+        // 禁止右键
+        document.oncontextmenu = function (){
+            return false;
+        }
+
+        // 禁止按F12
+        document.onkeydown = function (e){
+            if (e.keyCode == 123){
+                return false;
+            }
+        }
+
+    </script>
+</body>
+</html>

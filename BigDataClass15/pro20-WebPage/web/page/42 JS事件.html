@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: #99CCCC;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    我是div
+</div>
+<script>
+    // 获取div
+    let div = document.getElementById("div1");
+
+    //给div设置点击事件
+    div.onclick = function (){
+      alert("123");
+    };
+
+    //给 div 设置鼠标移入事件
+    div.onmouseover = function () {
+        console.log("鼠标进入到div中了！");
+        // div.style.backgroundColor = "red";
+        div.style.border = "1px solid red";
+    };
+
+    // 给 div 设置鼠标移出事件
+    div.onmouseout = function () {
+        console.log("鼠标从div中出去了！");
+        div.style.border = "";
+    };
+
+    //给div 设置鼠标按下事件
+    div.onmousedown = function () {
+          // 当鼠标按下div的时候，需要让div跟随鼠标
+          document.onmousemove = movediv;
+          // 设置div 为定位元素
+          div.style.position = 'absolute';
+    };
+
+    // 给 div 设置鼠标松开事件
+    div.onmouseup = function () {
+        // 为了放置松开鼠标后元素继续跟随
+        // 将鼠标移动事件移除掉
+        document.onmousemove = null;
+    }
+
+    function movediv(event) {
+      // 当事件被触发时，浏览器会调用绑定到事件上的函数。
+      // 还会给这个函数传入一个参数，事件对象参数，
+      // 事件对象参数内部包含了关于此次事件相关的一些内容。
+      console.log("鼠标移动了！");
+      let x = event.clientX;
+      let y = event.clientY;
+
+      // 只要鼠标移动，我们就修改 div 的 top 和 left 属性值
+      div.style.top = y + 'px';
+      div.style.left = x + 'px';
+    }
+
+
+    // JS 中常用的事件
+    // 是不是 只有按钮会有点击事件？
+    //  实际上 任何的元素都可以有点击事件
+
+    // 1. onclick      鼠标点击事件
+    // 2. onmouseover  鼠标移入事件
+    // 3. onmouseout   鼠标移出事件
+    // 4. onmousedown  鼠标按下事件
+    // 5. onmouseup    鼠标松开事件
+    // 6. onmousemove  鼠标移动事件
+
+</script>
+</body>
+</html>

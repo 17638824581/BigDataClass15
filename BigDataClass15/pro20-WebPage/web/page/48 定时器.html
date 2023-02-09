@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: #e52d34;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn1" value="超时定时器"/>
+<input type="button" id="btn2" value="循环定时器"/>
+
+<div id="d1"></div>
+
+<script>
+    let btn1 = document.getElementById('btn1');
+    let btn2 = document.getElementById('btn2');
+    let div1 = document.getElementById('d1');
+
+    //1. 超时定时器：setTimeout();
+    // 记录定时器id
+    let timeoutId;
+    btn1.onclick = function () {
+        // 清除之前的定时器
+        clearTimeout(timeoutId);
+        // 设置超时定时器，等待3秒后，执行指定的函数
+        // setTimeout() 设置定时器之后，会返回定时器的 id
+        timeoutId = setTimeout(() => {
+            // 关闭页面
+            window.close();
+        }, 3000);
+    }
+
+
+    //2. 循环定时器 ：setInterval();
+    btn2.onclick = function () {
+        // 设置循环定时器
+        // 要求每隔 10ms ，让div向右边移动 1px
+        setInterval(function () {
+            let left = parseFloat(getComputedStyle(div1).left);
+            div1.style.left = left+ 2 +'px';
+        }, 10)
+    }
+
+
+</script>
+</body>
+</html>

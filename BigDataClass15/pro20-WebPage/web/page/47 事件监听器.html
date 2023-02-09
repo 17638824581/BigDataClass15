@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件监听器</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+            <td><a class="delete" href="javascript:;">删除</a> <a href="javascript:;">修改</a></td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>18</td>
+            <td>男</td>
+            <td><a class="delete" href="javascript:;">删除</a> <a href="javascript:;">修改</a></td>
+        </tr>
+        <tr>
+            <td>王五</td>
+            <td>18</td>
+            <td>男</td>
+            <td><a class="delete" href="javascript:;">删除</a> <a href="javascript:;">修改</a></td>
+        </tr>
+        <tr>
+            <td>赵六</td>
+            <td>18</td>
+            <td>男</td>
+            <td><a class="delete" href="javascript:;">删除</a> <a href="javascript:;">修改</a></td>
+        </tr>
+        <tr>
+            <td>田七</td>
+            <td>18</td>
+            <td>男</td>
+            <td><a class="delete" href="javascript:;">删除</a> <a href="javascript:;">修改</a></td>
+        </tr>
+
+    </table>
+
+
+    <input type="button" value="点我" />
+    <script>
+        // 使用事件绑定方式给 按钮绑定一个点击事件
+        // document.getElementsByTagName("input")[0].onclick = function (){
+        //     alert("按钮被点击了，1");
+        // }
+        //
+        // document.getElementsByTagName("input")[0].onclick = function (){
+        //   alert("按钮被点击了，2");
+        // }
+
+        // 给同一个元素同一个事件绑定多个函数
+        // 我们可以使用事件监听器来实现这个事
+
+        // 怎么用事件监听器，给元素绑定事件？
+
+        // 1. 获取元素对象
+        // let input = document.getElementsByTagName("input")[0];
+        // // 2. 通过这个元素对象调用 addEventListener() 函数，来绑定事件
+        // input.addEventListener("click",(e)=>{
+        //   alert("第一次绑定的函数");
+        // })
+        //
+        // input.addEventListener("click",function (){
+        //   alert("第二次绑定的函数");
+        // })
+        //
+        // input.addEventListener("click",function (){
+        //   alert("第三次绑定的函数");
+        // })
+
+
+        // 给所有的 删除 链接添加点击事件
+        let elements = document.getElementsByClassName("delete");
+
+        // 以前的写法：使用事件处理器：使用（obj.onXxx = fn）的方式绑定事件
+        // for (let i = 0; i < elements.length; i++) {
+        //     elements[i].onclick = function (){
+        //         // console.log(this);
+        //
+        //         let tr = this.parentNode.parentNode;
+        //         console.log(tr)
+        //         tr.parentNode.removeChild(tr);
+        //     }
+        // }
+
+        // 使用 事件监听器 来添加事件
+        for (let i = 0; i < elements.length; i++) {
+            // obj.addEventListener(事件类型,函数)
+            elements[i].addEventListener('click',function (){
+                let tr = this.parentNode.parentNode;
+                console.log(tr)
+                tr.parentNode.removeChild(tr);
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>

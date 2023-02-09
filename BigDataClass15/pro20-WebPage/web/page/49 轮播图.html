@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图效果</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #window {
+            border: 10px solid blue;
+            height: 360px;
+            width: 600px;
+            background-color: red;
+            margin: 50px auto;
+            /*  处理溢出,将溢出来的部分隐藏掉  */
+            /*overflow: hidden;*/
+        }
+
+        #imgs {
+            width: 3000px;
+            position: relative;
+        }
+
+
+        #imgs > img {
+            height: 360px;
+            width: 600px;
+            /* 修改元素的类型 */
+            display: block;
+            float: left;
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- 用来显示轮播图的窗口 -->
+<div id="window">
+    <!-- 用来放置要轮播的图片的 -->
+    <div id="imgs">
+        <img src="../imgs/lunbo/lunbo1.jpg"/>
+        <img src="../imgs/lunbo/lunbo2.png"/>
+        <img src="../imgs/lunbo/lunbo3.jpg"/>
+        <img src="../imgs/lunbo/lunbo4.jpg"/>
+        <img src="../imgs/lunbo/lunbo5.jpg"/>
+    </div>
+</div>
+
+<input type="button" id="prev" value="上一张"/>
+<input type="button" id="next" value="下一张"/>
+
+<script>
+    // 将要求 imgs 移动动画的代码，包装为一个函数
+    /*
+    *   此函数用于执行某个元素水平方向上的 移动动画
+    *   obj : 要移动的元素。
+    *   distance : 要移动的距离，如果是负数，就往左移动。
+    *   len : 每次移动多长的间距。
+    *   time : 动画总时长。
+    * */
+    function Xmove(obj, distance, len, time) {
+        // 计算时间间隔
+        let step = time / (Math.abs(distance) / len);
+        len = distance > 0 ? len : -len;
+
+        // 记录实际移动的距离
+        let realLen = 0;
+
+        let id = setInterval(function (){
+            // 让obj移动一段距离
+            let left = parseFloat(getComputedStyle(obj).left);
+            obj.style.left = left + len + 'px';
+            realLen += len;
+
+            // 实际移动距离如果 >= 需要移动的距离，让动画停下来
+            if (Math.abs(realLen) >= Math.abs(distance)){
+                // 如果移动过头了，补偿回来
+                let sub = -(realLen - distance);
+                let left = parseFloat(getComputedStyle(obj).left);
+                obj.style.left = left + sub + 'px';
+
+                // 停止移动
+                clearInterval(id);
+            }
+        },step);
+    }
+
+
+    let btn1 = document.getElementById("next");
+    let btn2 = document.getElementById("prev");
+    let imgs = document.getElementById("imgs");
+
+    btn1.onclick = function () {
+        Xmove(imgs,-600,5,500);
+    }
+
+    btn2.onclick = function (){
+        Xmove(imgs,600,5,500);
+    }
+</script>
+</body>
+</html>

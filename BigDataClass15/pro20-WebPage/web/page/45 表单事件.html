@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单事件</title>
+</head>
+<body>
+
+    <!--
+        onfocus ： 获取焦点事件
+        onblur ： 失去焦点事件
+
+    -->
+    <input type="text" id="tt"/>
+    <input type="password" id="pp"/>
+
+    <script>
+        let text = document.getElementById("tt");
+        let psd = document.getElementById("pp");
+
+        // 给 text、psd 添加 onfocus 事件
+        text.onfocus = function (){
+            text.style.border = "5px solid red";
+        }
+
+        psd.onfocus = function (){
+            psd.placeholder = "获取焦点";
+            console.log("密码框获取到焦点了！");
+        }
+
+        // 给 text、psd 添加 onblur 事件
+        text.onblur = function (){
+            text.style.border = "";
+        }
+
+        psd.onblur = function (){
+            psd.placeholder = "";
+        }
+
+    </script>
+
+    <textarea id="txt">
+        我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，
+        我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，
+        我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，我是多行文本框，
+    </textarea>
+
+    <script>
+        // onselect 事件：内容选择事件
+        let txt = document.getElementById("txt");
+
+        // 当我们点击多行文本框时，自动选中其中全部内容
+        txt.onfocus = function (){
+            txt.select();
+        }
+
+        // txt.onselect = function (event){
+        //     console.log(event);
+        //     alert("禁止选择内容！");
+        // }
+
+    </script>
+
+    <hr>
+    你更喜欢哪种水果？
+    <input type="radio" id="in1" value="李子" name="like"/>李子
+    <input type="radio" value="桃子" name="like"/>桃子
+    <input type="radio" value="苹果" name="like"/>苹果
+
+    <script>
+        // onchange 事件： 选择改变事件，用于具有多个选项的表单元素
+        let elements = document.getElementsByTagName("input");
+
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].onchange = function (){
+                alert(this.value);
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
