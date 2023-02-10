@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的DOM操作</title>
+    <script src="../js/jQuery3.6.3.js"></script>
+</head>
+<body>
+<p id="p1">我是p标签1</p>
+<p id="p2">我是p标签2</p>
+<p id="p3">我是p标签3</p>
+<p id="p4">我是p标签4</p>
+<p id="p5">我是p标签5</p>
+<div id="div1">
+    我是div标签1
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+    </ul>
+</div>
+<div id="div2">
+    我是div标签2
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+    </ul>
+</div>
+<div id="div3">
+    我是div标签3
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+    </ul>
+</div>
+请输入用户名：<input type="text" name="uname"/><br>
+请输入密码：<input type="password" name="psd"/><br>
+<input type="button" value="提交"/>
+<script>
+    // jQuery 所提供的方法 一般都是 “查改一体” 的。
+    // 例如： text() 方法
+    //   如果没有参数 test() 获取元素 内部文本内容
+    //   如果有参数 text() 将这个元素的 内部文本 修改为 参数内容
+
+    // 由于 jQuery 选择器可能选择到多个元素
+    // 那么如果是多个元素，我们要获取它们的 html 内容时，不能够使用 html() 方法的返回值
+    // 可以给 html() 方法内部传入一个 回调函数，只要在回调函数写出需要对 html 内容做操作的代码
+    // 就可以将操作映射到每个元素上
+
+    // 获取多个元素的 html 内容
+    $('div').html((index,html)=>{
+        console.log('index='+index);
+        console.log('html='+html);
+    });
+
+    // 设置多个元素的 html 内容
+    // $('div').html("<h2>改好了！</h2>");
+
+
+    // 获取所有 div 元素的 id 属性
+    let attr = $('div').attr('id',(index,oldValue)=>{
+        console.log("index="+index)
+        console.log("id="+oldValue)
+    });
+
+
+    /* // 1.获取 p 标签内部的文本
+     let text = $('p').text();
+     console.log(text);
+
+     // 2.修改 p 标签内部的文本
+     $('p').text("哈哈哈");
+
+     // 3. 获取 div 标签内部的 html
+     console.log($('div').html());
+
+     // 4. 修改 div 标签的 html 内容
+     $('div').html("<h1>改好了！</h1>");
+
+     // 5. 给 提交按钮 添加点击事件，当点击后 获取两个文本框的内容，并弹窗输出出来
+     $(':button').click(function () {
+         let uname = $(':text').val();
+         let psd = $(':password').val();
+         alert("用户名：" + uname + "\n密码：" + psd);
+     });
+
+     // 6. 设置用户名默认内容为：test，设置密码框默认内容为：123
+     $(':text').val('test');
+     $(':password').val('123');
+
+     // 7. 通过 jQuery 来操作 元素的 HTML 属性？
+
+     // 获取元素的 id  html 属性
+     let id = $('p').attr('id');
+     // alert(id);
+
+     // 修改元素的 id 属性
+     $('p').attr('id','pp');
+
+     // 修改页面上的按钮改为文本框
+     $(':button').attr('type','text');*//* // 1.获取 p 标签内部的文本
+    let text = $('p').text();
+    console.log(text);
+
+    // 2.修改 p 标签内部的文本
+    $('p').text("哈哈哈");
+
+    // 3. 获取 div 标签内部的 html
+    console.log($('div').html());
+
+    // 4. 修改 div 标签的 html 内容
+    $('div').html("<h1>改好了！</h1>");
+
+    // 5. 给 提交按钮 添加点击事件，当点击后 获取两个文本框的内容，并弹窗输出出来
+    $(':button').click(function () {
+        let uname = $(':text').val();
+        let psd = $(':password').val();
+        alert("用户名：" + uname + "\n密码：" + psd);
+    });
+
+    // 6. 设置用户名默认内容为：test，设置密码框默认内容为：123
+    $(':text').val('test');
+    $(':password').val('123');
+
+    // 7. 通过 jQuery 来操作 元素的 HTML 属性？
+
+    // 获取元素的 id  html 属性
+    let id = $('p').attr('id');
+    // alert(id);
+
+    // 修改元素的 id 属性
+    $('p').attr('id','pp');
+
+    // 修改页面上的按钮改为文本框
+    $(':button').attr('type','text');*/
+
+
+</script>
+</body>
+</html>

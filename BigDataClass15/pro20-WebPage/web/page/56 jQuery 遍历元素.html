@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery遍历</title>
+    <script src="../js/jQuery3.6.3.js"></script>
+    <style>
+        .selected {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<h1>我是h1</h1>
+<div id="div1">
+    <ul>
+        <li class="selected">li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <button id="prev">上一个</button>
+    <button id="next">下一个</button>
+
+    <script>
+        $("#next").click(function () {
+            //1.能不能找到当前被选中的元素
+            let $selected = $(".selected");
+            // 2. 找当前被选中的元素的下一个元素
+            let next = $selected.next();
+            console.log(next);
+            // 如果后面有元素，则切换到下一个元素
+            if (next.length != 0) {
+                // 3. 设置这个下一个元素为 被选中
+                next.addClass('selected');
+            } else {
+                // 当前已经是最后一个元素，需要将 selected 设置给当前兄弟元素中的第一个元素
+                $($selected.siblings()[0]).addClass('selected')
+            }
+            // 4. 取消之前被选中的元素
+            $selected.removeClass('selected');
+
+        });
+    </script>
+
+    <div>
+        <p>我是div中div中的p
+            <a id="a2" href="">我是最深的a</a>
+        </p>
+        <p>我是div中div中的p</p>
+    </div>
+    <p>我是div中的p1</p>
+    <p class="red">我是div中的p2</p>
+    <p>我是div中的p3</p>
+</div>
+<div>
+    <a href="">a1</a>
+    <a href="">a2</a>
+    <a id="a" href="">a3</a>
+    <a href="">a4</a>
+    <a href="">a5</a>
+</div>
+<p>p1</p>
+<p>p2</p>
+<p>p3</p>
+<script>
+
+    // 向下遍历
+    // $obj.children() 可以获取 $obj 下的所有直接子元素
+    // $obj.find()   可以查找 $obj 下的所有后代元素
+    // 向上遍历
+    // $obj.parent()      获取 $obj 的直接父元素
+    // let parent = $("#a").parent();
+    // console.log(parent);
+    // $obj.parents()      获取 $obj 的所有祖先元素
+    // let parents = $("#a2").parents();
+    // console.log(parents);
+    // $obj.parentsUntil()  返回介于两个给定元素之间的所有祖先元素
+    // let parentsUntil = $("#a2").parentsUntil("body");
+    // console.log(parentsUntil);
+    // 1. 父元素找到指定的子元素
+    // let children = $("#div1").children("");
+    // div1 下面的所有子元素
+    // let all = $("#div1").find("*");
+
+    // 3. 找指定元素的兄弟元素
+
+    // 想要拿到 .red 所有兄弟元素下面的 a 元素
+
+    // 4. 找指定元素的同族元素
+
+
+</script>
+</body>
+</html>

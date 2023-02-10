@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery操作css</title>
+    <script src="../js/jQuery3.6.3.js"></script>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            float: left;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .radius {
+            border-radius: 10px;
+        }
+
+        #test {
+            border-width: 10px;
+            padding: 20px;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="red radius"></div>
+<button id="tg_bg">切换背景色</button>
+<button id="tg_rd">切换圆角</button>
+
+<div id="test">我是testdiv我是testdiv我是testdiv我是testdiv我是testdiv我是testdiv我是testdiv
+    我是testdiv我是testdiv我是testdiv我是testdiv
+    我是testdiv我是testdiv我是testdiv我是testdiv
+    我是testdiv我是testdiv我是testdiv我是testdiv我是testdiv
+</div>
+
+<button id="getwh"></button>
+<button id="addborder">增加边框宽度</button>
+<button id="addpadding">增加内边距宽度</button>
+
+<script>
+    /* 切换背景色 */
+    $('#tg_bg').click(function () {
+        $('div').toggleClass("red")
+    });
+
+    /* 切换圆角 */
+    $('#tg_rd').click(function () {
+        $('div').toggleClass("radius")
+    });
+
+    /* 使用 jQuery 获取尺寸的方法来获取元素的尺寸 */
+    $("#getwh").click(function () {
+        // 内容区宽高
+        let width = $('#test').width();
+        let height = $('#test').height();
+        // 边框内宽高
+        let innerWidth = $('#test').innerWidth();
+        let innerHeight = $('#test').innerHeight();
+        // 元素实际占据的宽高
+        let outerWidth = $('#test').outerWidth();
+        let outerHeight = $('#test').outerHeight();
+
+        console.log("内容区宽高："+width+","+height);
+        console.log("边框内宽高："+innerWidth+","+innerHeight);
+        console.log("元素实际占据的宽高："+outerWidth+","+outerHeight);
+
+    });
+
+
+</script>
+</body>
+</html>

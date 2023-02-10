@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window 对象</title>
+</head>
+<body>
+
+<script>
+    // 在 JS 中，提供了很多内置的对象，供我们来使用。
+
+    // 而 window 对象，就是这些对象中最重要的一个
+
+    document.writeln(document.URL);
+    document.writeln(location.href);
+
+
+    // location : 地址对象，管理网页的地址相关的内容
+    // location.href 属性：获取当前页面的网址
+    let href = location.href;
+    // location.search 属性：获取网址后面的参数（?之后的内容）
+    let search = location.search;
+    // location.hsah 属性：获取网址后面的锚点（#之后的内容）
+    let hash = location.hash;
+
+    // location.reload() 方法：可以刷新当前页面
+    // location.reload()
+
+    /*
+    *   navigator 对象
+    * */
+    // let userAgent = navigator.userAgent;
+    // // document.write(userAgent);
+    //
+    // let geolocation = navigator.geolocation;
+    // console.log(geolocation);
+    //
+    // let language = navigator.language;
+    //
+    // let onLine = navigator.onLine;
+    // document.write("是否联网:"+onLine);
+
+
+</script>
+
+<input type="button" onclick="location.reload()" value="点我">
+
+</body>
+</html>

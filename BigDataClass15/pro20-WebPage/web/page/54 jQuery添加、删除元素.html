@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>54 jQuery添加、删除元素</title>
+    <script src="../js/jQuery3.6.3.js"></script>
+    <style>
+      div{
+        width: 300px;
+        height: 100px;
+        margin: 10px;
+        background-color: #CCFFCC;
+      }
+    </style>
+</head>
+<body>
+<div id="div1" class="re">
+    <a href="">我是超链接1</a>
+</div>
+<div id="div2" class="re">
+  <a href="">我是超链接2</a>
+</div>
+<div id="div3">
+  <a href="">我是超链接3</a>
+</div>
+
+<p  class="re">我是p标签</p>
+
+<script>
+  // 删除元素 remove()
+  // $('#div2').remove();
+
+  // $('div').remove();
+
+  // 清空元素 empty()
+  // $('div').empty();
+
+  // 在删除或清空元素的时候，我们还可以再次过滤
+  // 例如：想要删除 div 中 class = re 的元素
+  // $('div').remove('.re')
+  // $('div.re').remove()
+  // $('div[class=re]').remove()
+
+
+  // $("div").after("<div style='background-color: #e52d34'>我是新div</div>");
+
+
+ /* // 1. 在#div1的内部的尾部添加一个 新的 a 标签
+  let a = document.createElement("a");
+  a.href="http://www.baidu.com";
+  a.innerText = "点我进入百度"
+
+  $('#div1').append(a);
+
+  // 2. 在#div1的内部的开头添加文本内容 "我是div"
+  $('#div1').prepend("我是div")
+
+  // 3. 在 #div1 的后面 再添加一个 div
+  $('#div1').after("<div style='background-color: #e52d34'>新div</div>");
+
+  // 4. 在 #div1 的前面 添加一个 p 标签
+  $('#div1').before("<p>我是p元素</p>");*/
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <!--  引入 jQuery  -->
+    <script src="../js/jQuery3.6.3.js"></script>
+</head>
+<body>
+    <input type="text" name="name" id="name" placeholder="请输入您的姓名："/><br>
+    <input type="text" name="age" id="age" placeholder="请输入您的年龄："/><br>
+    <input type="text" name="sex" id="sex" placeholder="请输入您的性别："/>
+    <input type="button" value="提交">
+
+    <script>
+        /*
+        *   原生JS的代码
+        * */
+
+        // 1. 首先给 按钮添加 点击事件
+        // let btn = document.querySelector("input[type=button]");
+        //
+        // btn.onclick = function (){
+        //     // 2. 获取 用户输入的姓名、年龄、性别
+        //     let element1 = document.getElementById("name");
+        //     let name = element1.value;
+        //     let element2 = document.getElementById("age");
+        //     let age = element2.value;
+        //     let element3 = document.getElementById("sex");
+        //     let sex = element3.value;
+        //
+        //     // 3. 使用弹窗输出内容
+        //     alert("您输入的内容是：\n 姓名："+name+"\n 性别："+sex+"\n 年龄："+age);
+        // }
+    </script>
+
+
+    <script>
+        /*
+        *   使用 jQuery
+        * */
+
+        // $ 就代表 jQuery 对象
+
+        // 1. 首先给 按钮添加 点击事件
+        $("input[type=button]").click(function (){
+            // 2. 获取 用户输入的姓名、年龄、性别
+            let name = $('#name').val();
+            let age = $('#age').val();
+            let sex = $('#sex').val();
+            // 3. 使用弹窗输出内容
+            alert("您输入的内容是：\n 姓名："+name+"\n 性别："+sex+"\n 年龄："+age);
+        });
+    </script>
+
+
+</body>
+</html>

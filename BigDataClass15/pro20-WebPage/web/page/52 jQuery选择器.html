@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+    <script src="../js/jQuery3.6.3.js"></script>
+</head>
+<body>
+<input type="button" value="按钮1" id="btn1">
+<input type="button" value="按钮2">
+<input type="button" value="按钮3">
+<input type="button" value="按钮4">
+<input type="button" value="按钮5">
+<input type="text" value="文本框">
+<input type="text" value="文本框">
+<input type="text" value="文本框">
+<input type="radio" value="单选框">
+<input type="radio" value="单选框">
+<input type="radio" value="单选框">
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<script>
+
+    // let elements = document.getElementsByTagName("input");
+    // for (let i = 0; i < elements.length; i++) {
+    //     elements[i].onclick = function (){
+    //       alert("点我干嘛!");
+    //     }
+    // }
+
+    // jQuery 选择器很智能
+    // $("input").click(function (){
+    //     alert("点我干嘛！");
+    // })
+    //
+
+    // 1.当我们引入 jQuery 代码时，就会在 window下面 添加两个属性：$ 、jQuery 并且这两个属性相同，都表示 jQuery 对象
+    // 2. $ 本质上是一个 function ，是一个函数，它能够执行
+    // 3. 通过 $() 来执行这个 函数，给这个函数传入 一个字符串类型的 css选择器，之后就会得到 jQuery类数组对象 ，这个对象中包含了查询到的所有元素
+    // 4. jQuery类数组对象本身也包含了 jQuery 的大部分方法，通过这些方法，我们就可以操作这个 jQuery类数组对象 中的元素。
+    // 5. 如果我们获取到了 原生的DOM 对象，则可以使用 $() 将其包装为 jQuery 元素，然后使用 jQuery 提供的方法。
+    // 6. 我们操作 jQuery 元素基本都是使用 jQuery 提供的方法，jQuery 的方法通常具有 "查改一体" 的特点
+
+    // let btn1 = document.getElementById("btn1");
+    // console.log("原生：",btn1);
+    // let $btn1 = $(btn1);
+    // $btn1.css('backgroundColor','red');
+
+    // let $btn1 = $("#btn1");
+    //
+    // console.log($btn1);
+    // console.log(typeof $btn1);
+
+    $('[type=text]').css('backgroundColor',"red")
+
+    // 选择器中开头的 : 代表 type 属性，
+    // :text 就代表选取 type=text 的元素
+    $(':text').css('backgroundColor','yellow')
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -21,8 +21,9 @@
         }
 
         #imgs {
-            width: 3000px;
+            width: 4200px;
             position: relative;
+            left: -600px;
         }
 
 
@@ -42,11 +43,13 @@
 <div id="window">
     <!-- 用来放置要轮播的图片的 -->
     <div id="imgs">
+        <img src="../imgs/lunbo/lunbo5.jpg"/>
         <img src="../imgs/lunbo/lunbo1.jpg"/>
         <img src="../imgs/lunbo/lunbo2.png"/>
         <img src="../imgs/lunbo/lunbo3.jpg"/>
         <img src="../imgs/lunbo/lunbo4.jpg"/>
         <img src="../imgs/lunbo/lunbo5.jpg"/>
+        <img src="../imgs/lunbo/lunbo1.jpg"/>
     </div>
 </div>
 
@@ -54,6 +57,13 @@
 <input type="button" id="next" value="下一张"/>
 
 <script>
+    // 定义一个全局变量，这个变量用来记录当前正在执行动画的循环定时器的id
+    var id = null;
+
+    // 记录当前是第几张图片
+    var index = 1;
+
+
     // 将要求 imgs 移动动画的代码，包装为一个函数
     /*
     *   此函数用于执行某个元素水平方向上的 移动动画
@@ -63,6 +73,20 @@
     *   time : 动画总时长。
     * */
     function Xmove(obj, distance, len, time) {
+
+        // 如果当前已经处在第五张（想要展示的最后一张），还要下一张的话，则先切换到 假的第五张，再执行动画
+        if (index==5 && distance<0){
+            // 快速将图片切换到真的第一张之前
+            imgs.style.left =  "0px";
+            index = 0;
+        }
+        //
+        if (index==1 && distance>0){
+            // 直接跳到最后一张之后
+            imgs.style.left = "-3600px"
+            index = 6;
+        }
+
         // 计算时间间隔
         let step = time / (Math.abs(distance) / len);
         len = distance > 0 ? len : -len;
@@ -70,23 +94,34 @@
         // 记录实际移动的距离
         let realLen = 0;
 
-        let id = setInterval(function (){
-            // 让obj移动一段距离
-            let left = parseFloat(getComputedStyle(obj).left);
-            obj.style.left = left + len + 'px';
-            realLen += len;
-
-            // 实际移动距离如果 >= 需要移动的距离，让动画停下来
-            if (Math.abs(realLen) >= Math.abs(distance)){
-                // 如果移动过头了，补偿回来
-                let sub = -(realLen - distance);
+        // 如果当前没有正在执行的动画，则添加新的动画
+        if(id == null){
+            id = setInterval(function (){
+                // 让obj移动一段距离
                 let left = parseFloat(getComputedStyle(obj).left);
-                obj.style.left = left + sub + 'px';
+                obj.style.left = left + len + 'px';
+                realLen += len;
 
-                // 停止移动
-                clearInterval(id);
-            }
-        },step);
+                // 实际移动距离如果 >= 需要移动的距离，让动画停下来
+                if (Math.abs(realLen) >= Math.abs(distance)){
+                    // 如果移动过头了，补偿回来
+                    let sub = -(realLen - distance);
+                    let left = parseFloat(getComputedStyle(obj).left);
+                    obj.style.left = left + sub + 'px';
+
+                    // 移动到位，停止动画
+                    clearInterval(id);
+                    // 将 id 置为 null，保证其他动画能够正常添加
+                    id = null;
+                    // 根据移动方向，更改表示图片的索引
+                    if (distance<0){
+                        index++;
+                    }else{
+                        index--;
+                    }
+                }
+            },step);
+        }
     }
 
 
@@ -95,11 +130,13 @@
     let imgs = document.getElementById("imgs");
 
     btn1.onclick = function () {
-        Xmove(imgs,-600,5,500);
+        console.log(index);
+        Xmove(imgs,-600,10,200);
     }
 
     btn2.onclick = function (){
-        Xmove(imgs,600,5,500);
+        console.log(index);
+        Xmove(imgs,600,10,200);
     }
 </script>
 </body>
