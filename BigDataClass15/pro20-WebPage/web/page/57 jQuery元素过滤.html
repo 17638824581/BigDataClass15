@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素过滤</title>
+    <script src="../js/jQuery3.6.3.js"></script>
+    <style>
+        .xuanfu {
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+
+<script>
+
+    // filter()：从现有选择到的元素中 按照条件过滤元素
+    // not()：从现有选择到的元素中 按照条件移除元素
+
+    // first()：从现有选择到的元素中，选择第一个
+    // last() ：从现有选择到的元素中，选择最后一个
+
+    // eq() ：从现有选择到的元素中，选择 指定索引的那个
+
+    // $("a") 选择到了5个a元素
+    // $("a").filter() ，指的是从 5个a元素里面过滤出来想要的元素
+
+    // console.log($("a").filter(".b"));
+    // console.log($("a").not(".b"));
+    // console.log($("a").first());
+    // console.log($("a").last());
+    // console.log($("a").eq(2));
+
+
+    // jQuery 给元素添加事件
+
+    // 添加页面加载完成事件
+    // $(fn) 直接给 $() 传入一个函数，这个函数就会被jQuery绑定给页面加载完成事件。
+
+    // resize 调整大小事件
+    $(window).resize(function (event){
+        let innerWidth = $(window).innerWidth();
+        let innerHeight = $(window).innerHeight();
+
+        console.log(innerWidth+","+innerHeight);
+    });
+
+    $(function () {
+        // 1. 元素.事件名(fn);
+        $("#btn").click(function () {
+            console.log("被单击了！")
+        });
+
+        $("#btn").dblclick(function () {
+            console.log("被双击了！");
+        });
+
+        $("#btn").hover(function () {
+            console.log("触发悬浮事件！");
+            $("#btn").toggleClass("xuanfu");
+        });
+
+        // 给输入框设置change事件
+        //change事件是当表单元素的 value 值受到改变后（元素失去焦点后）触发
+        $("#input").change(function () {
+            console.log("元素value受到修改！")
+        });
+
+        // submit 事件：指的是表单提交事件，在表单被提交给服务器之前触发
+        $("form").submit(function () {
+            // 在表单提交之前，对输入的账号和密码做一次验证
+            let zh = $("#input").val();
+            if (zh == "" || zh.length < 6) {
+                alert("账号不能为空，且长度要大于6");
+                // 阻止表单提交
+                return false;
+            }
+
+            let pwd = $(":password").val();
+            if (pwd == "" || pwd.length < 10) {
+                alert("密码不能为空，且长度不小于10");
+                // 阻止表单提交
+                return false;
+            }
+        });
+    })
+</script>
+
+<body>
+<p>
+    <a href="" id="a1">超链接1</a>
+    <a href="" class="b">超链接2</a>
+    <a href="">超链接3</a>
+    <a href="">超链接4</a>
+    <a href="" class="b">超链接5</a>
+</p>
+<form method="get" action="">
+    <label>
+        请输入账号：<input type="text" required id="input"/>
+    </label>
+    <br>
+    <label>
+        请输入密码：<input type="password" required/>
+    </label>
+    <br>
+    <input type="submit"/>
+</form>
+
+<button id="btn">点我</button>
+
+
+</body>
+</html>

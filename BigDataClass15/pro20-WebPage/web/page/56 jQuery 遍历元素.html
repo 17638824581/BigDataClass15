@@ -8,6 +8,11 @@
         .selected {
             border: 2px solid red;
         }
+
+        .liselected{
+            border: 1px solid red;
+            background-color: #FFFFCC;
+        }
     </style>
 </head>
 <body>
@@ -55,41 +60,75 @@
     <p>我是div中的p3</p>
 </div>
 <div>
-    <a href="">a1</a>
+    <a href="" id="a1">a1</a>
     <a href="">a2</a>
     <a id="a" href="">a3</a>
     <a href="">a4</a>
-    <a href="">a5</a>
+    <a href="" id="a5">a5</a>
 </div>
 <p>p1</p>
 <p>p2</p>
 <p>p3</p>
+
+<div>
+    <ol id="test">
+        <li class="liselected">列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+        <li>列表项5</li>
+        <li>列表项6</li>
+    </ol>
+</div>
 <script>
+    // 点击事件要执行的代码封装为一个函数
+    function nextClass(){
+        // 移除自己的 class 属性
+        $(this).removeClass("liselected");
+        // 移除自己的点击事件
+        $(this).off('click');
 
-    // 向下遍历
-    // $obj.children() 可以获取 $obj 下的所有直接子元素
-    // $obj.find()   可以查找 $obj 下的所有后代元素
-    // 向上遍历
-    // $obj.parent()      获取 $obj 的直接父元素
-    // let parent = $("#a").parent();
-    // console.log(parent);
-    // $obj.parents()      获取 $obj 的所有祖先元素
-    // let parents = $("#a2").parents();
-    // console.log(parents);
-    // $obj.parentsUntil()  返回介于两个给定元素之间的所有祖先元素
-    // let parentsUntil = $("#a2").parentsUntil("body");
-    // console.log(parentsUntil);
-    // 1. 父元素找到指定的子元素
-    // let children = $("#div1").children("");
-    // div1 下面的所有子元素
-    // let all = $("#div1").find("*");
+        // 让自己和父元素的最后一个元素做比较
+        // 以此来判断自己是不是最后一个元素
+        if($(this).is($(this).parent().children().last())){
+            // 将 class 属性继承给 第一个兄弟元素
+            $(this).siblings().first().addClass("liselected");
+            // 给 第一个兄弟元素 点击事件
+            $(this).siblings().first().click(nextClass);
+        }else{
+            // 将 class 属性继承给下一个兄弟元素
+            $(this).next().addClass("liselected");
+            // 给 下一个兄弟元素添加 点击事件
+            $(this).next().click(nextClass);
+        }
+    }
 
-    // 3. 找指定元素的兄弟元素
+    // 开始的时候，将点击事件添加给第一个li
+    $('.liselected').click(nextClass);
 
-    // 想要拿到 .red 所有兄弟元素下面的 a 元素
+    // next() 方法和 prev() 方法
 
-    // 4. 找指定元素的同族元素
+    // next() 下一个兄弟元素
+    console.log($("#a").next().next());
+    // prev() 上一个兄弟元素
+    console.log($("#a").prev().prev());
 
+    // nextAll() 和 prevAll() 方法
+    // nextAll() 获取当前元素后面所有的兄弟元素
+    console.log($("#a").nextAll());
+
+    // prevAll() 获取当前元素前面所有的兄弟元素
+    console.log($("#a").prevAll());
+
+    // nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素
+    // prevUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素
+
+    // 选择从 #a5 往前面到 #a1为止之间的所有兄弟元素
+    let prevUntil = $('#a5').prevUntil("#a1");
+    console.log(prevUntil);
+
+    let nextUntil = $("#a1").nextUntil("#a5");
+    console.log(nextUntil);
 
 </script>
 </body>
