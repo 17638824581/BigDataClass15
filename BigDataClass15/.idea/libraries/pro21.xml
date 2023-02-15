@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="pro21">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pro21-JavaWeb/libs/dom4j-2.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/pro21-JavaWeb/libs/dom4j-2.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -9,73 +9,83 @@
             margin: 0;
         }
 
-        #daohang {
-            /*text-align: center;*/
+        .list{
+            float: left;
+            padding: 5px 20px;
+            margin: 0 20px;
             background-color: #CCFFCC;
-            width: 100%;
-            height: 30px;
+        }
+        .list>ul>li{
+            margin: 10px 0;
         }
 
-        #daohang > a {
-            padding: 10px 20px;
-            background-color: #409adf;
+        .list>ul>li:hover{
+            color: #ec4448;
+            cursor: pointer;
         }
 
-        .list {
-            padding: 20px 10px;
-            background-color: #ec4448;
-            width: 80px;
-            position: absolute;
-            /*left: 120px;*/
-        }
-
-        .list > ul {
-            list-style-type: none;
-        }
-
-        .hidden {
+        .list > ul{
             display: none;
+            list-style-type: none;
         }
 
     </style>
 
     <script src="../js/jQuery3.6.3.js"></script>
     <script>
-
         $(function () {
-            //给 第一个菜单 添加鼠标悬浮事件
-            $("#daohang>a").first().hover(function () {
-                $(".list").toggleClass("hidden");
+            $(".list").hover(function (){
+                $(this).children("ul").slideToggle(200);
             });
-
-            //给 第一个下拉菜单 也添加鼠标悬浮事件
-            $(".list").first().hover(function () {
-                $(".list").first().toggleClass("hidden");
-            });
-
-
         })
-
-
     </script>
 
 </head>
 <body>
 <div id="daohang">
-    <a href="">第一个菜单</a>
-    <a href="">第二个菜单</a>
-    <a href="">第三个菜单</a>
-    <a href="">第四个菜单</a>
-    <a href="">第五个菜单</a>
-</div>
-<div class="list hidden">
-    <ul>
-        <li>列表项一</li>
-        <li>列表项二</li>
-        <li>列表项三</li>
-        <li>列表项四</li>
-        <li>列表项五</li>
-    </ul>
+    <div class="list">
+        <a href="">第一个菜单</a>
+        <ul>
+            <li>列表项一</li>
+            <li>列表项二</li>
+            <li>列表项三</li>
+            <li>列表项四</li>
+            <li>列表项五</li>
+        </ul>
+    </div>
+
+    <div class="list">
+        <a href="">第二个菜单</a>
+        <ul>
+            <li>列表项一</li>
+            <li>列表项二</li>
+            <li>列表项三</li>
+            <li>列表项四</li>
+            <li>列表项五</li>
+        </ul>
+    </div>
+
+    <div class="list">
+        <a href="">第三个菜单</a>
+        <ul>
+            <li>列表项一</li>
+            <li>列表项二</li>
+            <li>列表项三</li>
+            <li>列表项四</li>
+            <li>列表项五</li>
+        </ul>
+    </div>
+
+    <div class="list">
+        <a href="">第四个菜单</a>
+        <ul>
+            <li>列表项一</li>
+            <li>列表项二</li>
+            <li>列表项三</li>
+            <li>列表项四</li>
+            <li>列表项五</li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>

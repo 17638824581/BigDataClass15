@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <script src="../js/jQuery3.6.3.js"></script>
+    <style>
+        #data{
+            border: 2px solid red;
+            height: 200px;
+            width: 200px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    请求结果：
+    <div id="data">
+    </div>
+    <button id="request">点击发送请求给服务器</button>
+    <script>
+        // 给按钮添加点击事件
+        $("#request").click(function (){
+            alert("给服务器发送ajax请求！");
+
+            // 发送 ajax 请求
+            $.ajax({
+                // url 表示发送请求到哪儿
+                url:"http://localhost:8080/pro01/helloServlet",
+                // type 表示请求的类型：get、post 请求
+                type:"GET",
+                // success 表示请求发送成功后要执行的函数
+                success:function (){
+                    alert("请求成功！");
+                },
+                // 表示发送错误是要执行的函数
+                error:function (){
+                    alert("请求失败！");
+                }
+            });
+
+        });
+
+    </script>
+</body>
+</html>
