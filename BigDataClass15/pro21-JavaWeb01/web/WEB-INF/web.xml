@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- 配置上下文参数（环境参数） -->
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql:3306//localhost/my_db</param-value>
+    </context-param>
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.mysql.cj.jdbc.Driver</param-value>
+    </context-param>
+
+
+
+    <!-- 如何配置 Servlet 程序？
+        给我们的 Servlet 程序分配一个具体的访问路径，
+        使得用户能够通过 访问路径发送请求到 我们的Servlet程序中
+     -->
+
+    <!--  1. 给 Servlet程序 配置一个名称-->
+    <servlet>
+        <!-- 给这个Servlet程序起一个名字(任意) -->
+        <servlet-name>HelloServlet</servlet-name>
+        <!-- 标明Servlet程序的全类名 -->
+        <servlet-class>com.xty.servlet.HelloServlet</servlet-class>
+    </servlet>
+
+    <!--  2. 给指定名称的 Servlet 程序配置访问路径  -->
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>com.xty.servlet.TestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FormServlet</servlet-name>
+        <servlet-class>com.xty.servlet.FormServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>FormServlet</servlet-name>
+        <url-pattern>/form</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloServlet2</servlet-name>
+        <servlet-class>com.xty.servlet.HelloServlet2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>sh3</servlet-name>
+        <servlet-class>com.xty.servlet.HelloServlet3</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>小王</param-value>
+        </init-param>
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>18</param-value>
+        </init-param>
+        <init-param>
+            <param-name>sex</param-name>
+            <param-value>男</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestReustServlet</servlet-name>
+        <servlet-class>com.xty.servlet.TestReustServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestReustServlet</servlet-name>
+        <url-pattern>/testRequest</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>sh3</servlet-name>
+        <url-pattern>/hello3</url-pattern>
+    </servlet-mapping>
+
+</web-app>

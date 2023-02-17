@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="pro21">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/pro21-JavaWeb/libs/dom4j-2.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro21-JavaWeb01/web/WEB-INF/lib/druid-1.2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro21-JavaWeb01/web/WEB-INF/lib/mysql-connector-java-8.0.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro21-JavaWeb01/web/WEB-INF/lib/servlet-api.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/pro21-JavaWeb/libs/dom4j-2.1.4-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
