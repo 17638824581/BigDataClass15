@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="pro21">
+  <artifact type="exploded-war" name="pro21">
     <output-path>$PROJECT_DIR$/out/artifacts/pro21</output-path>
-    <root id="archive" name="pro21.war">
+    <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="pro21-JavaWeb01" />

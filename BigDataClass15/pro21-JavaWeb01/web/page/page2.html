@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>表单</title>
+    <!-- base 标签可以用来指示我们页面中的 项目路径 计算时参照哪个路径来算 -->
+<!--    <base href="http://localhost/pro21/page/abc/bcd/"/>-->
+</head>
+<body>
+<h1>我是 PAGE 2</h1>
+<a href="../index.html">回到主页</a>
+<a href="../page1.html">访问page1</a>
+<a href="page3.html">访问page3</a>
+<hr>
+<form action="http://localhost/pro21/testRequest" method="POST">
+    <label>
+        姓名：<input type="text" name="name" placeholder="请输入您的姓名"/>
+    </label><br>
+    <label>
+        性别：<input type="text" name="sex" placeholder="请输入您的性别"/>
+    </label><br>
+    <label>
+        年龄：<input type="text" name="age" placeholder="请输入您的年龄"/>
+    </label><br>
+    <label>
+        密码：<input type="password" name="psd" placeholder="请输入您的密码"/>
+    </label><br>
+    <label>
+        爱好：
+        <input type="checkbox" name="like" value="pingpang"/>乒乓球
+        <input type="checkbox" name="like" value="football"/>足球
+        <input type="checkbox" name="like" value="basketball"/>篮球
+    </label><br>
+
+    <input type="submit"/>
+</form>
+<hr>
+<form method="get" action="/pro21/verifyNumber">
+    <label>
+        手机号：<input type="text" name="number" required>
+    </label>
+    <label>
+        邮箱号：<input type="email" name="email" required>
+    </label>
+    <input type="submit"/>
+</form>
+</body>
+</html>

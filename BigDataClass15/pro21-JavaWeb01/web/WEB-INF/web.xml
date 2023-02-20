@@ -84,7 +84,7 @@
 
     <servlet>
         <servlet-name>TestReustServlet</servlet-name>
-        <servlet-class>com.xty.servlet.TestReustServlet</servlet-class>
+        <servlet-class>com.xty.servlet.TestRequestServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -95,6 +95,58 @@
     <servlet-mapping>
         <servlet-name>sh3</servlet-name>
         <url-pattern>/hello3</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>VerifyNumberServlet</servlet-name>
+        <servlet-class>com.xty.servlet.VerifyNumberServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>VerifyNumberServlet</servlet-name>
+        <url-pattern>/verifyNumber</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VerifyEmailServlet</servlet-name>
+        <servlet-class>com.xty.servlet.VerifyEmailServlet</servlet-class>
+    </servlet>
+    
+
+
+    <servlet-mapping>
+        <servlet-name>VerifyEmailServlet</servlet-name>
+        <url-pattern>/verifyEmail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestRequestDispatcherServlet</servlet-name>
+        <servlet-class>com.xty.servlet.TestRequestDispatcherServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>TestRequestDispatcherServlet</servlet-name>
+        <url-pattern>/testDispatcher</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestResponseServlet</servlet-name>
+        <servlet-class>com.xty.servlet.TestResponseServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestResponseServlet</servlet-name>
+        <url-pattern>/testResponse</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestRedirectServlet</servlet-name>
+        <servlet-class>com.xty.servlet.TestRedirectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestRedirectServlet</servlet-name>
+        <url-pattern>/redirect</url-pattern>
     </servlet-mapping>
 
 </web-app>

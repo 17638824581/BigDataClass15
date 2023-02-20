@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="pro22">
+    <output-path>$PROJECT_DIR$/out/artifacts/pro22</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="pro22-JavaWeb02/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="pro22-JavaWeb02" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="pro22" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

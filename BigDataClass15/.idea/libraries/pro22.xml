@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="pro22">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/commons-dbutils-1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/druid-1.2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/junit-4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/mysql-connector-java-8.0.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/servlet-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
