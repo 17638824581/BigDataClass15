@@ -3,6 +3,8 @@ package com.xty.service;
 import com.xty.bean.User;
 import com.xty.dao.impl.UserDaoImpl;
 
+import java.util.List;
+
 /**
  * 针对于 user 表的服务类
  * @author Mr.yu
@@ -31,4 +33,12 @@ public class UserService {
         return add == 1;
     }
 
+    /**
+     *  获取所有用户信息
+     */
+    public List<User> getAllUser(){
+        UserDaoImpl userDao = new UserDaoImpl();
+        List<User> users = userDao.sllectAll();
+        return users;
+    }
 }

@@ -8,10 +8,19 @@
         <servlet-name>RegisterUserServlet</servlet-name>
         <servlet-class>com.xty.servlet.RegisterUserServlet</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>ShowUsersServlet</servlet-name>
+        <servlet-class>com.xty.servlet.ShowUsersServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/addUser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ShowUsersServlet</servlet-name>
+        <url-pattern>/allUser</url-pattern>
     </servlet-mapping>
     
 </web-app>

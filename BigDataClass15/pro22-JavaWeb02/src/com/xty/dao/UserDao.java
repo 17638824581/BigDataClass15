@@ -2,6 +2,8 @@ package com.xty.dao;
 
 import com.xty.bean.User;
 
+import java.util.List;
+
 /**
  * 针对于 user 表的 Dao操作类
  * @author Mr.yu
@@ -63,4 +65,13 @@ public interface UserDao {
      * @date 2023/2/20 16:53
      */
     User selectByEamil(String email);
+
+    
+    /**
+     * 查询所有用户信息
+     * @return List<User>
+     * @author Mr.yu
+     * @date 2023/2/21 17:26
+     */
+    List<User> sllectAll();
 }

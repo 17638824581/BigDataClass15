@@ -55,7 +55,7 @@
             border: none;
             cursor: pointer;
         }
-        input[name=yzm]{
+        input[name=auth_code]{
             width: 160px;
         }
         #img-yzm{
@@ -66,7 +66,14 @@
             top: 10px;
         }
 
+        #msg{
+            font-size: 14px;
+            color: red;
+            text-align: center;
+        }
+
     </style>
+    <script src="js/jQuery3.6.3.js"></script>
 </head>
 <body>
 <img src="imgs/logo.jpg" id="logo"/>
@@ -78,15 +85,16 @@
             <label>用户名称：</label>
             <input type="text" name="username" required/><br>
             <label>用户密码：</label>
-            <input type="text" name="password" required/><br>
+            <input type="password" name="password" required/><br>
             <label>确认密码：</label>
-            <input type="text" name="repassword" required/><br>
+            <input type="password" name="repassword" required/><br>
             <label>电子邮件：</label>
             <input type="email" name="email" required/><br>
             <label>验证码：</label>
             <input type="text" name="auth_code"/>
             <img src="imgs/yzm.jfif" id="img-yzm">
             <br>
+            <p id="msg">注册失败！</p>
             <input type="submit" value="注册" id="submit">
         </form>
     </div>

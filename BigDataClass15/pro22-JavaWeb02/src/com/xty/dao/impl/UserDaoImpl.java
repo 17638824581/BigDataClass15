@@ -6,6 +6,7 @@ import com.xty.dao.UserDao;
 import com.xty.util.JdbcUtil;
 
 import java.sql.Connection;
+import java.util.List;
 
 public class UserDaoImpl extends BaseDao implements UserDao {
     /**
@@ -109,5 +110,20 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         User user = super.queryOne(User.class, conn, sql, email);
         JdbcUtil.close(conn);
         return user;
+    }
+
+    /**
+     * 查询所有用户信息
+     * @return List<User>
+     * @author Mr.yu
+     * @date 2023/2/21 17:26
+     */
+    @Override
+    public List<User> sllectAll() {
+        String sql = "select * from user";
+        Connection conn = JdbcUtil.getConn();
+        List<User> users = super.queryAll(User.class, conn, sql);
+        JdbcUtil.close(conn);
+        return users;
     }
 }
