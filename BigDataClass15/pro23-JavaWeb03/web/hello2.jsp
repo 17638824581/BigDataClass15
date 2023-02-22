@@ -31,5 +31,4 @@
 
 <%-- 将底部信息栏包含到我们 hello1.jsp 的尾部 --%>
 <%--<%@ include file="bottom.jsp"%>--%>
-
 <jsp:include page="bottom.jsp"></jsp:include>

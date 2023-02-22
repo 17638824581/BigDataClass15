@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax测试</title>
+</head>
+<body>
+<div id="div"></div>
+<script>
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    }else{
+        xhr = new ActiveXObject();
+    }
+
+    xhr.open("GET","http://localhost/pro23/ajax");
+    xhr.send();
+
+    xhr.onreadystatechange = function (){
+        if (xhr.readyState == 4 && xhr.status == 200){
+            alert(xhr.responseText);
+        }
+    }
+</script>
+</body>
+</html>

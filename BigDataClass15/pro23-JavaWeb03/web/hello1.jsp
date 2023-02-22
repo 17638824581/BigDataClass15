@@ -22,22 +22,31 @@
 <%
     // 使用代码脚本向 四大域对象中 存储数据
     // pageContext 域 只在当前 jsp 页面中有效
-    pageContext.setAttribute("name", "pageConext的数据");
+    pageContext.setAttribute("name1", "pageConext的数据");
     // request 域 只在同一个请求下有效
-    request.setAttribute("name", "request的数据");
+    request.setAttribute("name2", "request的数据");
     // session 域 只在同一个会话中有效
-    session.setAttribute("name", "session的数据");
+    session.setAttribute("name3", "session的数据");
     // application 在整个项目内有效
-    application.setAttribute("name", "application的数据");
+    application.setAttribute("name4", "application的数据");
 %>
 
-<h3><%= pageContext.getAttribute("name")%>
+<h3>
+<%--    <%= pageContext.getAttribute("name1")%>--%>
+    <%-- 使用EL表达式来取 key 为 name1 的数据 --%>
+    ${name1}
 </h3>
-<h3><%= request.getAttribute("name")%>
+<h3>
+<%--    <%= request.getAttribute("name2")%>--%>
+    ${name2}
 </h3>
-<h3><%= session.getAttribute("name")%>
+<h3>
+<%--    <%= session.getAttribute("name3")%>--%>
+    ${name3}
 </h3>
-<h3><%= application.getAttribute("name")%>
+<h3>
+<%--    <%= application.getAttribute("name4")%>--%>
+    ${name4}
 </h3>
 
 <%--
@@ -51,7 +60,7 @@
 <%--%>--%>
 
 <%-- 请求转发标签 --%>
-<jsp:forward page="hello2.jsp"></jsp:forward>
+<%--<jsp:forward page="hello2.jsp"></jsp:forward>--%>
 
 <%-- 将底部信息栏包含到我们 hello1.jsp 的尾部 --%>
 <%@ include file="bottom.jsp"%>
