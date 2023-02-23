@@ -14,7 +14,7 @@ import java.util.List;
  * @author Mr.yu
  * @date 2023/2/20 16:24
  */
-public class TestBaseDao {
+public class BaseDaoTest {
     
     /**
      * 测试增删改

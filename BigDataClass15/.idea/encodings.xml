@@ -4,5 +4,9 @@
     <file url="file://$PROJECT_DIR$/pro14-IoStream/books/哈利波特2.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/pro14-IoStream/output/stu.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/pro14-IoStream/output/students.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pro24-MybatisDemo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro24-MybatisDemo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro24-MybatisTest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro24-MybatisTest/src/main/resources" charset="UTF-8" />
   </component>
 </project>

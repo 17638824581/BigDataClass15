@@ -19,3 +19,22 @@ create table user(
 desc user;
 
 select * from user;
+
+-- 创建图书表
+create table books(
+    id int primary key auto_increment comment '图书id',
+    title varchar(128) not null unique comment '书名',
+    author varchar(128) not null default '佚名' comment '作者',
+    price double comment '价格',
+    sales int comment '销量',
+    count int comment '库存',
+    picture mediumblob comment '封面图片'
+);
+
+show tables;
+
+desc books;
+
+select * from books;
+
+drop table books;
