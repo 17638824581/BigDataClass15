@@ -98,6 +98,7 @@
 <%-- 使用 EL 表达式操作 List 集合
  --%>
 
+<%--
 <%
     ArrayList<Student> stus = (ArrayList<Student>) request.getAttribute("stus");
     for (Student s : stus) {
@@ -110,6 +111,7 @@
 <%
     }
 %>
+--%>
 
 
 <%-- 使用 EL 表达式操作 Map 集合 --%>
@@ -119,6 +121,7 @@
 --%>
 
 <%
+
     LinkedHashMap<String, Student> stus = (LinkedHashMap<String, Student>) request.getAttribute("stus");
     // 1.获取 map 集合中所有的键
     Set<String> keys = stus.keySet();

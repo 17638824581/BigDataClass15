@@ -7,6 +7,8 @@
       <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/junit-4.12.jar!/" />
       <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/mysql-connector-java-8.0.30.jar!/" />
       <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro22-JavaWeb02/web/WEB-INF/lib/standard.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,6 +112,9 @@
         <span>网上书城</span>
     </div>
     <div id="title-right">
+        欢迎：
+        <a href="">小邢</a>
+        |
         <a href="">登录</a>
         |
         <a href="">注册</a>
