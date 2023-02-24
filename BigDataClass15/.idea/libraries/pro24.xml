@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="pro24">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pro24-JavaWeb04/web/WEB-INF/lib/el-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro24-JavaWeb04/web/WEB-INF/lib/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro24-JavaWeb04/web/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro24-JavaWeb04/web/WEB-INF/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro24-JavaWeb04/web/WEB-INF/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro24-JavaWeb04/web/WEB-INF/lib/commons-fileupload-1.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro24-JavaWeb04/web/WEB-INF/lib/commons-io-2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -2,12 +2,12 @@
   <artifact type="exploded-war" name="pro23">
     <output-path>$PROJECT_DIR$/out/artifacts/pro23</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="pro23-JavaWeb03/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="pro23-JavaWeb03" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="pro23-JavaWeb03/web/Web" />
     </root>
   </artifact>
 </component>
