@@ -3,4 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+
+    <!-- 配置项目 Session 数据超时时间 -->
+    <session-config>
+        <session-timeout>
+            60
+        </session-timeout>
+    </session-config>
 </web-app>
