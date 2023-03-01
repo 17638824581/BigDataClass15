@@ -11,6 +11,7 @@
       <root url="jar://$PROJECT_DIR$/pro25-JavaWebDemo/web/WEB-INF/lib/commons-dbutils-1.7.jar!/" />
       <root url="jar://$PROJECT_DIR$/pro25-JavaWebDemo/web/WEB-INF/lib/druid-1.2.9.jar!/" />
       <root url="jar://$PROJECT_DIR$/pro25-JavaWebDemo/web/WEB-INF/lib/mysql-connector-java-8.0.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro25-JavaWebDemo/web/WEB-INF/lib/fastjson-1.2.83.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

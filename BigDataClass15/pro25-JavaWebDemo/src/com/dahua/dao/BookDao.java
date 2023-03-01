@@ -31,7 +31,7 @@ public interface BookDao {
      * @param title
      * @return
      */
-    List<Book> selectByTile(String title);
+    List<Book> selectByTitle(String title);
 
     /**
      * 通过类型查询
@@ -61,4 +61,10 @@ public interface BookDao {
      * @return
      */
     int update(int id, Book newBook);
+
+    /**
+     * 查询总数
+     * @return
+     */
+    int selectByTotal();
 }

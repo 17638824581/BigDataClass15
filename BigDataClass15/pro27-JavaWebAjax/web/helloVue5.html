@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门</title>
+</head>
+<body>
+
+<div id="app">
+    <table border="1">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>分数</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(stu,i) in students">
+            <td>{{i+1}}</td>
+            <td>{{stu.name}}</td>
+            <td>{{stu.age}}</td>
+            <td>{{stu.sex}}</td>
+            <td>{{stu.score}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+    let vue = new Vue({
+        el: "#app",
+        data: {
+            students: [],
+        },
+        // 当vue挂载完成事件
+        mounted : function (){
+            // 使用 axios 发送请求获取学生数据
+            axios({
+              url:"http://localhost/pro27/hello",
+              method:'get',
+            }).then(function (resp){
+              let data = resp.data;
+              vue.students = data;
+            })
+        }
+    })
+
+
+</script>
+
+</body>
+</html>

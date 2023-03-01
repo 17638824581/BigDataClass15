@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue入门</title>
+</head>
+<body>
+    <div id="app">
+        <h1 id="h1">{{a}}</h1>
+        <input type="text" v-model="a" placeholder="输入值">
+        <button v-on:click="add">点我</button>
+
+        <hr>
+
+        <a v-bind:href="url">点我干啥</a>
+        <hr>
+
+        <button v-on:click=" url='http://www.baidu.com'" >点我切换到百度</button>
+
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                a:0,
+                url:"https://www.jd.com",
+            },
+            methods:{
+                "add":function (){
+                    this.a++;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -12,11 +12,12 @@
 </head>
 <body>
 <h1>添加书籍</h1>
-<form method="" action="">
+<form method="post" action="/pro25/addBook">
   <label>书名：<input type="text" name="title" required></label><br>
   <label>作者：<input type="text" name="author" required></label><br>
   <label>类型：<input type="text" name="type" required></label><br>
   <label>价格：<input type="text" name="price" required></label><br>
+  <p>${msg}</p>
   <input type="submit" value="确认添加">
 </form>
 <hr>

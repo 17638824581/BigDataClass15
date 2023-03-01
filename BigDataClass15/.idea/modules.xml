@@ -31,6 +31,8 @@
       <module fileurl="file://$PROJECT_DIR$/pro23-JavaWeb03/pro23-JavaWeb03.iml" filepath="$PROJECT_DIR$/pro23-JavaWeb03/pro23-JavaWeb03.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro24-JavaWeb04/pro24-JavaWeb04.iml" filepath="$PROJECT_DIR$/pro24-JavaWeb04/pro24-JavaWeb04.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro25-JavaWebDemo/pro25-JavaWebDemo.iml" filepath="$PROJECT_DIR$/pro25-JavaWebDemo/pro25-JavaWebDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro26-JavaWeb05-Filter/pro26-JavaWeb05-Filter.iml" filepath="$PROJECT_DIR$/pro26-JavaWeb05-Filter/pro26-JavaWeb05-Filter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro27-JavaWebAjax/pro27-JavaWebAjax.iml" filepath="$PROJECT_DIR$/pro27-JavaWebAjax/pro27-JavaWebAjax.iml" />
     </modules>
   </component>
 </project>

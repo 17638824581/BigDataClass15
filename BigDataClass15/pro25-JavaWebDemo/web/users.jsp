@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <title>管理用户</title>
@@ -40,16 +41,17 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1</td>
-    <td>用户昵称</td>
-    <td>用户账号</td>
-    <td>用户邮箱</td>
-    <td>
-      <a href="">修改</a>
-      <a href="">删除</a>
-    </td>
-  </tr>
+  <c:forEach items="${users}" var="user" varStatus="status">
+    <tr>
+      <td>${status.index + 1}</td>
+      <td>${user.name}</td>
+      <td>${user.username}</td>
+      <td>${user.email}</td>
+      <td>
+        <a href="/pro25/deleteUser?id=${user.id}">删除</a>
+      </td>
+    </tr>
+  </c:forEach>
   </tbody>
 </table>
 

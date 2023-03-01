@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门</title>
+</head>
+<body>
+
+<input type="text" id="name" placeholder="请输入姓名：">
+<input type="button" id="btn" value="点我">
+<hr>
+<h1 id="h1"></h1>
+<script>
+    document.getElementById("btn").onclick = function () {
+        let value = document.getElementById("name").value;
+        document.getElementById("h1").innerText = value;
+    }
+</script>
+
+<div id="app">
+  <!--
+    v-model = "name"
+   将vue中的 数据模型 name 绑定给 input 输入框
+  -->
+  <input type="text" v-model="name" placeholder="请输入姓名：">
+  <hr>
+  <!--
+    {{模型名称}} ：从 vue 中取出数据模型的值
+   -->
+  <h1> {{name}} </h1>
+
+    <hr>
+    <button v-on:click="add">点我</button>
+</div>
+
+<!-- 引入vue -->
+<script src="./js/vue.js"></script>
+<script>
+    // 首先就要创建一个 Vue 对象，并传入一个 js 对象，
+    // js 对象中有很多配置项，
+    // el：设置 vue 的作用范围
+    // data：是在 vue 作用范围内，声明一个 数据模型
+    new Vue({
+        el:"#app",
+        data:{
+          name:"",
+        },
+        methods:{
+            "add":function (){
+                alert(123);
+            }
+        }
+    });
+</script>
+
+
+</body>
+</html>

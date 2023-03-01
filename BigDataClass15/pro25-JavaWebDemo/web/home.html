@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+</head>
+<style>
+    table {
+        margin: 40px auto;
+    }
+
+    h1, p {
+        text-align: center;
+    }
+
+    th, td {
+        padding: 5px 20px;
+    }
+</style>
+<body>
+<h1>书籍信息</h1>
+<hr>
+<p>
+    <span>欢迎您：</span>
+    <a href="/pro25/addBook.jsp">添加书籍</a>
+    <a href="/pro25/showUser">查看用户</a>
+    <a href="/pro25/logout">退出登录</a>
+</p>
+<hr>
+<script src="js/axios.min.js"></script>
+<script>
+    // 页面加载完成
+    window.onload = function (){
+        // 使用 Axios 发送请求
+        axios({
+            url:"http://localhost/pro25/getAllBook",
+            method:"get"
+        }).then(function (resp){
+            // 请求成功
+            let books = resp.data;
+
+            for (let i = 0; i < books.length; i++) {
+                let book = books[i];
+                document.getElementById("tbody").innerHTML += "<tr>" +
+                                                                    "<td>"+(i+1)+"</td>" +
+                                                                    "<td>"+book.title+"</td>" +
+                                                                    "<td>"+book.author+"</td>" +
+                                                                    "<td>"+book.type+"</td>" +
+                                                                    "<td>"+book.price+"</td>" +
+                                                                    "<td><a href=''>操作</a>" +
+                                                                    "<a href=''>删除</a></td>" +
+                                                                "</tr>"
+            }
+        })
+    }
+
+</script>
+
+
+<table border="1">
+    <caption>全部书籍</caption>
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>书名</th>
+        <th>作者</th>
+        <th>类型</th>
+        <th>价格</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+</table>
+</body>
+</html>

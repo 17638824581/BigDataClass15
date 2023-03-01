@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="pro27">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pro27-JavaWebAjax/web/WEB-INF/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pro27-JavaWebAjax/web/WEB-INF/lib/fastjson-1.2.83.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

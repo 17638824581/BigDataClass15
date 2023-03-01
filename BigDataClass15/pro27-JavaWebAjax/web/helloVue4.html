@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门</title>
+</head>
+<body>
+
+<div id="app">
+
+  <h1>a={{a}}</h1>
+
+  <h1 v-if="a==1">我是第一个</h1>
+  <h1 v-if="a==2">我是第二个</h1>
+
+  <h2 v-show="a==1">我是第一个</h2>
+  <h2 v-show="a==2">我是第二个</h2>
+
+  <button v-on:click="a++">点我</button>
+
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+
+  new Vue({
+    el:"#app",
+    data:{
+      a:1,
+    }
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloAjax</title>
+</head>
+<body>
+    <h1 id="h1">我是原本的h1标签</h1>
+
+    <div id="student">
+        <p id="name"></p>
+        <p id="age"></p>
+        <p id="sex"></p>
+    </div>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    
+    <button id="btn">点我</button>
+
+    <!-- 引入 jQuery 库 -->
+    <script src="js/jQuery3.6.3.js"></script>
+
+    <!-- 引入本地 Axios 库 -->
+    <script src="js/axios.min.js"></script>
+
+
+    <!-- 给按钮添加点击事件 -->
+    <script>
+        document.getElementById("btn").onclick = function (){
+            // 给 http://localhost/pro27/hello 发请求 获取 响应数据
+            // 将获取到的数据 放入 h1 标签
+
+            // 使用 axios 来发送 ajax 请求
+            // const axios = require('axios');
+            axios({
+                url:"http://localhost/pro27/hello",
+                responseType:'json'
+            }).then(function (resp){
+                let stus = resp.data;
+                console.log(resp.data)
+
+                for (let i = 0; i < stus.length; i++) {
+                    let stu = stus[i];
+                    document.getElementById("tbody").innerHTML += "<tr><td>"+stu.name+"</td><td>"+stu.age+"</td><td>"+stu.sex+"</td></tr>";
+                }
+            })
+
+
+            // 使用原生的 Ajax 写法
+            // 创建一个 XMLHttpRequest 对象
+           /* var xmlhttp = new XMLHttpRequest();
+            // 配置请求方法，及请求路径
+            xmlhttp.open("get","http://localhost/pro27/hello")
+            // 发送请求
+            xmlhttp.send()
+            // 添加状态码改变事件
+            xmlhttp.onreadystatechange = function (){
+                // 判断响应的响应状态码
+                if (xmlhttp.status == 200) {
+                    // 接收响应文本
+                    let text = xmlhttp.responseText;
+                    // 将 h1 标签的内容替换为 text
+                    document.getElementById("h1").innerText = text;
+                }else{
+                    alert("请求失败！")
+                }
+            }*/
+
+
+            // 使用 jQuery 发送ajax请求
+           /* $.ajax({
+                url:"http://localhost/pro27/hello",
+                method:"get",
+                success:function (data){
+                    $("#h1").html(data);
+                },
+                error:function (){
+                    alert("请求失败！")
+                }
+            })*/
+
+
+
+        }
+    </script>
+</body>
+</html>

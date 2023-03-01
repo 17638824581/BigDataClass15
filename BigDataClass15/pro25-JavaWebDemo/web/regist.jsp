@@ -9,12 +9,12 @@
 <body>
 <h1>欢迎注册</h1>
 <hr>
-<form method="" action="">
+<form method="post" action="/pro25/regist">
     <label>账号：<input type="text" name="username" required/></label><br>
     <label>昵称：<input type="text" name="name" required/></label><br>
     <label>密码：<input type="text" name="password" required/></label><br>
     <label>确认密码：<input type="text" name="repassword" required/></label><br>
-    <label>邮箱号：<input type="email" name="repassword" required/></label><br>
+    <label>邮箱号：<input type="email" name="email" required/></label><br>
     <p>${msg}</p>
     <input type="submit" value="确认注册"><br>
 </form>

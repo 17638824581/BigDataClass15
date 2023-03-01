@@ -133,7 +133,7 @@ public class UserService {
     /*
      *  处理用户登录的业务方法
      * */
-    public boolean login(String username, String password) {
+    public User login(String username, String password) {
         // 2. 验证用户名是否存在
         UserDaoImpl userDao = new UserDaoImpl();
         // 根据用户名查询用户数据
@@ -142,13 +142,13 @@ public class UserService {
         if (user != null) {
             // 3. 验证密码是否正确
             if (password.equals(user.getPassword())) {
-                // 密码一致，登录成功
-                return true;
+                // 密码一致，登录成功，返回用户对象
+                return user;
             }
-            return false;
+            return null;
         } else {
             // 用户不存在
-            return false;
+            return null;
         }
     }
 }

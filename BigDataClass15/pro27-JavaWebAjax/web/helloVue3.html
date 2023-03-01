@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Vue入门</title>
+    <script src="js/vue.js"></script>
+    <meta charset="utf-8">
+    <style>
+        #dd{
+            /*width: 100px;*/
+            /*height: 100px;*/
+            float: left;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="dd"  v-bind:style="{'width':width+'px','height':height+'px'}">我是div</div>
+    <div style="clear:both"></div>
+    <hr>
+    <button v-on:click="height+=10">增高</button>
+    <button v-on:click="width+=10">增宽</button>
+    <hr>
+    <input v-model="height" placeholder="高度">
+    <input v-model="width" placeholder="宽度">
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            width:100,
+            height:100,
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

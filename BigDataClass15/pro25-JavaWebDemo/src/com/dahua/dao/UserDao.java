@@ -32,25 +32,25 @@ public interface UserDao {
      * 查询所有用户
      * @return
      */
-    List<User> SelectAll();
+    List<User> selectAll();
 
     /**
      * 通过昵称查找用户
      * @return
      */
-    List<User> SelectByName();
+    List<User> selectByName(String name);
 
     /**
      * 通过id查询用户
      * @param id
      * @return
      */
-    User SelectById(int id);
+    User selectById(int id);
 
     /**
      * 通过用户名查询用户
      * @param username
      * @return
      */
-    User SelectByUserName(String username);
+    User selectByUserName(String username);
 }
