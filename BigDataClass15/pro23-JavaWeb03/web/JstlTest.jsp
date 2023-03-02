@@ -1,4 +1,4 @@
-<%@ page import="com.xty.bean.Student" %>
+<%@ page import="com.dahua.bean.Student" %>
 <%@ page import="java.sql.Array" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

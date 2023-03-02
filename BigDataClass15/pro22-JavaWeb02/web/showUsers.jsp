@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.xty.bean.User" %>
+<%@ page import="com.dahua.bean.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: XTY

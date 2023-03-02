@@ -26,7 +26,7 @@
         <!-- 给这个Servlet程序起一个名字(任意) -->
         <servlet-name>HelloServlet</servlet-name>
         <!-- 标明Servlet程序的全类名 -->
-        <servlet-class>com.xty.web.HelloServlet</servlet-class>
+        <servlet-class>com.dahua.web.HelloServlet</servlet-class>
     </servlet>
 
     <!--  2. 给指定名称的 Servlet 程序配置访问路径  -->
@@ -37,7 +37,7 @@
 
     <servlet>
         <servlet-name>TestServlet</servlet-name>
-        <servlet-class>com.xty.web.TestServlet</servlet-class>
+        <servlet-class>com.dahua.web.TestServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -47,7 +47,7 @@
 
     <servlet>
         <servlet-name>FormServlet</servlet-name>
-        <servlet-class>com.xty.web.FormServlet</servlet-class>
+        <servlet-class>com.dahua.web.FormServlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -57,7 +57,7 @@
 
     <servlet>
         <servlet-name>HelloServlet2</servlet-name>
-        <servlet-class>com.xty.web.HelloServlet2</servlet-class>
+        <servlet-class>com.dahua.web.HelloServlet2</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -67,7 +67,7 @@
 
     <servlet>
         <servlet-name>sh3</servlet-name>
-        <servlet-class>com.xty.web.HelloServlet3</servlet-class>
+        <servlet-class>com.dahua.web.HelloServlet3</servlet-class>
         <init-param>
             <param-name>name</param-name>
             <param-value>小王</param-value>
@@ -84,7 +84,7 @@
 
     <servlet>
         <servlet-name>TestReustServlet</servlet-name>
-        <servlet-class>com.xty.web.TestRequestServlet</servlet-class>
+        <servlet-class>com.dahua.web.TestRequestServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -99,7 +99,7 @@
     
     <servlet>
         <servlet-name>VerifyNumberServlet</servlet-name>
-        <servlet-class>com.xty.web.VerifyNumberServlet</servlet-class>
+        <servlet-class>com.dahua.web.VerifyNumberServlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -109,7 +109,7 @@
 
     <servlet>
         <servlet-name>VerifyEmailServlet</servlet-name>
-        <servlet-class>com.xty.web.VerifyEmailServlet</servlet-class>
+        <servlet-class>com.dahua.web.VerifyEmailServlet</servlet-class>
     </servlet>
     
 
@@ -121,7 +121,7 @@
 
     <servlet>
         <servlet-name>TestRequestDispatcherServlet</servlet-name>
-        <servlet-class>com.xty.web.TestRequestDispatcherServlet</servlet-class>
+        <servlet-class>com.dahua.web.TestRequestDispatcherServlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -131,7 +131,7 @@
 
     <servlet>
         <servlet-name>TestResponseServlet</servlet-name>
-        <servlet-class>com.xty.web.TestResponseServlet</servlet-class>
+        <servlet-class>com.dahua.web.TestResponseServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -141,7 +141,7 @@
 
     <servlet>
         <servlet-name>TestRedirectServlet</servlet-name>
-        <servlet-class>com.xty.web.TestRedirectServlet</servlet-class>
+        <servlet-class>com.dahua.web.TestRedirectServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element测试</title>
+</head>
+<body>
+
+    <div id="app">
+        <el-button type="success" v-on:click="onClick1" plain>添加书籍</el-button>
+        <el-button type="danger" plain>删除书籍</el-button>
+
+        <el-form ref="form" :model="form" label-width="80px">
+            <el-form-item label="书籍名称">
+                <el-input v-model="form.title"></el-input>
+            </el-form-item>
+            <el-form-item label="书籍作者">
+                <el-input v-model="form.author"></el-input>
+            </el-form-item>
+            <el-form-item label="书籍类型">
+                <el-input v-model="form.type"></el-input>
+            </el-form-item>
+            <el-form-item label="书籍价格">
+                <el-input v-model="form.price"></el-input>
+            </el-form-item>
+            <el-form-item label="出版设">
+                <el-input v-model="form.press"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary"  @click="onSubmit">添加书籍</el-button>
+                <el-button>取消</el-button>
+            </el-form-item>
+        </el-form>
+
+    </div>
+
+
+    <!-- 1.先引入 Vue -->
+    <script src="js/vue.js"></script>
+    <!-- 2.引入 Element 的组件库 和 样式表 -->
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="element-ui/lib/index.js"></script>
+
+    <script>
+        //  创建 Vue 对象
+        new Vue({
+            el:"#app",
+            data:{
+                form: {
+                    title: '',
+                    author:"",
+                    type:"",
+                    price:"",
+                    press:""
+                }
+            },
+            methods:{
+                onClick1(){
+                    alert("点我干嘛！")
+                },
+                onSubmit() {
+                    alert("提交书籍！")
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

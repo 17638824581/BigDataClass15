@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门</title>
+</head>
+<body>
+
+<h1>添加书籍</h1>
+<div id="app">
+    书名：<input v-model="book.title"/><br>
+    作者：<input v-model="book.author"/><br>
+    类型：<input v-model="book.type"/><br>
+    价格：<input v-model="book.price"/><br>
+    <button v-on:click="onSubmit">提交</button>
+</div>
+
+
+<!-- 引入Vue -->
+<script src="js/vue.js"></script>
+<!-- 引入 axois -->
+<script src="js/axios.min.js"></script>
+
+<script>
+    let vue = new Vue({
+        el: "#app",
+        data: {
+            book: {
+                title: "",
+                author: "",
+                type: "",
+                price: 0,
+            }
+        },
+        methods: {
+            // 提交书籍信息
+            onSubmit() {
+                console.log(vue.book);
+                // 使用 axios 发送异步 Ajax 请求将书籍信息提交给服务器
+                axios({
+                    url: "http://localhost/pro27/addBook",
+                    method: "post",
+                    // 在 data 中的参数，会放在 请求体中
+                    data: vue.book,
+                }).then(function (resp) {
+                    if (resp.data == "ok"){
+                        alert("添加成功！");
+                    }
+                })
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

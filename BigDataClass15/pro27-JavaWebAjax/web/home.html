@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+        }
+
+        #app {
+            /*border: 2px solid red;*/
+            width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-weight: normal;
+            color: #606266;
+        }
+
+        .el-row {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+    <el-row>
+        <el-col :span="6">
+            <h1>书籍管理</h1>
+        </el-col>
+    </el-row>
+
+    <el-row>
+        <!-- 操作按钮 -->
+        <el-button type="success" @click="handleAddBook" plain>添加书籍</el-button>
+        <el-button type="danger" plain>批量删除</el-button>
+    </el-row>
+
+    <!-- 条件查询 -->
+    <el-row>
+        <el-col :span="24">
+
+            <el-form :inline="true" :model="formInline" class="demo-form-inline">
+
+                <el-form-item label="书名">
+                    <el-input v-model="formInline.title" placeholder="书名"></el-input>
+                </el-form-item>
+
+                <el-form-item label="作者">
+                    <el-input v-model="formInline.author" placeholder="作者"></el-input>
+                </el-form-item>
+
+                <el-form-item label="类型">
+                    <el-select v-model="formInline.type" placeholder="活动区域">
+                        <el-option label="所有" value="所有"></el-option>
+                        <el-option label="神话" value="神话"></el-option>
+                        <el-option label="经典" value="经典"></el-option>
+                        <el-option label="言情" value="言情"></el-option>
+                        <el-option label="名著" value="名著"></el-option>
+                        <el-option label="历史" value="历史"></el-option>
+                        <el-option label="科幻" value="科幻"></el-option>
+                        <el-option label="冒险" value="冒险"></el-option>
+                    </el-select>
+                </el-form-item>
+
+                <el-form-item label="价格区间">
+                    <el-col :span="11">
+                        <el-input placeholder="最低价" v-model:type="formInline.minPrice"></el-input>
+                    </el-col>
+                    <el-col class="line" :span="2">-</el-col>
+                    <el-col :span="11">
+                        <el-input placeholder="最高价" v-model:type="formInline.maxPrice"></el-input>
+                    </el-col>
+                </el-form-item>
+
+                <el-form-item>
+                    <el-button type="primary" @click="onSubmit">查询</el-button>
+                </el-form-item>
+
+            </el-form>
+        </el-col>
+    </el-row>
+
+    <!-- 表格内容 -->
+    <el-row>
+        <el-col :span="24">
+            <template>
+                <el-table
+                        :data="tableData"
+                        stripe
+                        style="width: 100%"
+                        @selection-change="handleSelectionChange">
+                    <el-table-column
+                            type="selection"
+                            width="100">
+                    </el-table-column>
+                    <el-table-column
+                            label="序号"
+                            type="index"
+                            align="center"
+                            width="100">
+                    </el-table-column>
+                    <el-table-column
+                            prop="title"
+                            align="center"
+                            label="书名">
+                    </el-table-column>
+                    <el-table-column
+                            prop="author"
+                            align="center"
+                            label="作者">
+                    </el-table-column>
+                    <el-table-column
+                            prop="type"
+                            align="center"
+                            label="类型">
+                    </el-table-column>
+                    <el-table-column
+                            prop="price"
+                            align="center"
+                            label="价格">
+                    </el-table-column>
+                    <el-table-column
+                            label="操作"
+                            width="200"
+                            fixed="right"
+                            align="center">
+                        <template slot-scope="scope">
+                            <el-button
+                                    size="mini"
+                                    @click="handleEdit(scope.$index, scope.row)">编辑
+                            </el-button>
+                            <el-button
+                                    size="mini"
+                                    type="danger"
+                                    @click="handleDelete(scope.$index, scope.row)">删除
+                            </el-button>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </template>
+        </el-col>
+    </el-row>
+
+    <!-- 分页工具条 -->
+    <el-row>
+        <el-col :span="24" align="center">
+            <div class="block">
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        :current-page="currentPage4"
+                        :page-sizes="[100, 200, 300, 400]"
+                        :page-size="100"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="400">
+                </el-pagination>
+            </div>
+        </el-col>
+    </el-row>
+
+    <!-- 添加数据的弹窗 -->
+    <el-dialog
+            title="添加书籍"
+            :visible.sync="addBookDialogVisible"
+            width="26%"
+            :before-close="handleClose">
+
+        <el-form ref="form" :model="addBook" label-width="80px">
+            <el-form-item label="书名">
+                <el-input v-model="addBook.title"></el-input>
+            </el-form-item>
+            <el-form-item label="作者">
+                <el-input v-model="addBook.author"></el-input>
+            </el-form-item>
+            <el-form-item label="类型">
+                <el-input v-model="addBook.type"></el-input>
+            </el-form-item>
+            <el-form-item label="价格">
+                <el-input v-model="addBook.price"></el-input>
+            </el-form-item>
+        </el-form>
+
+        <span slot="footer" class="dialog-footer">
+      <el-button @click="addBookDialogVisible = false">取 消</el-button>
+      <el-button type="primary" @click="realAddBook">确 定</el-button>
+    </span>
+    </el-dialog>
+
+    <!-- 修改数据的弹窗 -->
+    <el-dialog
+            title="编辑书籍"
+            :visible.sync="changeBookDialogVisible"
+            width="26%"
+            :before-close="handleClose">
+
+        <el-form ref="form" :model="addBook" label-width="80px">
+            <el-form-item label="书名">
+                <el-input v-model="addBook.title"></el-input>
+            </el-form-item>
+            <el-form-item label="作者">
+                <el-input v-model="addBook.author"></el-input>
+            </el-form-item>
+            <el-form-item label="类型">
+                <el-input v-model="addBook.type"></el-input>
+            </el-form-item>
+            <el-form-item label="价格">
+                <el-input v-model="addBook.price"></el-input>
+            </el-form-item>
+        </el-form>
+
+        <span slot="footer" class="dialog-footer">
+      <el-button @click="changeBookDialogVisible = false">取 消</el-button>
+      <el-button type="primary" @click="handleChangeBook">确 定</el-button>
+    </span>
+    </el-dialog>
+
+</div>
+
+<!-- 1.先引入 Vue -->
+<script src="js/vue.js"></script>
+<!-- 2.引入 Element 的组件库 和 样式表 -->
+<!-- 引入样式 -->
+<link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="element-ui/lib/index.js"></script>
+<!-- 引入 Axios -->
+<script src="js/axios.min.js"></script>
+
+<script>
+    //  创建 Vue 对象
+    let vue = new Vue({
+        el: "#app",
+        data: {
+            // 表格数据
+            tableData: [{
+                id: 1,
+                title: '西游记',
+                author: '吴承恩',
+                type: '神话故事',
+                price: 5.8,
+            }],
+            // 存储被选中的元素
+            multipleSelection: [],
+            // 条件查询的数据模型
+            formInline: {
+                title: '',
+                author: '',
+                type: '',
+                minPrice: '',
+                maxPrice: '',
+            },
+            // 分页工具条数据模型
+            currentPage4: 4,
+            // 添加书籍对话框显示状态
+            addBookDialogVisible: false,
+            // 修改书籍对话框显示状态
+            changeBookDialogVisible: false,
+            // 添加书籍 和 修改书籍 的数据模型
+            addBook: {
+                title: '',
+                author: '',
+                type: '',
+                price: '',
+            }
+        },
+        methods: {
+            // 点击添加书籍按钮的方法
+            handleAddBook(){
+                vue.addBook = {title: '', author: '', type: '', price: '',};
+                // 显示添加书籍的对话框
+                vue.addBookDialogVisible = true;
+            },
+            // 单条数据确认修改
+            handleChangeBook(){
+                axios({
+                    url:"http://localhost/pro27/realUpdateBook",
+                    method:'post',
+                    data:vue.addBook,
+                }).then(function (resp){
+                    if (resp.data == 'ok'){
+                        // 修改成功提示
+                        vue.$message({
+                            message: '书籍信息修改成功！',
+                            type: 'success'
+                        });
+                        // 关闭对话框
+                        vue.changeBookDialogVisible = false;
+                        // 重新加载所有的书籍信息
+                        vue.loadBooks();
+                    }
+                })
+            },
+            // 加载所有书籍书籍
+            loadBooks() {
+                // 查询所有书籍数据
+                axios({
+                    url: "http://localhost/pro27/getAllBook",
+                    method: "get",
+                }).then(function (resp) {
+                    // 将获取到的所有书籍数据赋值给
+                    vue.tableData = resp.data;
+                })
+            },
+            // 切换选中的方法
+            toggleSelection(rows) {
+                if (rows) {
+                    rows.forEach(row => {
+                        this.$refs.multipleTable.toggleRowSelection(row);
+                    });
+                } else {
+                    this.$refs.multipleTable.clearSelection();
+                }
+            },
+            // 处理多选框更改
+            handleSelectionChange(val) {
+                this.multipleSelection = val;
+            },
+            // 单条数据修改按钮
+            handleEdit(index, row) {
+                // 修改数据的弹窗显示出来
+                vue.changeBookDialogVisible = true;
+                vue.addBook = row;
+                console.log(index, row);
+            },
+            handleSizeChange(val) {
+                console.log(`每页 ${val} 条`);
+            },
+            handleCurrentChange(val) {
+                console.log(`当前页: ${val}`);
+            },
+            // 关闭添加书籍对话框
+            handleClose(done) {
+                this.$confirm('确认关闭？')
+                    .then(_ => {
+                        done();
+                    })
+                    .catch(_ => {
+                    });
+            },
+            // 确认添加书籍
+            realAddBook() {
+                // 将用户填写的书籍的信息提交给添加书籍的接口
+                axios({
+                    url: "http://localhost/pro27/addBook",
+                    method: "post",
+                    data: vue.addBook,
+                }).then(function (resp) {
+                    // 判断是否添加成功
+                    if (resp.data == "ok") {
+                        // 给出添加成功提示
+                        vue.$message({
+                            message: '书籍信息添加成功！',
+                            type: 'success'
+                        });
+                        // 关闭对话框
+                        vue.addBookDialogVisible = false;
+                        // 重新加载所有的书籍信息
+                        vue.loadBooks();
+                    }
+                });
+            },
+            // 确认删除弹窗
+            handleDelete(index, row) {
+                this.$confirm('确认删除这条数据吗, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    axios({
+                        url: "http://localhost/pro27/deleteBook",
+                        method: "get",
+                        // data 是指定请求体的参数
+                        // params 是指定 url 参数
+                        params: {
+                            "id": row.id,
+                        }
+                    }).then(function (resp) {
+                        if (resp.data == 'ok') {
+                            // 弹出成功提示
+                            vue.$message({
+                                message: '书籍信息删除成功！',
+                                type: 'success'
+                            });
+                            // 重新加载所有的数据
+                            vue.loadBooks();
+                        }
+                    })
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: '已取消删除'
+                    });
+                });
+            }
+        },
+        // monuted 事件是当 Vue 挂载完毕就会执行
+        mounted: function () {
+            // 查询所有书籍数据
+            axios({
+                url: "http://localhost/pro27/getAllBook",
+                method: "get",
+            }).then(function (resp) {
+                // 将获取到的所有书籍数据赋值给
+                vue.tableData = resp.data;
+            })
+        }
+    })
+
+</script>
+
+</body>
+</html>

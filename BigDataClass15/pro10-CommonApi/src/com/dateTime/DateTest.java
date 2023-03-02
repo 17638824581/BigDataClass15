@@ -1,12 +1,6 @@
 package com.dateTime;
 
-import com.xty.common.Student;
-
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
 
 public class DateTest {
     public static void main(String[] args) throws ParseException {

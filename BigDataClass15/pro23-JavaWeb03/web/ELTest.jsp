@@ -1,4 +1,4 @@
-<%@ page import="com.xty.bean.Student" %>
+<%@ page import="com.dahua.bean.Student" %>
 <%@ page import="java.util.*" %><%--
   Created by IntelliJ IDEA.
   User: XTY
