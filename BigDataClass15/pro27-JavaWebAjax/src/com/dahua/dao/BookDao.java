@@ -67,4 +67,36 @@ public interface BookDao {
      * @return
      */
     int selectByTotal();
+
+
+    /*
+    *  批量删除
+    * */
+    int batchDelte(int[] ids);
+
+    /*
+    *  分页查询
+    * */
+    List<Book> selectBylimit(int begin,int size);
+
+    /*
+    *  条件分页查询
+    * */
+    List<Book> selectByConditionAndLimit(String title,
+                                         String author,
+                                         String type,
+                                         Double minPrice,
+                                         Double maxPrice,
+                                         int begin,
+                                         int size);
+
+    /*
+     *  条件查询数据数量
+     * */
+    long selectByConditionTotal(String title,
+                             String author,
+                             String type,
+                             Double minPrice,
+                             Double maxPrice);
+
 }

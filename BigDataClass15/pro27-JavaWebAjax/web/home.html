@@ -37,13 +37,12 @@
     <el-row>
         <!-- 操作按钮 -->
         <el-button type="success" @click="handleAddBook" plain>添加书籍</el-button>
-        <el-button type="danger" plain>批量删除</el-button>
+        <el-button type="danger" @click="batchDelete" plain>批量删除</el-button>
     </el-row>
 
     <!-- 条件查询 -->
     <el-row>
         <el-col :span="24">
-
             <el-form :inline="true" :model="formInline" class="demo-form-inline">
 
                 <el-form-item label="书名">
@@ -55,8 +54,8 @@
                 </el-form-item>
 
                 <el-form-item label="类型">
-                    <el-select v-model="formInline.type" placeholder="活动区域">
-                        <el-option label="所有" value="所有"></el-option>
+                    <el-select v-model="formInline.type" placeholder="类型">
+                        <el-option label="所有" value=""></el-option>
                         <el-option label="神话" value="神话"></el-option>
                         <el-option label="经典" value="经典"></el-option>
                         <el-option label="言情" value="言情"></el-option>
@@ -69,16 +68,16 @@
 
                 <el-form-item label="价格区间">
                     <el-col :span="11">
-                        <el-input placeholder="最低价" v-model:type="formInline.minPrice"></el-input>
+                        <el-input placeholder="最低价" v-model="formInline.minPrice"></el-input>
                     </el-col>
                     <el-col class="line" :span="2">-</el-col>
                     <el-col :span="11">
-                        <el-input placeholder="最高价" v-model:type="formInline.maxPrice"></el-input>
+                        <el-input placeholder="最高价" v-model="formInline.maxPrice"></el-input>
                     </el-col>
                 </el-form-item>
 
                 <el-form-item>
-                    <el-button type="primary" @click="onSubmit">查询</el-button>
+                    <el-button type="primary" @click="onConditionSearch">查询</el-button>
                 </el-form-item>
 
             </el-form>
@@ -101,6 +100,7 @@
                     <el-table-column
                             label="序号"
                             type="index"
+                            v-bind:index="index"
                             align="center"
                             width="100">
                     </el-table-column>
@@ -153,11 +153,11 @@
                 <el-pagination
                         @size-change="handleSizeChange"
                         @current-change="handleCurrentChange"
-                        :current-page="currentPage4"
-                        :page-sizes="[100, 200, 300, 400]"
-                        :page-size="100"
+                        :current-page="currentPage"
+                        :page-sizes="[10, 20, 50, 100]"
+                        :page-size="pageSize"
                         layout="total, sizes, prev, pager, next, jumper"
-                        :total="400">
+                        :total="totalCount">
                 </el-pagination>
             </div>
         </el-col>
@@ -236,14 +236,14 @@
     let vue = new Vue({
         el: "#app",
         data: {
+            // 书籍数据的总条数
+            totalCount: 0,
+            // 表格索引开始值
+            index: 1,
+            // 页面条目数
+            pageSize: 10,
             // 表格数据
-            tableData: [{
-                id: 1,
-                title: '西游记',
-                author: '吴承恩',
-                type: '神话故事',
-                price: 5.8,
-            }],
+            tableData: [],
             // 存储被选中的元素
             multipleSelection: [],
             // 条件查询的数据模型
@@ -253,9 +253,11 @@
                 type: '',
                 minPrice: '',
                 maxPrice: '',
+                currentPage: '',
+                pageSize: '',
             },
-            // 分页工具条数据模型
-            currentPage4: 4,
+            // 当前页面数
+            currentPage: 1,
             // 添加书籍对话框显示状态
             addBookDialogVisible: false,
             // 修改书籍对话框显示状态
@@ -269,20 +271,90 @@
             }
         },
         methods: {
+            // 执行分页条件查询
+            onConditionSearch() {
+
+                vue.formInline.currentPage = vue.currentPage;
+                vue.formInline.pageSize = vue.pageSize;
+
+                console.log(vue.formInline);
+
+                axios({
+                    url:"http://localhost/pro27/selectByCondition",
+                    method:'post',
+                    data:vue.formInline
+                }).then(function (resp){
+                    vue.tableData = resp.data.books;
+                    vue.totalCount = resp.data.total;
+
+                })
+            },
+            // 执行分页查询
+            bookByLimit(currentPage, pageSize) {
+                // 发送请求，来请求分页数据
+                axios({
+                    url: "http://localhost/pro27/selectByLimit",
+                    params: {
+                        "currentPage": currentPage,
+                        "pageSize": pageSize,
+                    }
+                }).then(function (resp) {
+                    // 将查询到的书籍信息交给表格
+                    vue.tableData = resp.data.books;
+                    // 将查询得到的数据总数交给谁?
+                    vue.totalCount = resp.data.total;
+                })
+            },
+            // 批量删除数据
+            batchDelete() {
+                // 1. 获取要被删除的数据信息
+                let books = this.multipleSelection;
+
+                if (books.length < 1) {
+                    // 修改成功提示
+                    vue.$message({
+                        message: '请先选中数据！',
+                        type: 'info'
+                    });
+                    return;
+                }
+
+                // 2. 从数据信息的数组中，只取出id。
+                let ids = [];
+                for (let i = 0; i < books.length; i++) {
+                    ids.push(books[i].id);
+                }
+                // 3.给批量删除的接口发请求，携带 ids 给服务器
+                axios({
+                    url: "http://localhost/pro27/batchDelete",
+                    method: "post",
+                    data: ids
+                }).then(function (resp) {
+                    let num = resp.data;
+                    // 修改成功提示
+                    vue.$message({
+                        message: '成功删除' + num + "条数据！",
+                        type: 'success'
+                    });
+                    // 重新加载本页的书籍信息
+                    vue.bookByLimit(vue.currentPage, vue.pageSize);
+                });
+
+            },
             // 点击添加书籍按钮的方法
-            handleAddBook(){
+            handleAddBook() {
                 vue.addBook = {title: '', author: '', type: '', price: '',};
                 // 显示添加书籍的对话框
                 vue.addBookDialogVisible = true;
             },
             // 单条数据确认修改
-            handleChangeBook(){
+            handleChangeBook() {
                 axios({
-                    url:"http://localhost/pro27/realUpdateBook",
-                    method:'post',
-                    data:vue.addBook,
-                }).then(function (resp){
-                    if (resp.data == 'ok'){
+                    url: "http://localhost/pro27/realUpdateBook",
+                    method: 'post',
+                    data: vue.addBook,
+                }).then(function (resp) {
+                    if (resp.data == 'ok') {
                         // 修改成功提示
                         vue.$message({
                             message: '书籍信息修改成功！',
@@ -318,6 +390,7 @@
             },
             // 处理多选框更改
             handleSelectionChange(val) {
+                // val 被选中的元素
                 this.multipleSelection = val;
             },
             // 单条数据修改按钮
@@ -327,11 +400,22 @@
                 vue.addBook = row;
                 console.log(index, row);
             },
+            // 处理页面大小改变
             handleSizeChange(val) {
-                console.log(`每页 ${val} 条`);
+                vue.pageSize = val;
+                // 更新索引
+                vue.index = (vue.currentPage - 1) * vue.pageSize + 1;
+                // 执行分页查询
+                this.bookByLimit(vue.currentPage, vue.pageSize);
             },
+            // 处理当前页改变
             handleCurrentChange(val) {
-                console.log(`当前页: ${val}`);
+                // 当前页数
+                vue.currentPage = val;
+                // 更新索引
+                vue.index = (vue.currentPage - 1) * vue.pageSize + 1;
+                // 执行分页查询
+                this.bookByLimit(vue.currentPage, vue.pageSize);
             },
             // 关闭添加书籍对话框
             handleClose(done) {
@@ -359,8 +443,8 @@
                         });
                         // 关闭对话框
                         vue.addBookDialogVisible = false;
-                        // 重新加载所有的书籍信息
-                        vue.loadBooks();
+                        // 重新加载本页的书籍信息
+                        vue.bookByLimit(vue.currentPage, vue.pageSize);
                     }
                 });
             },
@@ -387,7 +471,9 @@
                                 type: 'success'
                             });
                             // 重新加载所有的数据
-                            vue.loadBooks();
+                            // vue.loadBooks();
+                            // 重新加载本页的数据
+                            vue.bookByLimit(vue.currentPage, vue.pageSize);
                         }
                     })
                 }).catch(() => {
@@ -400,14 +486,17 @@
         },
         // monuted 事件是当 Vue 挂载完毕就会执行
         mounted: function () {
-            // 查询所有书籍数据
-            axios({
-                url: "http://localhost/pro27/getAllBook",
-                method: "get",
-            }).then(function (resp) {
-                // 将获取到的所有书籍数据赋值给
-                vue.tableData = resp.data;
-            })
+            /* // 查询所有书籍数据
+             axios({
+                 url: "http://localhost/pro27/getAllBook",
+                 method: "get",
+             }).then(function (resp) {
+                 // 将获取到的所有书籍数据赋值给
+                 vue.tableData = resp.data;
+             })*/
+
+            // 查询第一页数据
+            this.bookByLimit(1, this.pageSize);
         }
     })
 

@@ -146,4 +146,91 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         JdbcUtil.close(conn);
         return s;
     }
+
+    @Override
+    public int batchDelte(int[] ids) {
+        Connection conn = JdbcUtil.getConn();
+        String sql = "delete from book where id in ";
+
+        StringBuffer sb = new StringBuffer();
+        sb.append("(");
+        for (int i = 0; i < ids.length; i++) {
+            sb.append(ids[i]);
+            if (i != ids.length-1){
+                sb.append(",");
+            }
+        }
+        sb.append(")");
+
+        sql += sb.toString();
+
+        int update = super.update(conn, sql);
+        JdbcUtil.close(conn);
+        return update;
+    }
+
+    @Override
+    public List<Book> selectBylimit(int begin, int size) {
+        Connection conn = JdbcUtil.getConn();
+        String sql = "select * from book limit ?,?";
+        List<Book> books = super.queryAll(Book.class, conn, sql, begin, size);
+        JdbcUtil.close(conn);
+        return books;
+    }
+
+    @Override
+    public List<Book> selectByConditionAndLimit(String title, String author, String type, Double minPrice, Double maxPrice, int begin, int size) {
+
+        StringBuffer sql = new StringBuffer("select * from book where 1=1 ");
+        if (title != null && !title.equals("")){
+            sql.append("and title like '"+ title +"'");
+        }
+        if (author != null && !author.equals("")){
+            sql.append(" and author like '" + author +"'");
+        }
+        if (type != null && !type.equals("")){
+            sql.append(" and type like '" + type +"'");
+        }
+        if (minPrice != null){
+            sql.append(" and price >= " + minPrice);
+        }
+        if (maxPrice != null){
+            sql.append(" and price <= " + maxPrice);
+        }
+        sql.append(" limit "+begin+" , "+size);
+
+        System.out.println(sql);
+        Connection conn = JdbcUtil.getConn();
+        List<Book> books = super.queryAll(Book.class, conn, sql.toString());
+        JdbcUtil.close(conn);
+
+        return books;
+    }
+
+    @Override
+    public long selectByConditionTotal(String title, String author, String type, Double minPrice, Double maxPrice) {
+        StringBuffer sql = new StringBuffer("select count(*) from book where 1=1 ");
+        if (title != null && !title.equals("")){
+            sql.append("and title like '"+ title +"'");
+        }
+        if (author != null && !author.equals("")){
+            sql.append(" and author like '" + author +"'");
+        }
+        if (type != null && !type.equals("")){
+            sql.append(" and type like '" + type +"'");
+        }
+        if (minPrice != null){
+            sql.append(" and price >= " + minPrice);
+        }
+        if (maxPrice != null){
+            sql.append(" and price <= " + maxPrice);
+        }
+
+        System.out.println(sql);
+        Connection conn = JdbcUtil.getConn();
+        long count = (long) super.queryValue(conn, sql.toString());
+        JdbcUtil.close(conn);
+
+        return count;
+    }
 }
