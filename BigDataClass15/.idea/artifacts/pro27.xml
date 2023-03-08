@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="pro27">
     <output-path>$PROJECT_DIR$/out/artifacts/pro27</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="pro27-JavaWebAjax/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="pro27-JavaWebAjax" />
@@ -11,6 +10,7 @@
           <element id="library" level="project" name="pro27" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="pro27-JavaWebAjax/web/Web" />
     </root>
   </artifact>
 </component>

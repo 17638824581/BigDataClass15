@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 针对于  GoodsMapper 接口的 SQL 映射文件 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xty.mapper.GoodsMapper">
+
+    <!-- 对 Goods类的属性和 tb_goods 表的字段名 的 映射 -->
+    <resultMap id="Goods" type="com.xty.pojo.Goods">
+        <result property="goodsName" column="goods_name"/>
+        <result property="goodsType" column="goods_type"/>
+        <result property="goodsPrice" column="goods_price"/>
+        <result property="brandName" column="brand_name"/>
+    </resultMap>
+
+    <!-- 添加数据 -->
+    <insert id="add">
+        insert into tb_goods(goods_name, goods_type, goods_price, count, brand_name, status)
+        values (#{goodsName}, #{goodsType}, #{goodsPrice}, #{count}, #{brandName}, #{status});
+    </insert>
+
+    <!-- 添加数据 -->
+    <insert id="addReturnId" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_goods(goods_name, goods_type, goods_price, count, brand_name, status)
+        values (#{goodsName}, #{goodsType}, #{goodsPrice}, #{count}, #{brandName}, #{status});
+    </insert>
+
+    <insert id="addByMap">
+        insert into tb_goods(goods_name, goods_type, goods_price, count, brand_name, status)
+        values (#{goodsName}, #{goodsType}, #{goodsPrice}, #{count}, #{brandName}, #{status});
+    </insert>
+
+    <insert id="addByCollection">
+        insert into tb_goods(goods_name, goods_type, goods_price, count, brand_name, status)
+        values
+        <foreach collection="arg1" item="goods" open="(" close=")" separator=",">
+            #{goods.goodsName},#{goods.goodsType}
+        </foreach>
+    </insert>
+
+    <!-- 修改全部字段 -->
+    <update id="update">
+        update tb_goods
+        set goods_name  = #{goodsName},
+            goods_type  = #{goodsType},
+            goods_price = #{goodsPrice},
+            count       = #{count},
+            brand_name  = #{brandName},
+            status      = #{status}
+        where id = #{id};
+    </update>
+
+    <!-- 动态修改字段 -->
+    <update id="updateByActivity">
+        update tb_goods
+        <set>
+            <if test="goodsName != null and goodsName != '' ">
+                goods_name = #{goodsName},
+            </if>
+            <if test="goodsType != null and goodsType != '' ">
+                goods_type = #{goodsType},
+            </if>
+            <if test="goodsPrice != null">
+                goods_price = #{goodsPrice},
+            </if>
+            <if test="count != null">
+                count = #{count},
+            </if>
+            <if test="brandName != null and brandName != '' ">
+                brand_name = #{brandName},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        where
+        id = #{id};
+    </update>
+
+    <delete id="deleteById">
+        delete
+        from tb_goods
+        where id = #{id};
+    </delete>
+
+    <delete id="deleteByIds">
+        delete
+        from tb_goods
+        where
+        id in
+        <foreach collection="ids" separator="," open="(" close=")" item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!-- 查询全部 -->
+    <select id="selectAll" resultMap="Goods">
+        select *
+        from tb_goods;
+    </select>
+
+    <!-- 查询单条 -->
+    <select id="selectById" resultMap="Goods">
+        select *
+        from tb_goods
+        where id = #{id};
+    </select>
+
+    <!-- 多条件动态查询 -->
+    <select id="selectByCondition" resultMap="Goods">
+        select *
+        from tb_goods
+        <where>
+            <if test="brandName != null and brandName != '' ">
+                and brand_name like #{brandName}
+            </if>
+            <if test="goodsName != null and goodsName != '' ">
+                and goods_name like #{goodsName}
+            </if>
+            <if test="goodsType != null and goodsType != '' ">
+                and goods_type like #{goodsType}
+            </if>
+            <if test="minPrice != null">
+                and goods_price <![CDATA[ >= ]]> #{minPrice}
+            </if>
+            <if test="maxPrice != null">
+                and goods_price <![CDATA[ <= ]]> #{maxPrice}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+
+    <!-- 动态单条件查询 -->
+    <select id="selectBySingleCondition" resultMap="Goods">
+        select *
+        from tb_goods
+        where
+            <choose>
+                <when test="brandName != null and brandName != '' ">
+                    brand_name like #{brandName}
+                </when>
+                <when test="goodsName != null and goodsName != '' ">
+                    goods_name like #{goodsName}
+                </when>
+                <when test="goodsType != null and goodsType != '' ">
+                    goods_type like #{goodsType}
+                </when>
+                <when test="staus != null">
+                    status = #{status}
+                </when>
+                <otherwise>
+                    1 = 1;
+                </otherwise>
+            </choose>
+    </select>
+
+</mapper>

@@ -3,16 +3,20 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/pro24-MybatisTest" />
+    <file type="web" url="file://$PROJECT_DIR$/pro28-MavenDemo" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pro24-MybatisDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/pro28-MavenDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/pro29-MybatisDemo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/pro24-MybatisDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/pro28-MavenDemo/pro29-MybatisDemo/pom.xml" />
       </set>
     </option>
   </component>
