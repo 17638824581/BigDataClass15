@@ -1,10 +1,12 @@
 package com.xty.mapper;
 
+import com.github.pagehelper.PageHelper;
 import com.xty.pojo.Book;
 import com.xty.pojo.BookCondition;
 import com.xty.util.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class BookMapperTest {
         BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 
         Book book = new Book();
-        book.setTitle("淘气包马小跳");
+        book.setTitle("哈哈哈");
         book.setAuthor("马小跳");
         book.setPrice(19.8);
         book.setType("故事");
@@ -58,9 +60,33 @@ public class BookMapperTest {
         SqlSession sqlSession = MybatisUtil.getSqlSession();
         BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 
+
+//        // 使用分页助手实现分页查询
+//        PageHelper.startPage(2,6);
+
         List<Book> books = mapper.seleteAll();
 
-        System.out.println("books = " + books);
+        for (Book book : books) {
+            System.out.println(book);
+        }
+
+        // 通过分页助手获取当前页面的相关属性
+        PageInfo pageInfo = new PageInfo(books);
+        int firstPage = pageInfo.getFirstPage();
+        System.out.println("第一页："+firstPage);
+        int lastPage = pageInfo.getLastPage();
+        System.out.println("最后一页："+lastPage);
+        int endRow = pageInfo.getEndRow();
+        System.out.println("最后一行："+endRow);
+        int nextPage = pageInfo.getNextPage();
+        System.out.println("下一页："+nextPage);
+        int pageSize = pageInfo.getPageSize();
+        System.out.println("页面大小："+pageSize);
+        long total = pageInfo.getTotal();
+        System.out.println("数据总数："+total);
+        List list = pageInfo.getList();
+        System.out.println("当前页数据："+list);
+
         sqlSession.close();
     }
 

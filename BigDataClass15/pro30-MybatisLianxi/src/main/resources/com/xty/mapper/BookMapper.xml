@@ -15,7 +15,7 @@
         </foreach>
     </delete>
 
-    <select id="selectByConditionAndLimit" resultType="com.xty.pojo.Book">
+    <select id="selectByConditionAndLimit" resultType="Book">
         select *
         from book
         <where>

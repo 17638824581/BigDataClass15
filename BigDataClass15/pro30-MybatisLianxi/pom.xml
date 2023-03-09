@@ -10,6 +10,18 @@
 
   <dependencies>
 
+    <!-- Mybatis 插件：分页助手 -->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>3.7.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.jsqlparser</groupId>
+      <artifactId>jsqlparser</artifactId>
+      <version>0.9.1</version>
+    </dependency>
+
     <!-- Mybatis -->
     <dependency>
       <groupId>org.mybatis</groupId>

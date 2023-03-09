@@ -19,13 +19,11 @@ public class BookServiceImpl implements BookService {
      */
     @Override
     public boolean add(Book book) {
-        SqlSession sqlSession = MybatisUtil.getSqlSession();
-        BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-
-        boolean result = mapper.add(book);
-        sqlSession.commit();
-        sqlSession.close();
-
+        boolean result = false;
+        try(SqlSession sqlSession = MybatisUtil.getSqlSession(true)){
+            BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+            result = mapper.add(book);
+        }
         return result;
     }
 
