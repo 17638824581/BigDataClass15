@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xty.mapper.BookMapper">
+
+    <delete id="deleteByIds">
+        delete
+        from book
+        where
+        id
+        in
+        <foreach collection="ids" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectByConditionAndLimit" resultType="com.xty.pojo.Book">
+        select *
+        from book
+        <where>
+            <if test=" title !=null and title != '' ">
+                title like #{title}
+            </if>
+            <if test="type != null and type != '' ">
+                and type like #{type}
+            </if>
+            <if test="author != null and author != '' ">
+                and author like #{author}
+            </if>
+            <if test="minPrice != null">
+                and price >= #{minPrice}
+            </if>
+            <if test="maxPrice != null">
+                and price &lt;= #{maxPrice}
+            </if>
+        </where>
+        limit #{begin},#{size};
+    </select>
+
+    <select id="selectConditionTotalConut" resultType="java.lang.Integer">
+        select count(*)
+        from book
+        <where>
+            <if test=" title !=null and title != '' ">
+                title like #{title}
+            </if>
+            <if test="type != null and type != '' ">
+                and type like #{type}
+            </if>
+            <if test="author != null and author != '' ">
+                and author like #{author}
+            </if>
+            <if test="minPrice != null">
+                and price >= #{minPrice}
+            </if>
+            <if test="maxPrice != null">
+                and price &lt;= #{maxPrice}
+            </if>
+        </where>
+    </select>
+
+</mapper>

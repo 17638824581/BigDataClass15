@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/pro24-MybatisTest" />
     <file type="web" url="file://$PROJECT_DIR$/pro28-MavenDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/pro30-MybatisLianxi" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -11,6 +12,7 @@
         <option value="$PROJECT_DIR$/pro24-MybatisDemo/pom.xml" />
         <option value="$PROJECT_DIR$/pro28-MavenDemo/pom.xml" />
         <option value="$PROJECT_DIR$/pro29-MybatisDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/pro30-MybatisLianxi/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

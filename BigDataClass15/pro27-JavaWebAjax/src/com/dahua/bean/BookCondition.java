@@ -6,7 +6,6 @@ public class BookCondition {
     private String author;
     private Double minPrice;
     private Double maxPrice;
-
     private int currentPage;
     private int pageSize;
 
