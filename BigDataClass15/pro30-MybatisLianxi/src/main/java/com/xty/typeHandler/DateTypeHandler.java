@@ -17,7 +17,7 @@ public class DateTypeHandler extends BaseTypeHandler<Date> {
     @Override
     public void setNonNullParameter(PreparedStatement preparedStatement, int i, Date date, JdbcType jdbcType) throws SQLException {
         long time = date.getTime();
-        preparedStatement.setString(i,String.valueOf(time));
+        preparedStatement.setLong(i,time);
     }
 
     @Override

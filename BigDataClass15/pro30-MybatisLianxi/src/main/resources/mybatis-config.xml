@@ -15,7 +15,7 @@
 
     <!-- 配置自定义的类型处理器 -->
     <typeHandlers>
-        <typeHandler handler="com.xty.typeHandler.DateTypeHandler" javaType="java.util.Date" jdbcType="VARCHAR"/>
+        <typeHandler handler="com.xty.typeHandler.DateTypeHandler"/>
     </typeHandlers>
 
     <!-- 配置插件 -->

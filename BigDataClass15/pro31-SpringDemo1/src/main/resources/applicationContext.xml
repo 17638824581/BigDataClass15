@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Spring的核心配置文件 -->
+
+    <!-- 将 UserDao 配置到Spring的ioc容器之中
+        id：是这个 bean 的唯一标识
+     -->
+    <bean id="userDao" class="com.xty.dao.impl.UserDaoImpl" scope="singleton"></bean>
+
+    <!-- UserService -->
+    <bean id="userService" class="com.xty.service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!-- 将 Student 配置到容器中 -->
+    <bean id="student" class="com.xty.pojo.Student">
+        <!-- 配置Spring自动给 name 属性赋值为 张三 -->
+        <property name="name" value="李四"/>
+    </bean>
+
+    <!-- 配置Teacher -->
+    <bean id="teacher" class="com.xty.pojo.Teacher">
+        <property name="name" value="张老师"/>
+        <property name="age" value="26"/>
+        <property name="likeStu" ref="student"/>
+    </bean>
+
+    <!-- 配置Person类 -->
+    <bean id="person" class="com.xty.pojo.Person">
+        <property name="name" value="张三"/>
+        <property name="age" value="30"/>
+        <property name="money" value="4999.9"/>
+        <property name="man" value="true"/>
+        <property name="son" ref="student"/>
+        <property name="friends" value="李四,王五,赵六">
+        </property>
+        <property name="students">
+            <list>
+                <bean class="com.xty.pojo.Student">
+                    <property name="name" value="小黑"/>
+                </bean>
+                <bean class="com.xty.pojo.Student">
+                    <property name="name" value="小白"/>
+                </bean>
+            </list>
+        </property>
+
+        <property name="teachers">
+            <map>
+                <entry key="王老师" value-ref="teacher"/>
+
+                <entry key="张老师">
+                    <bean class="com.xty.pojo.Teacher">
+                        <property name="name" value="张大哥"/>
+                    </bean>
+                </entry>
+
+                <entry key="白老师">
+                    <bean class="com.xty.pojo.Teacher">
+                        <property name="name" value="白大哥"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="key1">value1</prop>
+                <prop key="key2">value2</prop>
+                <prop key="key3">value3</prop>
+            </props>
+        </property>
+    </bean>
+
+
+</beans>

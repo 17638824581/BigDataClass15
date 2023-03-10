@@ -12,6 +12,6 @@ public interface StudentMapper {
     @Select("select * from student")
     List<Student> selectAll();
 
-    @Insert("insert into student(name, age, birthday) values(#{name},#{age},#{birthday})")
+    @Insert("insert into student(name, age, birthday) values(#{name},#{age},#{birthday});")
     boolean add(Student student);
 }
