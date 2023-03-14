@@ -14,12 +14,15 @@
         <option value="$PROJECT_DIR$/pro29-MybatisDemo/pom.xml" />
         <option value="$PROJECT_DIR$/pro30-MybatisLianxi/pom.xml" />
         <option value="$PROJECT_DIR$/pro31-SpringDemo1/pom.xml" />
+        <option value="$PROJECT_DIR$/pro32-SpringDemo2/pom.xml" />
+        <option value="$PROJECT_DIR$/pro33-SpringDemo3/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/pro24-MybatisDemo/pom.xml" />
         <option value="$PROJECT_DIR$/pro28-MavenDemo/pro29-MybatisDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/pro31-SpringDemo1/pro32-SpringDemo2/pom.xml" />
       </set>
     </option>
   </component>

@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="pro31-SpringDemo1" />
-        <module name="pro29-MybatisDemo" />
         <module name="pro30-MybatisLianxi" />
+        <module name="pro33-SpringDemo3" />
+        <module name="pro32-SpringDemo2" />
+        <module name="pro29-MybatisDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

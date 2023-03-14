@@ -8,12 +8,9 @@
     <!-- 将 UserDao 配置到Spring的ioc容器之中
         id：是这个 bean 的唯一标识
      -->
-    <bean id="userDao" class="com.xty.dao.impl.UserDaoImpl" scope="singleton"></bean>
 
-    <!-- UserService -->
-    <bean id="userService" class="com.xty.service.impl.UserServiceImpl">
-        <property name="userDao" ref="userDao"/>
-    </bean>
+    <!-- 引入分配置文件 -->
+    <import resource="classpath:applicationContext-web.xml"/>
 
     <!-- 将 Student 配置到容器中 -->
     <bean id="student" class="com.xty.pojo.Student">
@@ -37,6 +34,7 @@
         <property name="son" ref="student"/>
         <property name="friends" value="李四,王五,赵六">
         </property>
+
         <property name="students">
             <list>
                 <bean class="com.xty.pojo.Student">
@@ -75,5 +73,20 @@
         </property>
     </bean>
 
+    <!-- 配置 Dog 类 -->
+<!--    <bean id="dog2" class="com.xty.test.Dog">-->
+<!--        <constructor-arg value="大哥"/>-->
+<!--    </bean>-->
+
+    <bean id="dog1" class="com.xty.test.Dog">
+        <constructor-arg value="大黄"/>
+    </bean>
+
+
+    <!-- 配置 User类，并配置依赖注入 -->
+    <bean id="user" class="com.xty.test.User">
+        <property name="name" value="李四"/>
+        <property name="dog" ref="dog1"/>
+    </bean>
 
 </beans>
