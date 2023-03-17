@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="pro33">
     <output-path>$PROJECT_DIR$/out/artifacts/pro33</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="pro33-SpringDemo3/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="pro33-SpringDemo3" />
@@ -19,8 +18,10 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:5.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.5.RELEASE" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="pro33-SpringDemo3/web/Web" />
     </root>
   </artifact>
 </component>

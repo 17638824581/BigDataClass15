@@ -5,6 +5,8 @@ import com.xty.service.UserService;
 import com.xty.service.impl.UserServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -15,13 +17,9 @@ import java.io.IOException;
 public class UserSaveServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 找 ServletContext 域 获取 Spring 容器
-        ServletContext servletContext = request.getServletContext();
-        ApplicationContext app = (ApplicationContext) servletContext.getAttribute("app");
-
-        // 再从Spring容器中获取 UserService 对象
+        // 怎么获取 Spring 容器？
+        ApplicationContext app = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
         UserService userService = app.getBean(UserService.class);
-
         // 执行对应的业务方法
         userService.save();
 

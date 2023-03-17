@@ -30,6 +30,13 @@
       <version>5.0.5.RELEASE</version>
     </dependency>
 
+    <!-- 引入 spring-web 组件 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>5.0.5.RELEASE</version>
+    </dependency>
+
     <!-- 引入 Servlet 依赖 -->
     <dependency>
       <groupId>javax.servlet</groupId>

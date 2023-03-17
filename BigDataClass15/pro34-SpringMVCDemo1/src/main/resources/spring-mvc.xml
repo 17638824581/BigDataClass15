@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+">
+
+    <!-- 配置组件扫描，让我们通过注解写的 控制器 生效 -->
+    <context:component-scan base-package="com.xty.controller"/>
+
+<!--     配置视图解析器 -->
+<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+<!--        &lt;!&ndash; 视图url前缀 &ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="prefix" value="/WEB-INF/page/"/>&ndash;&gt;-->
+<!--        &lt;!&ndash; 视图url后缀 &ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="suffix" value=".jsp"/>&ndash;&gt;-->
+<!--        &lt;!&ndash; 设置响应体格式 &ndash;&gt;-->
+<!--    </bean>-->
+
+    <!-- 配置处理器映射器来实现自动将 控制器方法的返回值转为 JSON 格式 -->
+    <!-- 配置 mvc 注解驱动 -->
+    <!-- conversion-service="conversionService" 配置应用我们自定义的类型转换服务工厂-->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+    <!-- 配置（html、图片、音频、视频、js、css）静态资源  访问路径 -->
+<!--    <mvc:resources mapping="/static/imgs/**" location="/imgs/"/>-->
+
+<!--    <mvc:resources mapping="*.html" location="/html/"/>-->
+
+    <!-- 开放静态资源访问
+        去让 tomcat 处理我们 controller 中没有配置的访问路径
+    -->
+    <mvc:default-servlet-handler/>
+
+    <!-- 配置自定义的类型转换器
+         配置 类型器转换服务工厂  ConversionServiceFactoryBean
+     -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <!-- 配置自定义的类型转换器 -->
+        <property name="converters">
+            <list>
+                <bean class="com.xty.converter.String2DateConverter"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 上传文件解析器  -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 总文件上传的最大尺寸，设置最大的大小值，单位是字节 Byte，50MB -->
+        <property name="maxUploadSize" value="52428800"/>
+        <!-- 单个文件的最大大小 30MB-->
+        <property name="maxUploadSizePerFile" value="31457280"/>
+        <!-- 文件的默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+</beans>

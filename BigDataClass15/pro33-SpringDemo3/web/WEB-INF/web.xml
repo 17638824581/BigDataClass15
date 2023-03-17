@@ -4,6 +4,17 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!-- 配置一个初始化参数，参数中说明 使用哪个配置文件创建 Spring 容器 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
+    <!-- 配置 SpringLoader 监听器，用于在项目启动时创建Spring容器并存入 Context 域中 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>com.xty.web.HelloServlet</servlet-class>
