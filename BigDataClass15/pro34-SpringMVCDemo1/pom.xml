@@ -90,6 +90,35 @@
       <version>5.0.5.RELEASE</version>
     </dependency>
 
+    <!-- 引入 spring-jdbc 依赖 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>5.0.5.RELEASE</version>
+    </dependency>
+
+    <!-- 引入 spring-tx  -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>5.0.5.RELEASE</version>
+    </dependency>
+
+    <!-- 引入 Druid -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.2.8</version>
+    </dependency>
+
+    <!-- Mysql驱动 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.26</version>
+    </dependency>
+
+
     <!-- 引入Servlet -->
     <dependency>
       <groupId>javax.servlet</groupId>

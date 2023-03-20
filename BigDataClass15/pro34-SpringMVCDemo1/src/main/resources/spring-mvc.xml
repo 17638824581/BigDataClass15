@@ -58,4 +58,39 @@
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
+    <mvc:view-controller path="/jsp/*"/>
+
+    <!-- 配置自定义拦截器 -->
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**"/>-->
+<!--            <mvc:exclude-mapping path="/imgs/"/>-->
+<!--            <mvc:exclude-mapping path="/js/"/>-->
+<!--            <bean class="com.xty.interceptor.MyInterceptor2"/>-->
+<!--            &lt;!&ndash; 排除拦截路径 &ndash;&gt;-->
+<!--        </mvc:interceptor>-->
+
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**"/>-->
+<!--            <bean class="com.xty.interceptor.MyInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
+
+    <!-- 配置自定义异常处理器 -->
+    <bean class="com.xty.exceptionResolver.MyExceptionResolver"/>
+
+
+    <!-- 配置简单映射异常处理器 -->
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        &lt;!&ndash; 默认异常视图 &ndash;&gt;-->
+<!--        <property name="defaultErrorView" value="/error.jsp"/>-->
+<!--        &lt;!&ndash; 配置不同的异常视图 &ndash;&gt;-->
+<!--        <property name="exceptionMappings">-->
+<!--            <props>-->
+<!--                <prop key="java.lang.ArithmeticException">/error1.jsp</prop>-->
+<!--                <prop key="java.lang.ClassNotFoundException">/error2.jsp</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--    </bean>-->
+
 </beans>

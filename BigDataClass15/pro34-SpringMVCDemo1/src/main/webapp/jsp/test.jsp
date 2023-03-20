@@ -4,7 +4,11 @@
     <title>Title</title>
 </head>
 <body>
-  <h1>我是 test.jsp</h1>
-  <img src="imgs/poi-marker-cyan.png"/>
+<h1>我是 test.jsp</h1>
+
+<h1>你好：${name}</h1>
+
+<img src="../imgs/poi-marker-cyan.png"/>
+
 </body>
 </html>

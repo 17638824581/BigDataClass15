@@ -11,7 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-  <h1>我是 bbb.jsp</h1>
+    <%
+        System.out.println(1/0);
+    %>
+    <h1>我是 bbb.jsp</h1>
 
 </body>
 </html>

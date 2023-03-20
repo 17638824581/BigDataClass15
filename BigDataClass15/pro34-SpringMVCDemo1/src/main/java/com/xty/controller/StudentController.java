@@ -9,10 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,17 +22,19 @@ import java.util.List;
 public class StudentController {
 
     @RequestMapping("/getAll")
-    public ModelAndView getAll(ModelAndView mav) {
+    public ModelAndView getAll(ModelAndView mav) throws FileNotFoundException {
         List<Student> all = null;
+        SqlSession sqlSession = MybatisUtil.getSqlSession();
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+        all = mapper.getAll();
 
-        try (SqlSession sqlSession = MybatisUtil.getSqlSession()) {
-            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
-            all = mapper.getAll();
+        FileInputStream fileInputStream = new FileInputStream("F:\\Desktop\\新建 文本文档.txt");
 
-            mav.addObject("students", all);
-            mav.setViewName("/student.jsp");
-        }
+        mav.addObject("students", all);
+        mav.setViewName("/student.jsp");
 
+        sqlSession.commit();
+        sqlSession.close();
         return mav;
     }
 
@@ -71,51 +71,50 @@ public class StudentController {
 
     @RequestMapping(value = "/param")
     @ResponseBody
-    public String getParam(@RequestParam(value = "mm",defaultValue = "佚名") String name){
+    public String getParam(@RequestParam(value = "mm", defaultValue = "佚名") String name) {
         System.out.println("name = " + name);
         return "哈哈";
     }
 
-    @RequestMapping(value = "/testRestful/{id}",method = {RequestMethod.GET})
+    @RequestMapping(value = "/testRestful/{id}", method = {RequestMethod.GET})
     @ResponseBody
-    public String testRestful(@PathVariable Integer id){
+    public String testRestful(@PathVariable Integer id) {
         System.out.println("收到 restful 的 GET 请求！");
 
-        System.out.println("获取 id = " + id+"的数据....");
+        System.out.println("获取 id = " + id + "的数据....");
         return "哈哈";
     }
 
-    @RequestMapping(value = "/testRestful",method = {RequestMethod.POST})
+    @RequestMapping(value = "/testRestful", method = {RequestMethod.POST})
     @ResponseBody
-    public String testRestful1(){
+    public String testRestful1() {
         System.out.println("收到 restful 的 POST 请求！");
 
         System.out.println("添加数据....");
         return "哈哈";
     }
 
-    @RequestMapping(value = "/testRestful/{id}",method = {RequestMethod.DELETE})
+    @RequestMapping(value = "/testRestful/{id}", method = {RequestMethod.DELETE})
     @ResponseBody
-    public String testRestful2(@PathVariable Integer id){
+    public String testRestful2(@PathVariable Integer id) {
         System.out.println("收到 restful 的 DELETE 请求！");
 
-        System.out.println("删除 id = " + id+"的数据....");
+        System.out.println("删除 id = " + id + "的数据....");
         return "哈哈";
     }
 
-    @RequestMapping(value = "/testRestful/{id}",method = {RequestMethod.PUT})
+    @RequestMapping(value = "/testRestful/{id}", method = {RequestMethod.PUT})
     @ResponseBody
-    public String testRestful3(@PathVariable Integer id){
+    public String testRestful3(@PathVariable Integer id) {
         System.out.println("收到 restful 的 PUT 请求！");
 
-        System.out.println("修改 id = " + id+"的数据....");
+        System.out.println("修改 id = " + id + "的数据....");
         return "哈哈";
     }
 
     @RequestMapping("/getDate")
-    public Object getDate(@CookieValue("JSESSIONID") String jsessionId) throws IOException {
-
-        System.out.println("jsessionId = " + jsessionId);
+    public Object getDate(Date time) throws IOException {
+        System.out.println("time = " + time);
 
         return new String("你好！");
     }
