@@ -22,6 +22,13 @@
       <version>5.0.5.RELEASE</version>
     </dependency>
 
+    <!-- AspectJ AOP 框架 -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.8.4</version>
+    </dependency>
+
 
     <dependency>
       <groupId>junit</groupId>

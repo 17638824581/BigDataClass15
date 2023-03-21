@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+">
+
+
+    <!-- 配置目标对象 -->
+    <bean id="studentService" class="com.xty.service.impl.StudentServiceImpl"/>
+    <bean id="userService" class="com.xty.service.UserService"/>
+
+    <!-- 配置切面类 -->
+    <bean id="myAspect" class="com.xty.aspect.MyAspect"/>
+
+    <!-- 配置织入关系 -->
+    <aop:config>
+        <!-- 配置切面：切点+通知 -->
+        <aop:aspect ref="myAspect">
+            <!-- 配置切点 -->
+            <aop:pointcut id="count" expression="execution(void com.xty.service.impl.StudentServiceImpl.delete())"/>
+            <!-- 前置通知：在切点方法执行之前执行 -->
+<!--            <aop:before method="countAdive" pointcut-ref="count"/>-->
+
+            <!-- aop:around 环绕通知，任意的去控制切点方法 -->
+<!--            <aop:around method="aroundAdvice" pointcut-ref="save"/>-->
+
+            <!-- 后置通知：在切点方法执行之后执行，当切点方法抛出异常，后置通知不会执行 -->
+<!--            <aop:after-returning method="afterAdvice" pointcut-ref="save"/>-->
+
+            <!-- 异常抛出通知：专门在切点方法抛出异常之后执行 -->
+<!--            <aop:after-throwing method="excptionAdvice" pointcut-ref="save"/>-->
+
+            <!-- 最终通知：在切点方法执行之后执行，无论切点方法是否抛出异常，最终通知都会执行 -->
+<!--            <aop:after method="afterAdvice" pointcut-ref="save"/>-->
+
+        </aop:aspect>
+    </aop:config>
+
+</beans>

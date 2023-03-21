@@ -5,6 +5,7 @@ import com.xty.service.StudentService;
 public class StudentServiceImpl implements StudentService {
     @Override
     public void save() {
+        System.out.println(1/0);
         System.out.println("save() 方法执行....");
     }
 

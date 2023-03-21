@@ -1,6 +1,6 @@
 package com.xty.web;
 
-import com.xty.advice.MyAdvice;
+import com.xty.aspect.MyAspect;
 import com.xty.service.UserService;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
@@ -26,14 +26,14 @@ public class CglibProxyTest {
         enhancer.setCallback(new MethodInterceptor() {
             @Override
             public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-                MyAdvice myAdvice = new MyAdvice();
+                MyAspect myAspect = new MyAspect();
 
                 // 前置增强
-                myAdvice.before();
+                myAspect.beforeAdvice();
                 // 调用目标方法
                 Object invoke = method.invoke(userService, objects);
                 // 后置增强
-                myAdvice.after();
+                myAspect.afterAdvice();
 
                 return invoke;
             }

@@ -1,6 +1,6 @@
 package com.xty.web;
 
-import com.xty.advice.MyAdvice;
+import com.xty.aspect.MyAspect;
 import com.xty.service.StudentService;
 import com.xty.service.impl.StudentServiceImpl;
 
@@ -31,13 +31,13 @@ public class JDKProxyTest {
 
                         // 只对 save() 方法做增强
                         if (method.getName().equals("save")){
-                            MyAdvice myAdvice = new MyAdvice();
+                            MyAspect myAspect = new MyAspect();
                             // 前置增强
-                            myAdvice.before();
+                            myAspect.beforeAdvice();
                             // save() 方法本身也要执行
                             result = method.invoke(studentService, args);
                             // 后置增强
-                            myAdvice.after();
+                            myAspect.afterAdvice();
                         }else{
                             result = method.invoke(studentService, args);
                         }
