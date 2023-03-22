@@ -1,5 +1,8 @@
 package com.xty.service;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserService {
 
     public void getAll(){

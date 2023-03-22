@@ -1,41 +1,35 @@
 package com.xty.aspect;
 
-import org.aspectj.lang.ProceedingJoinPoint;
+
+import org.aspectj.lang.annotation.*;
+import org.springframework.stereotype.Component;
 
 /*
-*  切面类，内部方法封装了我们将要要执行的增强的代码
-*  内部方法 封装了 通知
+*  自定义的切面类
 * */
+@Aspect
+@Component
 public class MyAspect {
 
-    private int count = 0;
+    // 让方法承载切点表达式
+    @Pointcut("execution(* com.xty.service.UserService.*(..))")
+    public void myPointcut(){}
 
-    public void beforeAdvice(){
-        System.out.println("执行前置增强的代码。。。。");
+
+    // 通知/增强
+    @Before("myPointcut()")
+    public void beforeAdvise(){
+        System.out.println("执行了前置通知");
     }
 
-    public void afterAdvice(){
-        System.out.println("执行后置增强的代码....");
-    }
-    public Object aroundAdvice(ProceedingJoinPoint pjp) throws Throwable {
-
-        System.out.println("执行环绕增强前置通知的代码....");
-
-        // 调用目标方法
-        Object proceed = pjp.proceed();
-
-        System.out.println("执行环绕增强后置通知的代码....");
-
-        return proceed;
+    @AfterReturning("myPointcut()")
+    public void afterReturningAdvise(){
+        System.out.println("执行了后置通知");
     }
 
-    public void excptionAdvice(){
-        System.out.println("异常通知。。。");
+    @After("myPointcut()")
+    public void afterAdvise(){
+        System.out.println("执行了最终通知");
     }
 
-
-    public void countAdive(){
-        count++;
-        System.out.println("目标方法被执行了"+count+"次！");
-    }
 }

@@ -1,7 +1,6 @@
-package com.xty.aopTest;
+package com.xty.dao;
 
-import com.xty.service.StudentService;
-import com.xty.service.UserService;
+import com.xty.dao.impl.AccountDaoImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,18 +9,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
-public class AopTest {
-
-//    @Autowired
-//    private StudentService studentService;
+public class AccountDaoTest {
 
     @Autowired
-    private UserService userService;
-
+    private AccountDao accountDao;
 
     @Test
-    public void test1(){
-        userService.getAll();
+    public void testOutMoney(){
+        accountDao.outMoney(1, 500);
     }
 
+    @Test
+    public void testInMoney(){
+        accountDao.inMoney(1,600);
+    }
 }

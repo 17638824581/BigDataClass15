@@ -29,11 +29,11 @@ public class CglibProxyTest {
                 MyAspect myAspect = new MyAspect();
 
                 // 前置增强
-                myAspect.beforeAdvice();
+//                myAspect.beforeAdvice();
                 // 调用目标方法
                 Object invoke = method.invoke(userService, objects);
                 // 后置增强
-                myAspect.afterAdvice();
+//                myAspect.afterAdvice();
 
                 return invoke;
             }

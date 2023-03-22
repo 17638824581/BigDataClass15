@@ -33,11 +33,11 @@ public class JDKProxyTest {
                         if (method.getName().equals("save")){
                             MyAspect myAspect = new MyAspect();
                             // 前置增强
-                            myAspect.beforeAdvice();
+//                            myAspect.beforeAdvice();
                             // save() 方法本身也要执行
                             result = method.invoke(studentService, args);
                             // 后置增强
-                            myAspect.afterAdvice();
+//                            myAspect.afterAdvice();
                         }else{
                             result = method.invoke(studentService, args);
                         }
