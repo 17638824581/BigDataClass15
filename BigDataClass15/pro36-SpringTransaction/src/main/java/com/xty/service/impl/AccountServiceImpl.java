@@ -1,14 +1,10 @@
 package com.xty.service.impl;
 
-import com.xty.dao.AccountDao;
+import com.xty.mapper.AccountDao;
 import com.xty.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 @Service
 public class AccountServiceImpl implements AccountService {

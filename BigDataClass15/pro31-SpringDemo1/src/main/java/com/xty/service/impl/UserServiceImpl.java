@@ -1,7 +1,7 @@
 package com.xty.service.impl;
 
-import com.xty.dao.UserDao;
-import com.xty.dao.impl.UserDaoImpl;
+import com.xty.mapper.UserDao;
+import com.xty.mapper.impl.UserDaoImpl;
 import com.xty.service.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

@@ -1,7 +1,7 @@
 package com.xty.factory;
 
-import com.xty.dao.UserDao;
-import com.xty.dao.impl.UserDaoImpl;
+import com.xty.mapper.UserDao;
+import com.xty.mapper.impl.UserDaoImpl;
 
 public class UserDaoFactory {
 

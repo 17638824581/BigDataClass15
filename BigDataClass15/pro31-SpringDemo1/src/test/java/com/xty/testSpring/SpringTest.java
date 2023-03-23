@@ -1,6 +1,6 @@
 package com.xty.testSpring;
 
-import com.xty.dao.UserDao;
+import com.xty.mapper.UserDao;
 import com.xty.factory.UserDaoFactory;
 import com.xty.pojo.Person;
 import com.xty.pojo.Student;

@@ -30,5 +30,9 @@
     <file url="file://$PROJECT_DIR$/pro35-SpringAopDemo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pro36-SpringTransaction/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pro36-SpringTransaction/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro37-SpringAnnoTransaction/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro37-SpringAnnoTransaction/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro38-SSM/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro38-SSM/src/main/resources" charset="UTF-8" />
   </component>
 </project>

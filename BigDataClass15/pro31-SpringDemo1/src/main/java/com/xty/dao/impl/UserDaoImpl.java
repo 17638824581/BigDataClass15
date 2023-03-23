@@ -1,6 +1,6 @@
-package com.xty.dao.impl;
+package com.xty.mapper.impl;
 
-import com.xty.dao.UserDao;
+import com.xty.mapper.UserDao;
 
 public class UserDaoImpl implements UserDao {
     @Override

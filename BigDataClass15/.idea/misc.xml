@@ -7,6 +7,8 @@
     <file type="web" url="file://$PROJECT_DIR$/pro30-MybatisLianxi" />
     <file type="web" url="file://$PROJECT_DIR$/pro34-SpringMVCDemo1" />
     <file type="web" url="file://$PROJECT_DIR$/pro36-SpringTransaction" />
+    <file type="web" url="file://$PROJECT_DIR$/pro37-SpringAnnoTransaction" />
+    <file type="web" url="file://$PROJECT_DIR$/pro38-SSM" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -21,6 +23,8 @@
         <option value="$PROJECT_DIR$/pro34-SpringMVCDemo1/pom.xml" />
         <option value="$PROJECT_DIR$/pro35-SpringAopDemo/pom.xml" />
         <option value="$PROJECT_DIR$/pro36-SpringTransaction/pom.xml" />
+        <option value="$PROJECT_DIR$/pro37-SpringAnnoTransaction/pom.xml" />
+        <option value="$PROJECT_DIR$/pro38-SSM/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

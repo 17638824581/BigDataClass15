@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Homework/Homework.iml" filepath="$PROJECT_DIR$/Homework/Homework.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyModel1/MyModel1.iml" filepath="$PROJECT_DIR$/MyModel1/MyModel1.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyModel2/MyModel2.iml" filepath="$PROJECT_DIR$/MyModel2/MyModel2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro37-SpringAnnotationTransaction/src/main/main.iml" filepath="$PROJECT_DIR$/pro37-SpringAnnotationTransaction/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro01-JavaBase/pro01-JavaBase.iml" filepath="$PROJECT_DIR$/pro01-JavaBase/pro01-JavaBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro02-JavaArray/pro02-JavaArray.iml" filepath="$PROJECT_DIR$/pro02-JavaArray/pro02-JavaArray.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro03-JavaMethod/pro03-JavaMethod.iml" filepath="$PROJECT_DIR$/pro03-JavaMethod/pro03-JavaMethod.iml" />
@@ -33,6 +34,7 @@
       <module fileurl="file://$PROJECT_DIR$/pro25-JavaWebDemo/pro25-JavaWebDemo.iml" filepath="$PROJECT_DIR$/pro25-JavaWebDemo/pro25-JavaWebDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro26-JavaWeb05-Filter/pro26-JavaWeb05-Filter.iml" filepath="$PROJECT_DIR$/pro26-JavaWeb05-Filter/pro26-JavaWeb05-Filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro27-JavaWebAjax/pro27-JavaWebAjax.iml" filepath="$PROJECT_DIR$/pro27-JavaWebAjax/pro27-JavaWebAjax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro37-SpringAnnotationTransaction/src/test/pro37-SpringAnnotationTransaction.iml" filepath="$PROJECT_DIR$/pro37-SpringAnnotationTransaction/src/test/pro37-SpringAnnotationTransaction.iml" />
     </modules>
   </component>
 </project>

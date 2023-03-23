@@ -1,4 +1,4 @@
-package com.xty.dao;
+package com.xty.mapper;
 
 public interface UserDao {
 

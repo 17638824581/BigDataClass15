@@ -1,12 +1,10 @@
 package com.xty.test;
 
 import com.xty.configration.SpringContextConfigration;
-import com.xty.dao.UserDao;
-import com.xty.dao.impl.UserDaoImpl;
+import com.xty.mapper.UserDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 

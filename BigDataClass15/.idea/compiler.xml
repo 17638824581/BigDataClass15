@@ -10,9 +10,11 @@
         <module name="pro36-SpringTransaction" />
         <module name="pro33-SpringDemo3" />
         <module name="pro32-SpringDemo2" />
+        <module name="pro37-SpringAnnoTransaction" />
         <module name="pro29-MybatisDemo" />
         <module name="pro34-SpringMVCDemo1" />
         <module name="pro35-SpringAopDemo" />
+        <module name="pro38-SSM" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

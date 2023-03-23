@@ -1,6 +1,6 @@
 package com.xty.service.impl;
 
-import com.xty.dao.UserDao;
+import com.xty.mapper.UserDao;
 import com.xty.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
