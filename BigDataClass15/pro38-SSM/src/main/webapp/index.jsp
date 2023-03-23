@@ -1,4 +1,5 @@
 <%@ page isELIgnored="false" contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -15,15 +16,17 @@
     </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>TOM</td>
-            <td>1234</td>
-            <td>
-                <a href="">删除</a>
-                <a href="">修改</a>
-            </td>
-        </tr>
+        <c:forEach items="${accounts}" var="account">
+            <tr>
+                <td>${account.id}</td>
+                <td>${account.name}</td>
+                <td>${account.money}</td>
+                <td>
+                    <a href="">删除</a>
+                    <a href="">修改</a>
+                </td>
+            </tr>
+        </c:forEach>
     </tbody>
 </table>
 
