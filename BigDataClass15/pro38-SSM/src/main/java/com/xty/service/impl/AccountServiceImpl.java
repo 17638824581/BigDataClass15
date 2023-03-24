@@ -5,6 +5,7 @@ import com.xty.pojo.Account;
 import com.xty.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -34,19 +35,20 @@ public class AccountServiceImpl implements AccountService {
         return mapper.selectAll();
     }
 
-
     @Override
     public Account findById(int id) {
         return mapper.selectById(id);
     }
 
     @Override
+    @Transactional
     public void transfer(String sourceName, String targetName, double money) {
         Account outAccount = mapper.selectByName(sourceName);
         Account InAccount = mapper.selectByName(targetName);
 
         // 执行转账业务
         mapper.outMoney(outAccount.getId(),money);
+        System.out.println(1/0);
         mapper.inMoney(InAccount.getId(),money);
     }
 }

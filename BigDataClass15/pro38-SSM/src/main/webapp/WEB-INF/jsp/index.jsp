@@ -22,8 +22,8 @@
                 <td>${account.name}</td>
                 <td>${account.money}</td>
                 <td>
-                    <a href="">删除</a>
-                    <a href="">修改</a>
+                    <a href="http://localhost/pro38/delete?id=${account.id}" >删除</a>
+                    <a href="http://localhost/pro38/delete?id=${account.id}" >修改</a>
                 </td>
             </tr>
         </c:forEach>
@@ -32,7 +32,7 @@
 
 <hr>
 <h2>添加账户</h2>
-<form >
+<form  method="post" action="http://localhost/pro38/add">
     账户名：<input type="text" name="name"/>
     余额：<input type="text" name="money"/>
     <input type="submit" value="添加账户"/>
@@ -40,11 +40,11 @@
 
 <hr>
 <h2>转账业务</h2>
-<form >
+<form method="post" action="http://localhost/pro38/transfer">
     转出账户名：<input type="text" name="outName"/>
     转入账户名：<input type="text" name="inName"/>
     金额：<input type="text" name="money"/>
-    <input type="submit" value="添加账户"/>
+    <input type="submit" value="确认转账"/>
 </form>
 
 </body>
