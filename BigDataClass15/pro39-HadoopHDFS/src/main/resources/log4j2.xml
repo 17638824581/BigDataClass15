@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Appenders>
+        <Appender type="Console" name="STDOUT">
+        <Layout type="PatternLayout"
+                pattern="[%p] [%d{yyyy-MM-dd HH:mm:ss}][%c{10}]%m%n" />
+        </Appender>
+    </Appenders>
+
+    <Loggers>
+        <logger name="test" level="info" additivity="false">
+            <AppenderRef ref="STDOUT" />
+        </logger>
+
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>

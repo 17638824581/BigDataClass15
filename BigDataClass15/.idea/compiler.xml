@@ -13,6 +13,7 @@
         <module name="pro37-SpringAnnoTransaction" />
         <module name="pro29-MybatisDemo" />
         <module name="pro34-SpringMVCDemo1" />
+        <module name="pro39-HadoopHDFS" />
         <module name="pro35-SpringAopDemo" />
         <module name="pro38-SSM" />
       </profile>

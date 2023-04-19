@@ -25,6 +25,7 @@
         <option value="$PROJECT_DIR$/pro36-SpringTransaction/pom.xml" />
         <option value="$PROJECT_DIR$/pro37-SpringAnnoTransaction/pom.xml" />
         <option value="$PROJECT_DIR$/pro38-SSM/pom.xml" />
+        <option value="$PROJECT_DIR$/pro39-HadoopHDFS/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
