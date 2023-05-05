@@ -36,5 +36,13 @@
     <file url="file://$PROJECT_DIR$/pro38-SSM/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pro39-HadoopHDFS/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pro39-HadoopHDFS/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro40-WordCountMR/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro40-WordCountMR/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro41-PhoneFlowCount/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro41-PhoneFlowCount/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro42-MrPartition/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro42-MrPartition/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro43-MRsort/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pro43-MRsort/src/main/resources" charset="UTF-8" />
   </component>
 </project>

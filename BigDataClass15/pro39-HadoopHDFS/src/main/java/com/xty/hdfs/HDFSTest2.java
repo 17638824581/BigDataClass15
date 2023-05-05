@@ -48,7 +48,7 @@ public class HDFSTest2 {
     }
 
 
-    @Test
+    @Testa
     // 文件下载
     public void fileDownload() throws IOException, URISyntaxException, InterruptedException {
         // 1. 先获取 HDFS 连接
@@ -57,7 +57,7 @@ public class HDFSTest2 {
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop101:9820"),conf,"hdp");
 
         // 2. 调用方法，下载文件
-        fileSystem.copyToLocalFile(true,new Path("/排序.psd"), new Path("F:\\Desktop\\download"),false);
+        fileSystem.copyToLocalFile(true,new Path("/datas"), new Path("F:\\Desktop\\download"),false);
 
         // 3. 关闭连接
         fileSystem.close();

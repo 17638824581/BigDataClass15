@@ -26,6 +26,10 @@
         <option value="$PROJECT_DIR$/pro37-SpringAnnoTransaction/pom.xml" />
         <option value="$PROJECT_DIR$/pro38-SSM/pom.xml" />
         <option value="$PROJECT_DIR$/pro39-HadoopHDFS/pom.xml" />
+        <option value="$PROJECT_DIR$/pro40-WordCountMR/pom.xml" />
+        <option value="$PROJECT_DIR$/pro41-PhoneFlowCount/pom.xml" />
+        <option value="$PROJECT_DIR$/pro42-MrPartition/pom.xml" />
+        <option value="$PROJECT_DIR$/pro43-MRsort/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

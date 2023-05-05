@@ -7,15 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pro30-MybatisLianxi" />
-        <module name="pro36-SpringTransaction" />
         <module name="pro33-SpringDemo3" />
         <module name="pro32-SpringDemo2" />
-        <module name="pro37-SpringAnnoTransaction" />
+        <module name="pro43-MRsort" />
         <module name="pro29-MybatisDemo" />
         <module name="pro34-SpringMVCDemo1" />
         <module name="pro39-HadoopHDFS" />
         <module name="pro35-SpringAopDemo" />
         <module name="pro38-SSM" />
+        <module name="pro41-PhoneFlowCount" />
+        <module name="pro36-SpringTransaction" />
+        <module name="pro42-MrPartition" />
+        <module name="pro37-SpringAnnoTransaction" />
+        <module name="pro40-WordCountMR" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
